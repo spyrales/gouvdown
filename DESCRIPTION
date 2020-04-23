@@ -1,0 +1,28 @@
+Package: gouvdown
+Title: French Government Design System for R Markdown
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Maël",
+             family = "Theulière",
+             role = c("aut", "cre"),
+             email = "mael.theuliere@gmail.com"),
+      person(given = "Romain",
+             family = "Lesur",
+             role = "aut",
+             email = "romain.lesur@gmail.com",
+             comment = c(ORCID = "0000-0002-0721-5595")),
+      person(given = "Thomas",
+             family = "Vroylandt",
+             role = "aut",
+             email = "tvroylandt@gmail.com"),
+      person(family = "République Française",
+             role = "cph"))
+Description: Produce documents compliants with the French
+    government design system.
+License: EUPL (>= 1.2) | file LICENCE
+Suggests: 
+    testthat
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
