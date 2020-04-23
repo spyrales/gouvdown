@@ -20,6 +20,8 @@ Authors@R:
 Description: Produce documents compliants with the French
     government design system.
 License: EUPL (>= 1.2) | file LICENCE
+URL: https://github.com/spyrales/gouvdown
+BugReports: https://github.com/spyrales/gouvdown/issues
 Suggests: 
     testthat
 Encoding: UTF-8
