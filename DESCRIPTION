@@ -17,7 +17,7 @@ Authors@R:
              email = "tvroylandt@gmail.com"),
       person(family = "République Française",
              role = "cph"),
-      person(family = "Production Type", 
+      person(family = "Production Type",
              role = "cph",
              comment = "Spectral typeface in inst/resources/fonts/spectral/files"))
 Description: Produce documents compliants with the French
@@ -25,11 +25,13 @@ Description: Produce documents compliants with the French
 License: EUPL (>= 1.2) | file LICENCE
 URL: https://github.com/spyrales/gouvdown
 BugReports: https://github.com/spyrales/gouvdown/issues
+Imports: 
+    htmltools,
+    utils,
+    xfun
 Suggests: 
     testthat
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
-Imports: 
-    htmltools
