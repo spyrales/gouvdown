@@ -1,5 +1,7 @@
 # gouvdown 0.0.0.9000
 
+* Licence is updated after `gouvdown.fonts` creation.
+
 * Created a `spectral_font_dep()` function which returns HTML dependencies for
 the Spectral font.
 

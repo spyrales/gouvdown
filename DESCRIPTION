@@ -16,10 +16,7 @@ Authors@R:
              role = "aut",
              email = "tvroylandt@gmail.com"),
       person(family = "République Française",
-             role = "cph"),
-      person(family = "Production Type",
-             role = "cph",
-             comment = "Spectral typeface in inst/resources/fonts/spectral/files"))
+             role = "cph"))
 Description: Produce documents compliants with the French
     government design system.
 License: EUPL (>= 1.2) | file LICENCE
