@@ -25,7 +25,7 @@ spectral_font_dep <- function(use_gouvdown_fonts = TRUE) {
   }
 
   htmltools::htmlDependency(
-    "gfontspectral", "v2.000", src = pkg_resource(),
+    "Spectral", "v2.000", src = pkg_resource(),
     head = paste(
       readLines(pkg_resource("fonts", "spectral", "desktop", "head.html")),
       collapse = "\n"
@@ -44,7 +44,7 @@ spectral_sc_font_dep <- function(use_gouvdown_fonts = TRUE) {
   }
 
   htmltools::htmlDependency(
-    "fontspectral", "v2.000", src = pkg_resource(),
+    "SpectralSC", "v2.000", src = pkg_resource(),
     head = paste(
       readLines(pkg_resource("fonts", "spectral", "sc", "head.html")),
       collapse = "\n"
