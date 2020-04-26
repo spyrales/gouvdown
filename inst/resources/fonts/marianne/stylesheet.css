@@ -1,23 +1,27 @@
 @font-face {
     font-family: 'Marianne';
     font-weight: 300;
+    font-display: swap;
     src: local('Marianne Light'), local('Marianne-Light');
 }
 
 @font-face {
     font-family: 'Marianne';
     font-weight: 400;
+    font-display: swap;
     src: local('Marianne Regular'), local('Marianne-Regular');
 }
 
 @font-face {
     font-family: 'Marianne';
     font-weight: 700;
+    font-display: swap;
     src: local('Marianne Bold'), local('Marianne-Bold');
 }
 
 @font-face {
     font-family: 'Marianne';
     font-weight: 800;
+    font-display: swap;
     src: local('Marianne ExtraBold'), local('Marianne-ExtraBold');
 }
