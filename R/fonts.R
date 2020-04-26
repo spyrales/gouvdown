@@ -15,6 +15,21 @@
 #' spectral_font_dep()
 NULL
 
+#' Create an HTML dependency for Marianne font
+#' @rdname fonts-dependencies
+#' @export
+marianne_font_dep <- function() {
+  if (xfun::loadable("gouvdown.fonts")) {
+    dep <- utils::getFromNamespace("html_dependency_marianne", "gouvdown.fonts")
+    return(dep())
+  }
+
+  htmltools::htmlDependency(
+    "Marianne", "0.999", src = pkg_resource("fonts", "marianne"),
+    stylesheet = "stylesheet.css", all_files = FALSE
+  )
+}
+
 #' Create an HTML dependency for Spectral font
 #' @rdname fonts-dependencies
 #' @export

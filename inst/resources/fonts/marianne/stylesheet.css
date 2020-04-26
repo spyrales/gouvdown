@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Marianne';
+    font-weight: 300;
+    src: local('Marianne Light'), local('Marianne-Light');
+}
+
+@font-face {
+    font-family: 'Marianne';
+    font-weight: 400;
+    src: local('Marianne Regular'), local('Marianne-Regular');
+}
+
+@font-face {
+    font-family: 'Marianne';
+    font-weight: 700;
+    src: local('Marianne Bold'), local('Marianne-Bold');
+}
+
+@font-face {
+    font-family: 'Marianne';
+    font-weight: 800;
+    src: local('Marianne ExtraBold'), local('Marianne-ExtraBold');
+}

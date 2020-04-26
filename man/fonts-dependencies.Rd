@@ -2,10 +2,13 @@
 % Please edit documentation in R/fonts.R
 \name{fonts-dependencies}
 \alias{fonts-dependencies}
+\alias{marianne_font_dep}
 \alias{spectral_font_dep}
 \alias{spectral_sc_font_dep}
 \title{HTML dependencies for fonts used in French governmental documents}
 \usage{
+marianne_font_dep()
+
 spectral_font_dep(use_gouvdown_fonts = TRUE)
 
 spectral_sc_font_dep(use_gouvdown_fonts = TRUE)
