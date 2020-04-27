@@ -14,7 +14,7 @@ spectral_font_dep(use_gouvdown_fonts = TRUE)
 spectral_sc_font_dep(use_gouvdown_fonts = TRUE)
 }
 \arguments{
-\item{use_gouvdown_fonts}{Do you prefer to use \code{gouvdown.fonts} dependencies?}
+\item{use_gouvdown_fonts}{Do you prefer using \code{gouvdown.fonts} dependencies?}
 }
 \value{
 An object that can be included in a list of dependencies passed to
@@ -25,6 +25,17 @@ These functions provide common HTML dependencies for re-use by other R
 Markdown output formats or Shiny applications.
 }
 \examples{
-spectral_font_dep()
+library(htmltools)
+library(gouvdown)
+
+tag <- p("The quick brown fox jumps over the lazy dog", 
+    style = "font-family: 'Marianne', Arial, sans-serif")
+
+tag <- attachDependencies(tag, marianne_font_dep())
+
+html_print(tag)
+}
+\references{
+\url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/la-typographie}
 }
 \keyword{internal}
