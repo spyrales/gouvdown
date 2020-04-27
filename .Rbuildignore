@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^\.github$
 ^data-raw$
+^CODE_OF_CONDUCT\.md$
+^CONTRIBUTING\.md$
