@@ -2,17 +2,17 @@
 % Please edit documentation in R/colors.R
 \name{scale_color_gouv_continuous}
 \alias{scale_color_gouv_continuous}
-\title{Echelle de couleur continue}
+\title{Continuous color scale}
 \usage{
 scale_color_gouv_continuous(palette = "pal_gouv_a", reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Nom de la palette}
+\item{palette}{Palette name}
 
-\item{reverse}{Palette inversée ou non}
+\item{reverse}{Reverse the palette or not}
 
 \item{...}{Additional arguments}
 }
 \description{
-Echelle de couleur continue
+Continuous color scale
 }

@@ -2,18 +2,18 @@
 % Please edit documentation in R/colors.R
 \name{gouv_pal_inter}
 \alias{gouv_pal_inter}
-\title{Interpolation des palettes}
+\title{Palettes interpolation}
 \usage{
 gouv_pal_inter(palette = "pal_gouv_fr", reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Character name of palette in omni_palettes}
+\item{palette}{Character name of palette ingouv_palette}
 
 \item{reverse}{Boolean indicating whether the palette should be reversed}
 
 \item{...}{Additional arguments to pass to colorRampPalette()}
 }
 \description{
-Interpolation des palettes
+Palettes interpolation
 }
 \keyword{internal}

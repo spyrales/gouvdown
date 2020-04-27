@@ -2,17 +2,17 @@
 % Please edit documentation in R/colors.R
 \name{scale_fill_gouv_discrete}
 \alias{scale_fill_gouv_discrete}
-\title{Echelle de fill discrète}
+\title{Discrete fill scale}
 \usage{
 scale_fill_gouv_discrete(palette = "pal_gouv_fr", reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Nom de la palette}
+\item{palette}{Palette name}
 
-\item{reverse}{Palette inversée ou non}
+\item{reverse}{Reverse the palette or not}
 
 \item{...}{Additional arguments}
 }
 \description{
-Echelle de fill discrète
+Discrete fill scale
 }

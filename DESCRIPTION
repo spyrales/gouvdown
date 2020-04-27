@@ -27,12 +27,7 @@ Imports:
     utils,
     xfun,
     ggplot2,
-    stringr,
-    colorspace,
-    dplyr,
-    magrittr,
-    tibble,
-    tidyr
+    colorspace
 Suggests: 
     testthat
 Encoding: UTF-8

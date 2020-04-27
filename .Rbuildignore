@@ -1,3 +1,4 @@
 ^gouvdown\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+^data-raw$

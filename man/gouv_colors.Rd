@@ -2,19 +2,18 @@
 % Please edit documentation in R/colors.R
 \name{gouv_colors}
 \alias{gouv_colors}
-\title{Obtenir les couleurs de la charte graphique}
+\title{Colors vector}
 \usage{
 gouv_colors(...)
 }
 \arguments{
-\item{...}{La couleur souhaitée}
+\item{...}{The color you want, by code (from a0 to r4 or bleu_france, blanc, rouge_marianne)}
 }
 \value{
 
 }
 \description{
-gouv_colors() donne directement les couleurs principales
-de la charte graphique
+gouv_colors() directly gives the colors as hex codes
 }
 \examples{
 gouv_colors("a1")
