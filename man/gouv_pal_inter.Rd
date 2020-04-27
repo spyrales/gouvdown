@@ -7,11 +7,16 @@
 gouv_pal_inter(palette = "pal_gouv_fr", reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Character name of palette ingouv_palette}
+\item{palette}{Character name of palette in \link{gouv_palettes}.}
 
-\item{reverse}{Boolean indicating whether the palette should be reversed}
+\item{reverse}{Boolean indicating whether the palette should be reversed.}
 
-\item{...}{Additional arguments to pass to colorRampPalette()}
+\item{...}{Additional arguments to pass to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}}.}
+}
+\value{
+A function that takes an integer argument (the required number of
+colors) and returns a character vector of colors (see \link[grDevices:rgb]{grDevices::rgb})
+interpolating the given sequence.
 }
 \description{
 Palettes interpolation

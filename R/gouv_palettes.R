@@ -1,5 +1,5 @@
-#' Colors palettes for France gouvdown
+#' Colors palettes for France design system
 #'
-#' @format A named list with 23 palettes
-#' @source \url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}
+#' @format A named list with 23 palettes.
+#' @inherit gouv_colors references
 "gouv_palettes"

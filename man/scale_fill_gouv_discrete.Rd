@@ -7,11 +7,15 @@
 scale_fill_gouv_discrete(palette = "pal_gouv_fr", reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Palette name}
+\item{palette}{Character name of palette in \link{gouv_palettes}.}
 
-\item{reverse}{Reverse the palette or not}
+\item{reverse}{Boolean indicating whether the palette should be reversed.}
 
-\item{...}{Additional arguments}
+\item{...}{
+  Arguments passed on to \code{\link[=scale_color_gouv_discrete]{scale_color_gouv_discrete}}
+  \describe{
+    \item{\code{}}{}
+  }}
 }
 \description{
 Discrete fill scale

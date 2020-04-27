@@ -7,8 +7,20 @@
 gouv_colors(...)
 }
 \arguments{
-\item{...}{The color you want, by code - from a0 to r4 or bleu_france, blanc, rouge_marianne}
+\item{...}{The color you want, by code - from \code{"a0"} to \code{"r4"} or
+\code{"bleu_france"}, \code{"blanc"}, \code{"rouge_marianne"}.}
+}
+\value{
+A named vector of character strings. Each value represents the
+requested hex code.
 }
 \description{
-gouv_colors directly gives the colors as hex codes
+\code{gouv_colors()} directly gives the colors as hex codes.
+}
+\examples{
+gouv_colors("a1")
+
+}
+\references{
+\url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}
 }

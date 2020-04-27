@@ -1,10 +1,15 @@
 #' Colors vector
 #'
-#' gouv_colors directly gives the colors as hex codes
+#' `gouv_colors()` directly gives the colors as hex codes.
 #'
-#' @param ... The color you want, by code - from a0 to r4 or bleu_france, blanc, rouge_marianne
-#'
+#' @param ... The color you want, by code - from `"a0"` to `"r4"` or
+#' `"bleu_france"`, `"blanc"`, `"rouge_marianne"`.
+#' @return A named vector of character strings. Each value represents the
+#'   requested hex code.
+#' @references <https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs>
 #' @export
+#' @examples
+#' gouv_colors("a1")
 #'
 gouv_colors <- function(...) {
   # construction de la palette
@@ -58,96 +63,86 @@ gouv_colors <- function(...) {
   if (is.null(cols))
     return (gouv_colors_vector)
 
-  as.vector(gouv_colors_vector[cols])
+  gouv_colors_vector[cols]
 }
 
 #' Palettes interpolation
 #'
-#' @param palette Character name of palette ingouv_palette
-#' @param reverse Boolean indicating whether the palette should be reversed
-#' @param ... Additional arguments to pass to colorRampPalette()
+#' @param palette Character name of palette in [gouv_palettes].
+#' @param reverse Boolean indicating whether the palette should be reversed.
+#' @param ... Additional arguments to pass to [grDevices::colorRampPalette()].
+#' @return A function that takes an integer argument (the required number of
+#'   colors) and returns a character vector of colors (see [grDevices::rgb])
+#'   interpolating the given sequence.
 #' @keywords internal
 #'
-gouv_pal_inter <-
-  function(palette = "pal_gouv_fr",
-           reverse = FALSE,
-           ...) {
-    pal <- gouvdown::gouv_palettes[[palette]]
+gouv_pal_inter <- function(palette = "pal_gouv_fr", reverse = FALSE, ...) {
+  pal <- gouvdown::gouv_palettes[[palette]]
 
-    if (reverse)
-      pal <- rev(pal)
+  if (isTRUE(reverse))
+    pal <- rev(pal)
 
-    grDevices::colorRampPalette(pal, ...)
-  }
+  grDevices::colorRampPalette(pal, ...)
+}
 
 #' Discrete color scale
 #'
-#' @param palette Palette name
-#' @param reverse Reverse the palette or not
-#' @param ... Additional arguments
+#' @inheritParams gouv_pal_inter
+#' @param ... Additional arguments passed to [ggplot2::discrete_scale()].
 #'
 #' @export
 #'
-scale_color_gouv_discrete <-
-  function(palette = "pal_gouv_fr",
-           reverse = FALSE,
-           ...) {
-    pal <- gouv_pal_inter(palette = palette, reverse = reverse)
+scale_color_gouv_discrete <- function(
+  palette = "pal_gouv_fr", reverse = FALSE, ...
+) {
+  pal <- gouv_pal_inter(palette = palette, reverse = reverse)
 
-    ggplot2::discrete_scale("color", paste0("gouv_", palette), palette = pal, ...)
-
-  }
+  ggplot2::discrete_scale("color", paste0("gouv_", palette), palette = pal,
+                          ...)
+}
 
 #' Discrete fill scale
 #'
-#' @param palette Palette name
-#' @param reverse Reverse the palette or not
-#' @param ... Additional arguments
+#' @inheritParams gouv_pal_inter
+#' @inheritDotParams scale_color_gouv_discrete
 #'
 #' @export
 #'
-scale_fill_gouv_discrete <-
-  function(palette = "pal_gouv_fr",
-           reverse = FALSE,
-           ...) {
-    pal <- gouv_pal_inter(palette = palette, reverse = reverse)
+scale_fill_gouv_discrete <- function(
+  palette = "pal_gouv_fr", reverse = FALSE, ...
+) {
+  pal <- gouv_pal_inter(palette = palette, reverse = reverse)
 
-    ggplot2::discrete_scale("fill", paste0("gouv_", palette), palette = pal, ...)
-  }
+  ggplot2::discrete_scale("fill", paste0("gouv_", palette), palette = pal, ...)
+}
 
 
 #' Continuous color scale
 #'
-#' @param palette Palette name
-#' @param reverse Reverse the palette or not
-#' @param ... Additional arguments
+#' @inheritParams gouv_pal_inter
+#' @param ... Additional arguments passed to [ggplot2::scale_color_gradientn()].
 #'
 #' @export
 #'
+scale_color_gouv_continuous <- function(
+  palette = "pal_gouv_a", reverse = FALSE, ...
+) {
+  pal <- gouv_pal_inter(palette = palette, reverse = reverse)
 
-scale_color_gouv_continuous <-
-  function(palette = "pal_gouv_a",
-           reverse = FALSE,
-           ...) {
-    pal <- gouv_pal_inter(palette = palette, reverse = reverse)
-
-    ggplot2::scale_color_gradientn(colors = pal(256), ...)
-
-  }
+  ggplot2::scale_color_gradientn(colors = pal(256), ...)
+}
 
 #' Continuous fill scale
 #'
-#' @param palette Palette name
-#' @param reverse Reverse the palette or not
-#' @param ... Additional arguments
+#' @inheritParams gouv_pal_inter
+#' @param ... Additional arguments passed to [ggplot2::scale_fill_gradientn()].
 #'
 #' @export
 #'
-scale_fill_gouv_continuous <-
-  function(palette = "pal_gouv_a",
-           reverse = FALSE,
-           ...) {
-    pal <- gouv_pal_inter(palette = palette, reverse = reverse)
+scale_fill_gouv_continuous <- function(
+  palette = "pal_gouv_a", reverse = FALSE, ...
+) {
+  pal <- gouv_pal_inter(palette = palette, reverse = reverse)
 
-    ggplot2::scale_fill_gradientn(colors = pal(256), ...)
-  }
+  ggplot2::scale_fill_gradientn(colors = pal(256), ...)
+}
