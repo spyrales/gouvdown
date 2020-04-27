@@ -1,5 +1,7 @@
 # gouvdown 0.0.0.9000
 
+* Added `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` (#9).
+
 * Created a `marianne_font_dep()` function which returns HTML dependencies for
 the Marianne font.
 
