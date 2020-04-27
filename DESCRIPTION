@@ -22,13 +22,14 @@ Description: Produce documents compliants with the French
 License: EUPL (>= 1.2) | file LICENCE
 URL: https://github.com/spyrales/gouvdown
 BugReports: https://github.com/spyrales/gouvdown/issues
-Depends: R (>= 2.10)
+Depends: 
+    R (>= 2.10)
 Imports: 
+    colorspace,
+    ggplot2,
     htmltools,
     utils,
-    xfun,
-    ggplot2,
-    colorspace
+    xfun
 Suggests: 
     testthat
 Encoding: UTF-8
