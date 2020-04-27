@@ -18,8 +18,8 @@ NULL
 #' Create an HTML dependency for Marianne font
 #' @rdname fonts-dependencies
 #' @export
-marianne_font_dep <- function() {
-  if (xfun::loadable("gouvdown.fonts")) {
+marianne_font_dep <- function(use_gouvdown_fonts = TRUE) {
+  if (isTRUE(use_gouvdown_fonts) && xfun::loadable("gouvdown.fonts")) {
     dep <- utils::getFromNamespace("html_dependency_marianne", "gouvdown.fonts")
     return(dep())
   }

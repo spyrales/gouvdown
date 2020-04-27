@@ -7,7 +7,7 @@
 \alias{spectral_sc_font_dep}
 \title{HTML dependencies for fonts used in French governmental documents}
 \usage{
-marianne_font_dep()
+marianne_font_dep(use_gouvdown_fonts = TRUE)
 
 spectral_font_dep(use_gouvdown_fonts = TRUE)
 
