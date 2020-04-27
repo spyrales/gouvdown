@@ -25,4 +25,4 @@ gouv_palettes <- list(
   "pal_gouv_div2" = gouv_colors("p0", "p1", "p2", "p3", "p4", "c4", "c3", "c2", "c1", "c0")
 )
 
-usethis::use_data(gouv_palettes, overwrite = TRUE)
+usethis::use_data(gouv_palettes)

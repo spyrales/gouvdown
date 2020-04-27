@@ -7,15 +7,8 @@
 gouv_colors(...)
 }
 \arguments{
-\item{...}{The color you want, by code (from a0 to r4 or bleu_france, blanc, rouge_marianne)}
-}
-\value{
-
+\item{...}{The color you want, by code - from a0 to r4 or bleu_france, blanc, rouge_marianne}
 }
 \description{
-gouv_colors() directly gives the colors as hex codes
-}
-\examples{
-gouv_colors("a1")
-
+gouv_colors directly gives the colors as hex codes
 }

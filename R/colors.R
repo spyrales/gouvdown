@@ -1,14 +1,10 @@
 #' Colors vector
 #'
-#' gouv_colors() directly gives the colors as hex codes
+#' gouv_colors directly gives the colors as hex codes
 #'
-#' @param ... The color you want, by code (from a0 to r4 or bleu_france, blanc, rouge_marianne)
+#' @param ... The color you want, by code - from a0 to r4 or bleu_france, blanc, rouge_marianne
 #'
-#' @return
 #' @export
-#'
-#' @examples
-#' gouv_colors("a1")
 #'
 gouv_colors <- function(...) {
   # construction de la palette
@@ -76,7 +72,7 @@ gouv_pal_inter <-
   function(palette = "pal_gouv_fr",
            reverse = FALSE,
            ...) {
-    pal <- gouv_palettes[[palette]]
+    pal <- gouvdown::gouv_palettes[[palette]]
 
     if (reverse)
       pal <- rev(pal)
@@ -91,11 +87,6 @@ gouv_pal_inter <-
 #' @param ... Additional arguments
 #'
 #' @export
-#' @example
-#' iris %>%
-#'  ggplot(aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
-#'  geom_point() +
-#'  scale_color_gouv_discrete(palette = "pal_gouv_i")
 #'
 scale_color_gouv_discrete <-
   function(palette = "pal_gouv_fr",
