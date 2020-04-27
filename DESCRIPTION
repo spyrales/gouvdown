@@ -30,7 +30,9 @@ Imports:
     stringr,
     colorspace,
     dplyr,
-    magrittr
+    magrittr,
+    tibble,
+    tidyr
 Suggests: 
     testthat
 Encoding: UTF-8
