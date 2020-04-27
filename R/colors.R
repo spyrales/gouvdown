@@ -133,7 +133,7 @@ gouv_pal_inter <-
 #' @param reverse Palette inversée ou non
 #' @param ... Additional arguments
 #'
-#' @importFrom ggplot2 discret_scale
+#' @importFrom ggplot2 discrete_scale
 #'
 #' @export
 #' @example
@@ -158,7 +158,7 @@ scale_color_gouv_discrete <-
 #' @param reverse Palette inversée ou non
 #' @param ... Additional arguments
 #'
-#' @importFrom ggplot2 discret_scale
+#' @importFrom ggplot2 discrete_scale
 #'
 #' @export
 #'

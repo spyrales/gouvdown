@@ -25,7 +25,12 @@ BugReports: https://github.com/spyrales/gouvdown/issues
 Imports: 
     htmltools,
     utils,
-    xfun
+    xfun,
+    ggplot2,
+    stringr,
+    colorspace,
+    dplyr,
+    magrittr
 Suggests: 
     testthat
 Encoding: UTF-8
