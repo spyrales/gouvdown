@@ -146,3 +146,57 @@ scale_fill_gouv_continuous <- function(
 
   ggplot2::scale_fill_gradientn(colors = pal(256), ...)
 }
+
+#' Display palettes used in French governmental documents
+#'
+#' Plot the palettes used in `gouvdown`.
+#'
+#' @inheritParams gouv_pal_inter
+#'
+#' @export
+#'
+#' @examples
+#' display_palette("pal_gouv_fr")
+#' display_palette_all()
+display_palette <- function(palette) {
+  # check argument
+  match.arg(palette, names(gouvdown::gouv_palettes))
+
+  # retrieve colors
+  col <- gouvdown::gouv_palettes[[palette]]
+
+  # get number of colors
+  n_col <- length(col)
+
+  # plot palettes
+  graphics::image(1:n_col, 1, as.matrix(1:n_col), col = col,
+        xlab = palette, ylab = "", xaxt = "n",
+        yaxt = "n", bty = "n")
+}
+
+#' @export
+#' @rdname display_palette
+display_palette_all <- function() {
+  # retrieve palettes
+  all_pal <- rev(gouvdown::gouv_palettes)
+
+  # number of palettes
+  n_pal <- length(all_pal)
+
+  # get number of colors in each palette
+  n_col <- vapply(all_pal, length, integer(1), USE.NAMES = FALSE)
+  # compute the max number of colors
+  n_col_max <- max(n_col)
+
+  # plot palettes
+  plot(1, 1, xlim = c(-1, n_col_max), ylim = c(0, n_pal), type = "n",
+       axes = FALSE, bty = "n", xlab = "", ylab = "")
+  for (i in 1:n_pal) {
+    nj <- n_col[i]
+    col <- all_pal[[i]]
+    rect(xleft = 0:(nj - 1), ybottom = i - 1, xright = 1:nj,
+         ytop = i - 0.2, col = col, border = "light grey")
+  }
+  text(rep(-0.3, n_pal), (1:n_pal) - 0.6, labels = names(all_pal), xpd = TRUE,
+       adj = 1)
+}
