@@ -1,6 +1,6 @@
 # gouvdown 0.0.0.9000
 
-* Create helper functions for displaying palettes: `display_palette()` and
+* Create helper functions to display palettes: `display_palette()` and
 `display_palette_all()`.
 
 * Added colors helper functions (#11).
