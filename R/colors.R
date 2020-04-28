@@ -68,9 +68,9 @@ gouv_colors <- function(...) {
 
 #' Palettes interpolation
 #'
-#' @param palette Character name of palette in [gouv_palettes].
+#' @param palette Character name of palette in [gouv_palettes], one of `r paste0("``", names(gouvdown::gouv_palettes), "``", collapse = ", ")`.
 #' @param reverse Boolean indicating whether the palette should be reversed.
-#' @param ... Additional arguments to pass to [grDevices::colorRampPalette()].
+#' @param ... Additional arguments passed to [grDevices::colorRampPalette()].
 #' @return A function that takes an integer argument (the required number of
 #'   colors) and returns a character vector of colors (see [grDevices::rgb])
 #'   interpolating the given sequence.
