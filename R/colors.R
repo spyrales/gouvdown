@@ -158,7 +158,7 @@ scale_fill_gouv_continuous <- function(
 #' @examples
 #' display_palette("pal_gouv_fr")
 #' display_palette_all()
-display_palette <- function(palette) {
+display_palette <- function(palette = "scale_color_gouv_discrete") {
   # check argument
   match.arg(palette, names(gouvdown::gouv_palettes))
 
