@@ -189,14 +189,14 @@ display_palette_all <- function() {
   n_col_max <- max(n_col)
 
   # plot palettes
-  plot(1, 1, xlim = c(-1, n_col_max), ylim = c(0, n_pal), type = "n",
+  graphics::plot(1, 1, xlim = c(-1, n_col_max), ylim = c(0, n_pal), type = "n",
        axes = FALSE, bty = "n", xlab = "", ylab = "")
   for (i in 1:n_pal) {
     nj <- n_col[i]
     col <- all_pal[[i]]
-    rect(xleft = 0:(nj - 1), ybottom = i - 1, xright = 1:nj,
+    graphics::rect(xleft = 0:(nj - 1), ybottom = i - 1, xright = 1:nj,
          ytop = i - 0.2, col = col, border = "light grey")
   }
-  text(rep(-0.3, n_pal), (1:n_pal) - 0.6, labels = names(all_pal), xpd = TRUE,
+  graphics::text(rep(-0.3, n_pal), (1:n_pal) - 0.6, labels = names(all_pal), xpd = TRUE,
        adj = 1)
 }
