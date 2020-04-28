@@ -29,7 +29,11 @@ Imports:
     ggplot2,
     htmltools,
     utils,
-    xfun
+    xfun,
+    magrittr,
+    extrafont,
+    attempt,
+    systemfonts
 Suggests: 
     testthat
 Encoding: UTF-8
