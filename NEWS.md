@@ -1,5 +1,8 @@
 # gouvdown 0.0.0.9000
 
+* Create helper functions for displaying palettes: `display_palette()` and
+`display_palette_all()`.
+
 * Added colors helper functions (#11).
 
 * Added `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` (#9).
