@@ -5,7 +5,7 @@
 \alias{display_palette_all}
 \title{Display palettes used in French governmental documents}
 \usage{
-display_palette(palette)
+display_palette(palette = "scale_color_gouv_discrete")
 
 display_palette_all()
 }
