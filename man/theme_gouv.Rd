@@ -85,7 +85,14 @@ ggplot2 theme with french government design template
 \examples{
 \dontrun{
 library(ggplot2)
-ggplot(mtcars) + geom_point(aes(cyl, mpg)) + labs(title = "Mon titre avec Marianne", 
-    x = "lab X avec Spectral", y = "Lab Y avec Spectral") + theme_gouv()
+ggplot(mtcars) +
+  geom_point(aes(cyl, mpg)) +
+  labs(
+    title = "Mon titre avec Marianne",
+    x = "lab X avec Spectral",
+    y = "Lab Y avec Spectral"
+  ) +
+  theme_gouv()
 }
+
 }
