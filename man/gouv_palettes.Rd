@@ -11,7 +11,7 @@ A named list with 23 palettes.
 gouv_palettes
 }
 \description{
-Colors palettes for France design system
+\figure{palettes-1.png}
 }
 \references{
 \url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}

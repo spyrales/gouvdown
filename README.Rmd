@@ -1,0 +1,52 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# gouvdown
+
+<!-- badges: start -->
+[![R build status](https://github.com/spyrales/gouvdown/workflows/R-CMD-check/badge.svg)](https://github.com/spyrales/gouvdown/actions)
+[![Codecov test coverage](https://codecov.io/gh/spyrales/gouvdown/branch/master/graph/badge.svg)](https://codecov.io/gh/spyrales/gouvdown?branch=master)
+<!-- badges: end -->
+
+**gouvdown** let you write R Markdown documents which comply with the French
+government design system.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) 
+with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("spyrales/gouvdown")
+```
+
+## Palettes
+
+**gouvdown** provides the official colors and a set of palettes. 
+
+```{r palettes, echo=FALSE}
+pal <- gouvdown::gouv_palettes
+labels <- names(pal)
+
+do.call(pals::pal.bands, 
+        c(pal, list(labels = labels, gap = 0.2, main = "gouvdown palettes"))
+)
+```
+
+## References
+
++ Design system: <https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/introduction>
++ Example: <https://github.com/DISIC/design.numerique.gouv.fr/tree/master/src/assets>

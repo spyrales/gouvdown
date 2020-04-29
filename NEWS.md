@@ -1,5 +1,7 @@
 # gouvdown 0.0.0.9000
 
+* Display the palettes in the documentation (#14).
+
 * Added colors helper functions (#11).
 
 * Added `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` (#9).
