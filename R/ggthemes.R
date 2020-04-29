@@ -128,14 +128,15 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
 #' @examples
 #' \dontrun{
 #' library(ggplot2)
-#' ggplot(mtcars) +
-#'   geom_point(aes(cyl, mpg)) +
+#' ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+#'   geom_point(aes(color = Species, shape = Species)) +
 #'   labs(
-#'     title = "Mon titre avec Marianne",
-#'     x = "lab X avec Spectral",
-#'     y = "Lab Y avec Spectral"
+#'     x = "Sepal Length", y = "Sepal Width",
+#'     title = "Sepal Length-Width",
+#'     subtitle = "with gouv_theme()"
 #'   ) +
-#'   theme_gouv()
+#'   theme_gouv() +
+#'   scale_color_gouv_discrete()
 #' }
 #'
 theme_gouv <- function(base_family = "Spectral", base_size = 12,
@@ -151,11 +152,11 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
                        axis_title_family = subtitle_family, axis_title_size = base_size,
                        axis_title_face = "plain", axis_title_just = "rt",
                        plot_margin = margin(30, 30, 30, 30),
-                       grid_col = "#ffffff", grid = TRUE,
-                       panel_background_color = "#C0C0C0",
-                       panel_border_color = "#888888",
-                       legend_background_color = "#C0C0C0",
-                       legend_border_color = "#888888",
+                       grid_col = "#888888", grid = TRUE,
+                       panel_background_color = "#ffffff",
+                       panel_border_color = "#ffffff",
+                       legend_background_color = "#ffffff",
+                       legend_border_color = "#ffffff",
                        axis_col = "#cccccc", axis = FALSE, ticks = FALSE) {
   ret <- ggplot2::theme_minimal(base_family = base_family, base_size = base_size)
 
@@ -256,4 +257,38 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
   ret <- ret + theme(plot.margin = plot_margin)
 
   ret
+}
+
+
+
+
+#' ggplot2 grey theme with french government design template
+#'
+#' @md
+#' @param ... other param from `gouv_theme()`
+#' @return a ggplot2 theme
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#' ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+#'   geom_point(aes(color = Species, shape = Species)) +
+#'   labs(
+#'     x = "Sepal Length", y = "Sepal Width",
+#'     title = "Sepal Length-Width",
+#'     subtitle = "with gouv_theme()"
+#'   ) +
+#'   theme_grey_gouv() +
+#'   scale_color_gouv_discrete(palette = "pal_gouv_fr")
+#' }
+#'
+theme_grey_gouv <- function(...) {
+  theme_gouv(...,
+    grid_col = "#ffffff",
+    panel_background_color = "#C0C0C0",
+    panel_border_color = "#888888",
+    legend_background_color = "#C0C0C0",
+    legend_border_color = "#888888"
+  )
 }
