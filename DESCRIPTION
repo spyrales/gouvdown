@@ -30,7 +30,6 @@ Imports:
     htmltools,
     utils,
     xfun,
-    magrittr,
     extrafont,
     attempt,
     systemfonts

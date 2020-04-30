@@ -73,7 +73,8 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
         res <- TRUE
       }
       res
-    }) %>% unlist()
+    })
+    res <- unlist(res)
     names(res) <- fonts
 
     # load installed fonts
@@ -82,8 +83,9 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
 
   res <- lapply(fonts, function(x) {
     (extrafont::choose_font(x) != "")
-  }) %>%
-    unlist()
+  })
+
+  res <- unlist(res)
   names(res) <- fonts
 
   # If some are missing
@@ -292,3 +294,5 @@ theme_grey_gouv <- function(...) {
     legend_border_color = "#888888"
   )
 }
+
+
