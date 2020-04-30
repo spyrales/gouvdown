@@ -6,6 +6,10 @@
 
 * Added `theme_gouv()` and `theme_grey_gouv()` (#1) ggplot themes
 
+* Display the palettes in the documentation (#14).
+
+* Added colors helper functions (#11).
+
 * Added `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` (#9).
 
 * Created a `marianne_font_dep()` function which returns HTML dependencies for

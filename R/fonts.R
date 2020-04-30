@@ -3,23 +3,34 @@
 #' These functions provide common HTML dependencies for re-use by other R
 #' Markdown output formats or Shiny applications.
 #'
-#' @param use_gouvdown_fonts Do you prefer to use `gouvdown.fonts` dependencies?
+#' @param use_gouvdown_fonts Do you prefer using `gouvdown.fonts` dependencies?
 #'
 #' @return An object that can be included in a list of dependencies passed to
 #'   [attachDependencies][htmltools::attachDependencies()].
 #'
+#' @references <https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/la-typographie>
 #' @keywords internal
 #' @name fonts-dependencies
 #'
 #' @examples
-#' spectral_font_dep()
+#' library(htmltools)
+#' library(gouvdown)
+#'
+#' tag <- p(
+#'   "The quick brown fox jumps over the lazy dog",
+#'   style = "font-family: 'Marianne', Arial, sans-serif"
+#' )
+#'
+#' tag <- attachDependencies(tag, marianne_font_dep())
+#'
+#' html_print(tag)
 NULL
 
 #' Create an HTML dependency for Marianne font
 #' @rdname fonts-dependencies
 #' @export
-marianne_font_dep <- function() {
-  if (xfun::loadable("gouvdown.fonts")) {
+marianne_font_dep <- function(use_gouvdown_fonts = TRUE) {
+  if (isTRUE(use_gouvdown_fonts) && xfun::loadable("gouvdown.fonts")) {
     dep <- utils::getFromNamespace("html_dependency_marianne", "gouvdown.fonts")
     return(dep())
   }

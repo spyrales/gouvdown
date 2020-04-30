@@ -37,6 +37,7 @@ Imports:
     grid,
     png
 Suggests: 
+    pals,
     testthat
 Encoding: UTF-8
 LazyData: true

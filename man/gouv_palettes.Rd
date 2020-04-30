@@ -3,15 +3,17 @@
 \docType{data}
 \name{gouv_palettes}
 \alias{gouv_palettes}
-\title{Colors palettes for France gouvdown}
-\format{A named list with 23 palettes}
-\source{
-\url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}
+\title{Colors palettes for France design system}
+\format{
+A named list with 23 palettes.
 }
 \usage{
 gouv_palettes
 }
 \description{
-Colors palettes for France gouvdown
+\figure{palettes-1.png}
+}
+\references{
+\url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}
 }
 \keyword{datasets}
