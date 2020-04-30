@@ -32,7 +32,10 @@ Imports:
     xfun,
     extrafont,
     attempt,
-    systemfonts
+    systemfonts,
+    ggpubr,
+    grid,
+    png
 Suggests: 
     testthat
 Encoding: UTF-8

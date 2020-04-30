@@ -2,16 +2,16 @@
 % Please edit documentation in R/bloque_marque.R
 \name{get_bloque_marque}
 \alias{get_bloque_marque}
-\title{get the link to the bloque marque in the package directory}
+\title{get the path to the bloque marque in the package directory}
 \usage{
 get_bloque_marque(bloque_marque)
 }
 \arguments{
-\item{bloque_marque}{}
+\item{bloque_marque}{name of the bloque marque}
 }
 \value{
-
+a string
 }
 \description{
-get the link to the bloque marque in the package directory
+get the path to the bloque marque in the package directory
 }
