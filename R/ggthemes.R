@@ -65,9 +65,9 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
   if (isTRUE(import)) {
     fonts_no_space <- gsub(" ", "", fonts)
     res <- lapply(fonts_no_space, function(x) {
-      res <- attempt::try_catch(
+      res <- tryCatch(
         extrafont::font_import(path = dirname(systemfonts::match_font(x)$path), pattern = x, prompt = FALSE),
-        .e = ~FALSE
+        error = function(e) FALSE
       )
       if (is.null(res)) {
         res <- TRUE
@@ -294,5 +294,4 @@ theme_grey_gouv <- function(...) {
     legend_border_color = "#888888"
   )
 }
-
 
