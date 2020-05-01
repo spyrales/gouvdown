@@ -31,7 +31,6 @@ Imports:
     utils,
     xfun,
     extrafont,
-    attempt,
     systemfonts,
     ggpubr,
     grid,
