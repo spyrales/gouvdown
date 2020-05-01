@@ -4,7 +4,7 @@
 
 * Added `get_bloque_marque()` and `list_bloque_marque()` to use bloque marque as logo
 
-* Added `theme_gouv()` and `theme_grey_gouv()` (#1) ggplot themes
+* Added `theme_gouv()` and `theme_grey_gouv()` (#1 and #15) ggplot themes
 
 * Display the palettes in the documentation (#14).
 
