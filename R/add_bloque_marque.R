@@ -4,7 +4,7 @@
 #' @param alias Name of a logo available in `gouvdown`.
 #' @param x_pos,y_pos `x` and `y` positions of the logo relative to the border.
 #'
-#' @return a grob
+#' @return An object of class "grob".
 #' @export
 #'
 #' @examples
