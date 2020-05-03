@@ -36,7 +36,7 @@ create_bloque_marque <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos 
 #' @param header The header to add.
 #' @param ratio the ratio in % between the header and the plot
 #'
-#' @return a ggplot
+#' @return A `ggplot` object.
 #' @export
 
 add_bloque_marque <- function(plot = ggplot2::last_plot(),header,ratio=10) {
