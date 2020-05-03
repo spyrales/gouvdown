@@ -266,7 +266,6 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
 
 #' ggplot2 grey theme with french government design template
 #'
-#' @md
 #' @param ... other param from `gouv_theme()`
 #' @return a ggplot2 theme
 #' @export
@@ -294,4 +293,3 @@ theme_grey_gouv <- function(...) {
     legend_border_color = "#888888"
   )
 }
-
