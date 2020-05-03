@@ -26,7 +26,7 @@ create_bloque_marque <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos 
   }
 
   #Make the header
-  header <- grid::grobTree(grid::rasterGrob(png::readPNG(logo), x = x_pos,y=y_pos))
+  header <- grid::grobTree(grid::rasterGrob(png::readPNG(logo), x = x_pos, y = y_pos))
   return(header)
 }
 
