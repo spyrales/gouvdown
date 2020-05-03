@@ -1,4 +1,4 @@
-#' Create a grob from image file
+#' Create a grid graphical object from an image file
 #'
 #' @param file local file
 #' @param alias name from a bloque marque available in gouvdown
