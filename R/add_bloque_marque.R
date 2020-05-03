@@ -30,7 +30,7 @@ create_bloque_marque <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos 
   return(header)
 }
 
-#' add the bloque_marque to a plot
+#' Add a logo to a plot
 #'
 #' @param plot the plot
 #' @param header the header to add
