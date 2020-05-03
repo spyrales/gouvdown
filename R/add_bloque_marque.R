@@ -10,7 +10,7 @@
 #' @examples
 #' create_bloque_marque(alias = "marianne")
 
-create_bloque_marque <- function (file=NULL,alias=NULL,x_pos=0.04,y_pos=0.96) {
+create_bloque_marque <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
   if (!is.null(file)) {
     logo <- file
   }
