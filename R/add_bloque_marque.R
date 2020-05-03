@@ -39,7 +39,7 @@ create_bloque_marque <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos 
 #' @return A `ggplot` object.
 #' @export
 
-add_bloque_marque <- function(plot = ggplot2::last_plot(),header,ratio=10) {
+add_bloque_marque <- function(plot = ggplot2::last_plot(), header, ratio = 10) {
 plot_grid <- ggpubr::ggarrange(header, plot,
                                ncol = 1, nrow = 2,
                                heights = c(ratio/100,1))
