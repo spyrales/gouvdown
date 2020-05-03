@@ -33,7 +33,7 @@ create_bloque_marque <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos 
 #' Add a logo to a plot
 #'
 #' @param plot A plot.
-#' @param header the header to add
+#' @param header The header to add.
 #' @param ratio the ratio in % between the header and the plot
 #'
 #' @return a ggplot
