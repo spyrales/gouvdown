@@ -12,7 +12,7 @@ list_bloque_marque <- function() {
 #' @param bloque_marque name of the bloque marque
 #'
 #'
-#' @return a string
+#' @return A character string with the path to the logo file.
 #' @export
 get_bloque_marque <- function(bloque_marque) {
 
