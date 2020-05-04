@@ -19,7 +19,7 @@ get_bloque_marque <- function(bloque_marque) {
   liste_bloque_marque <- list_bloque_marque()
 
   if (!bloque_marque %in% liste_bloque_marque) {
-    stop("Error Message: this bloque_marque is not know")
+    stop("Error Message: this logo is not known")
   }
   dir <- pkg_resource("bloque_marque", bloque_marque)
   files <- list.files(dir,full.names = TRUE)
