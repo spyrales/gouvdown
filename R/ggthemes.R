@@ -27,7 +27,7 @@ load_fonts <- function() {
 #' Test if fonts are available on the system and import them in R
 #'
 #' @param fonts Vector of fonts.
-#' @param import Logical. Whether to import ttf in R. (Otherwise just check)
+#' @param import Logical. Whether to import `ttf` font files in R. (Otherwise just check)
 #' @param verbose list fonts to install if needed
 #'
 #' @importFrom utils browseURL unzip
