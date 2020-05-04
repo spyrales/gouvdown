@@ -121,7 +121,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
 #' @param ticks ticks if `TRUE` add ticks
 #'
 #' @importFrom ggplot2 element_blank element_line element_text margin theme element_rect
-#' @return a ggplot2 theme
+#' @return A `ggplot2` theme.
 #' @export
 #'
 #' @examples
@@ -132,7 +132,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
 #'   labs(
 #'     x = "Sepal Length", y = "Sepal Width",
 #'     title = "Sepal Length-Width",
-#'     subtitle = "with gouv_theme()"
+#'     subtitle = "with theme_gouv()"
 #'   ) +
 #'   theme_gouv() +
 #'   scale_color_gouv_discrete()
