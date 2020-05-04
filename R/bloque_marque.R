@@ -14,7 +14,6 @@ list_bloque_marque <- function() {
 #'
 #' @return a string
 #' @export
-
 get_bloque_marque <- function(bloque_marque) {
 
   liste_bloque_marque <- list_bloque_marque()
