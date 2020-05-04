@@ -24,7 +24,7 @@ load_fonts <- function() {
 }
 
 
-#' Tests if fonts are available on the system and import for extrafont
+#' Test if fonts are available on the system and import them in R
 #'
 #' @param fonts vector of fonts
 #' @param import Logical. Whether to import ttf in R. (Otherwise just check)
