@@ -4,7 +4,7 @@
 #' @return a list
 #' @export
 list_bloque_marque <- function() {
-  list.dirs(path = pkg_resource("bloque_marque"),recursive = F,full.names = F)
+  list.dirs(path = pkg_resource("bloque_marque"), recursive = FALSE, full.names = FALSE)
 }
 
 #' get the path to the bloque marque in the package directory
