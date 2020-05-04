@@ -1,7 +1,7 @@
 
 #' list all marque etat available
 #'
-#' @return a list
+#' @return A list with the names of the logos available in `gouvdown`.
 #' @export
 list_bloque_marque <- function() {
   list.dirs(path = pkg_resource("bloque_marque"), recursive = FALSE, full.names = FALSE)
