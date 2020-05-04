@@ -21,7 +21,7 @@ get_bloque_marque <- function(bloque_marque) {
   if (!bloque_marque %in% liste_bloque_marque) {
     stop("Error Message: this bloque_marque is not know")
   }
-  dir <- pkg_resource("bloque_marque",bloque_marque)
+  dir <- pkg_resource("bloque_marque", bloque_marque)
   files <- list.files(dir,full.names = TRUE)
   return(files)
 }
