@@ -264,7 +264,7 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
 
 #' ggplot2 grey theme with french government design template
 #'
-#' @param ... other param from `gouv_theme()`
+#' @param ... Other params passed to `theme_gouv()`.
 #' @return a ggplot2 theme
 #' @export
 #'
