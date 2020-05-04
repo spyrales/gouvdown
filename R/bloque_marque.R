@@ -3,8 +3,6 @@
 #'
 #' @return a list
 #' @export
-
-
 list_bloque_marque <- function() {
   list.dirs(path = pkg_resource("bloque_marque"),recursive = F,full.names = F)
 }
@@ -28,4 +26,3 @@ get_bloque_marque <- function(bloque_marque) {
   files <- list.files(dir,full.names = TRUE)
   return(files)
 }
-
