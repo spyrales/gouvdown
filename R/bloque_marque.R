@@ -7,7 +7,7 @@ list_bloque_marque <- function() {
   list.dirs(path = pkg_resource("bloque_marque"), recursive = FALSE, full.names = FALSE)
 }
 
-#' get the path to the bloque marque in the package directory
+#' Get the path to the logo file in the package directory
 #'
 #' @param bloque_marque name of the bloque marque
 #'
