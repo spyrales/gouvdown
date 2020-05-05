@@ -11,6 +11,14 @@
 #' create_logo(alias = "marianne")
 
 create_logo <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
+  if (length(file) > 1) {
+    stop("Error Message: please select only one file")
+  }
+
+  if (length(alias) > 1) {
+    stop("Error Message: please select only one alias")
+  }
+
   if (!is.null(file)) {
     logo <- file
   }
