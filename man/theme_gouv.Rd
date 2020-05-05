@@ -14,7 +14,7 @@ theme_gouv(
   subtitle_family = "Marianne Light",
   subtitle_size = 22,
   subtitle_face = "plain",
-  subtitle_margin = 9,
+  subtitle_margin = 15,
   strip_text_family = base_family,
   strip_text_size = 22,
   strip_text_face = "plain",
