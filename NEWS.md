@@ -2,7 +2,7 @@
 
 * Added `add_logo()` to add a design mark in a ggplot (#15).
 
-* Added `get_logo()` and `list_logo()` to use a design mark as logo (#15).
+* Added `get_logo()` and `list_logos()` to use a design mark as logo (#15).
 
 * Added `theme_gouv()` and `theme_grey_gouv()` (#1 and #15) ggplot themes
 

@@ -17,7 +17,7 @@
 #'
 #' @return A list with the names of the logos available in `gouvdown`.
 #' @export
-list_logo <- function() {
+list_logos <- function() {
   list.dirs(path = pkg_resource("blocs_marque"), recursive = FALSE, full.names = FALSE)
 }
 
@@ -30,7 +30,7 @@ list_logo <- function() {
 #' @export
 get_logo <- function(logo) {
 
-  liste_blocs_marque <- list_logo()
+  liste_blocs_marque <- list_logos()
 
   if (length(logo) > 1) {
     stop("please select only one logo")
