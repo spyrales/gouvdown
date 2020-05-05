@@ -30,9 +30,7 @@ create_logo <- function(alias = NULL, file = get_logo(alias), x_pos = 0.04, y_po
     stop("use either a local file or an alias for a gouvdown logos")
   }
 
-  if (length(alias) > 1) {
-    stop("please select only one alias")
-  }
+  alias <- match.arg(alias, list_logo())
 
   if (length(file) > 1) {
     stop("please select only one file")
