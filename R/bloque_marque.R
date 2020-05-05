@@ -18,7 +18,11 @@ get_logo <- function(logo) {
 
   liste_blocs_marque <- list_logo()
 
-  if (!bloque_marque %in% liste_bloque_marque) {
+  if (length(logo) > 1) {
+    stop("Error Message: please select only one logo")
+  }
+
+  if (!logo %in% liste_blocs_marque) {
     stop("Error Message: this logo is not known")
   }
   dir <- pkg_resource("bloque_marque", bloque_marque)
