@@ -27,7 +27,7 @@
 #' create_logo("marianne")
 create_logo <- function(alias = NULL, file = get_logo(alias), x_pos = 0.04, y_pos = 0.96) {
   if (!xor(missing(alias), missing(file))) {
-    stop("use either a local file or an alias for a gouvdown logos")
+    stop("use either a local file or an alias for a gouvdown logo")
   }
 
   alias <- match.arg(alias, list_logo())
