@@ -30,15 +30,8 @@ list_logos <- function() {
 #' @export
 get_logo <- function(logo) {
 
-  liste_blocs_marque <- list_logos()
+  match.arg(logo, list_logos())
 
-  if (length(logo) > 1) {
-    stop("please select only one logo")
-  }
-
-  if (!logo %in% liste_blocs_marque) {
-    stop("this logo is not known")
-  }
   dir <- pkg_resource("blocs_marque", logo)
   file <- list.files(dir, full.names = TRUE)
   return(file)
