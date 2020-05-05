@@ -17,7 +17,6 @@ load_fonts <- function() {
   extrafont::loadfonts(quiet = TRUE)
   # On windows only
   if (.Platform$OS.type == "windows") {
-    windowsFonts <- grDevices::windowsFonts
     extrafont::loadfonts(device = "win", quiet = TRUE)
   }
 }
