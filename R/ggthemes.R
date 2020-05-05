@@ -14,7 +14,6 @@
 # limitations under the Licence.
 
 #' Function to run onLoad
-
 onload_function <- function() {
   # load fonts
   load_fonts()
@@ -46,7 +45,6 @@ load_fonts <- function() {
     extrafont::loadfonts(device = "win", quiet = TRUE)
   }
 }
-
 
 #' Test if fonts are available on the system and import them in R
 #'
@@ -123,7 +121,6 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
   }
   res
 }
-
 
 #' ggplot2 theme with french government design template
 #'
@@ -284,9 +281,6 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
 
   ret
 }
-
-
-
 
 #' ggplot2 grey theme with french government design template
 #'

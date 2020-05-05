@@ -25,7 +25,6 @@
 #'
 #' @examples
 #' create_logo(alias = "marianne")
-
 create_logo <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
   if (length(file) > 1) {
     stop("Error Message: please select only one file")
@@ -62,7 +61,6 @@ create_logo <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
 #'
 #' @return A `ggplot` object.
 #' @export
-
 add_logo <- function(plot = ggplot2::last_plot(), header, ratio = 10) {
   plot_grid <- ggpubr::ggarrange(header, plot,
                                  ncol = 1, nrow = 2,

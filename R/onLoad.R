@@ -7,6 +7,7 @@
   packageStartupMessage("theme_gouv() for ggplot2 is not set as default,\nto do so, execute:\n  theme_set(theme_gouv())")
   packageStartupMessage("*******************************************************\n")
 }
+
 .onLoad <- function(libname, pkgname) {
   onload_function()
 }
