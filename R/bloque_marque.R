@@ -14,7 +14,7 @@ list_logo <- function() {
 #'
 #' @return A character string with the path to the logo file.
 #' @export
-get_bloque_marque <- function(bloque_marque) {
+get_logo <- function(logo) {
 
   liste_bloque_marque <- list_bloque_marque()
 
