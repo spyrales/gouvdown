@@ -5,14 +5,14 @@
 \title{Create a grid graphical object from an image file}
 \usage{
 create_logo(
-  alias = NULL,
-  file = logo_file_path(alias),
+  logo = NULL,
+  file = logo_file_path(logo),
   x_pos = 0.04,
   y_pos = 0.96
 )
 }
 \arguments{
-\item{alias}{Name of a logo available in \code{gouvdown}.}
+\item{logo}{Name of a logo available in \code{gouvdown}.}
 
 \item{file}{Path to a local \code{png} file.}
 
@@ -25,7 +25,7 @@ An object of class "grob".
 Create a grid graphical object from an image file
 }
 \details{
-Fill either \code{file} or \code{alias} parameter:  an error is thrown if both parameters are provided.
+Fill either \code{file} or \code{logo} parameter:  an error is thrown if both parameters are provided.
 }
 \examples{
 create_logo("marianne")

@@ -15,9 +15,9 @@
 
 #' Create a grid graphical object from an image file
 #'
-#' @details Fill either `file` or `alias` parameter:  an error is thrown if both parameters are provided.
+#' @details Fill either `file` or `logo` parameter:  an error is thrown if both parameters are provided.
 #' @param file Path to a local `png` file.
-#' @param alias Name of a logo available in `gouvdown`.
+#' @param logo Name of a logo available in `gouvdown`.
 #' @param x_pos,y_pos `x` and `y` positions of the logo relative to the border.
 #'
 #' @return An object of class "grob".
@@ -25,12 +25,12 @@
 #'
 #' @examples
 #' create_logo("marianne")
-create_logo <- function(alias = NULL, file = logo_file_path(alias), x_pos = 0.04, y_pos = 0.96) {
-  if (!xor(missing(alias), missing(file))) {
-    stop("use either a local file or an alias for a gouvdown logo")
+create_logo <- function(logo = NULL, file = logo_file_path(logo), x_pos = 0.04, y_pos = 0.96) {
+  if (!xor(missing(logo), missing(file))) {
+    stop("use either a local file or an logo for a gouvdown logo")
   }
 
-  alias <- match.arg(alias, list_logos())
+  match.arg(logo, list_logos())
 
   if (length(file) > 1) {
     stop("please select only one file")
