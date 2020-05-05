@@ -24,7 +24,7 @@ create_logo <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
   }
 
   if (!is.null(alias)) {
-    logo <- get_bloque_marque(alias)
+    logo <- get_logo(alias)
   }
   if (!is.null(alias) && !is.null(file)) {
     stop("Error Message: use either a local file or an alias to the package bloque marque")
