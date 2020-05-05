@@ -1,8 +1,8 @@
 # gouvdown 0.0.0.9000
 
-* Add `add_bloque_marque()` to add a bloque marque to a ggplot
+* Added `add_logo()` to add a design mark in a ggplot (#15).
 
-* Added `get_bloque_marque()` and `list_bloque_marque()` to use bloque marque as logo
+* Added `get_logo()` and `list_logo()` to use a design mark as logo (#15).
 
 * Added `theme_gouv()` and `theme_grey_gouv()` (#1 and #15) ggplot themes
 
