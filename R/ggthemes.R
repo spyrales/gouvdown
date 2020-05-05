@@ -14,7 +14,6 @@ onload_function <- function() {
 load_fonts <- function() {
   # load fonts
   # Run it once in every R session
-  pdfFonts <- grDevices::pdfFonts
   extrafont::loadfonts(quiet = TRUE)
   # On windows only
   if (.Platform$OS.type == "windows") {
