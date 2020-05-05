@@ -36,13 +36,8 @@ create_logo <- function(alias = NULL, file = get_logo(alias), x_pos = 0.04, y_po
     stop("please select only one file")
   }
 
-  if (!is.null(file)) {
-    logo <- file
-  }
-
-
   #Make the header
-  header <- grid::grobTree(grid::rasterGrob(png::readPNG(logo), x = x_pos, y = y_pos))
+  header <- grid::grobTree(grid::rasterGrob(png::readPNG(file), x = x_pos, y = y_pos))
   return(header)
 }
 
