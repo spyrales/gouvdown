@@ -28,7 +28,7 @@ list_logos <- function() {
 #'
 #' @return A character string with the path to the logo file.
 #' @export
-get_logo <- function(logo) {
+logo_file_path <- function(logo) {
 
   match.arg(logo, list_logos())
 

@@ -4,7 +4,12 @@
 \alias{create_logo}
 \title{Create a grid graphical object from an image file}
 \usage{
-create_logo(alias = NULL, file = get_logo(alias), x_pos = 0.04, y_pos = 0.96)
+create_logo(
+  alias = NULL,
+  file = logo_file_path(alias),
+  x_pos = 0.04,
+  y_pos = 0.96
+)
 }
 \arguments{
 \item{alias}{Name of a logo available in \code{gouvdown}.}
