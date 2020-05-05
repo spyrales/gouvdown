@@ -24,27 +24,24 @@
 #' @export
 #'
 #' @examples
-#' create_logo(alias = "marianne")
-create_logo <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
-  if (length(file) > 1) {
-    stop("please select only one file")
+#' create_logo("marianne")
+create_logo <- function(alias = NULL, file = get_logo(alias), x_pos = 0.04, y_pos = 0.96) {
+  if (!xor(missing(alias), missing(file))) {
+    stop("use either a local file or an alias for a gouvdown logos")
   }
 
   if (length(alias) > 1) {
     stop("please select only one alias")
   }
 
+  if (length(file) > 1) {
+    stop("please select only one file")
+  }
+
   if (!is.null(file)) {
     logo <- file
   }
 
-  if (!is.null(alias)) {
-    logo <- get_logo(alias)
-  }
-
-  if (!xor(missing(alias), missing(file))) {
-    stop("use either a local file or an alias to the package bloque marque")
-  }
 
   #Make the header
   header <- grid::grobTree(grid::rasterGrob(png::readPNG(logo), x = x_pos, y = y_pos))

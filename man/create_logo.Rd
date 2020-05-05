@@ -4,12 +4,12 @@
 \alias{create_logo}
 \title{Create a grid graphical object from an image file}
 \usage{
-create_logo(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96)
+create_logo(alias = NULL, file = get_logo(alias), x_pos = 0.04, y_pos = 0.96)
 }
 \arguments{
-\item{file}{Path to a local \code{png} file.}
-
 \item{alias}{Name of a logo available in \code{gouvdown}.}
+
+\item{file}{Path to a local \code{png} file.}
 
 \item{x_pos, y_pos}{\code{x} and \code{y} positions of the logo relative to the border.}
 }
@@ -23,5 +23,5 @@ Create a grid graphical object from an image file
 Fill either \code{file} or \code{alias} parameter:  an error is thrown if both parameters are provided.
 }
 \examples{
-create_logo(alias = "marianne")
+create_logo("marianne")
 }
