@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggthemes.R
 \name{check_fonts_in_r}
 \alias{check_fonts_in_r}
-\title{Tests if fonts are available on the system and import for extrafont}
+\title{Test if fonts are available on the system and import them in R}
 \usage{
 check_fonts_in_r(
   fonts = c("Marianne", "Spectral"),
@@ -11,14 +11,14 @@ check_fonts_in_r(
 )
 }
 \arguments{
-\item{fonts}{vector of fonts}
+\item{fonts}{Vector of fonts.}
 
-\item{import}{Logical. Whether to import ttf in R. (Otherwise just check)}
+\item{import}{Logical. Whether to import \code{ttf} font files in R. (Otherwise just check)}
 
-\item{verbose}{list fonts to install if needed}
+\item{verbose}{List fonts to install if needed.}
 }
 \description{
-Tests if fonts are available on the system and import for extrafont
+Test if fonts are available on the system and import them in R
 }
 \details{
 For fonts to be used, they need to be installed on the machine.

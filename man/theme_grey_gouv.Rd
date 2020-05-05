@@ -7,10 +7,10 @@
 theme_grey_gouv(...)
 }
 \arguments{
-\item{...}{other param from \code{gouv_theme()}}
+\item{...}{Other params passed to \code{theme_gouv()}.}
 }
 \value{
-a ggplot2 theme
+A \code{ggplot2} theme.
 }
 \description{
 ggplot2 grey theme with french government design template
