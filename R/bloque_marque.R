@@ -26,6 +26,6 @@ get_logo <- function(logo) {
     stop("Error Message: this logo is not known")
   }
   dir <- pkg_resource("blocs_marque", bloque_marque)
-  files <- list.files(dir,full.names = TRUE)
+  file <- list.files(dir, full.names = TRUE)
   return(files)
 }
