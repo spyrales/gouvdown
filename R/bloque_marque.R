@@ -25,7 +25,7 @@ get_logo <- function(logo) {
   if (!logo %in% liste_blocs_marque) {
     stop("Error Message: this logo is not known")
   }
-  dir <- pkg_resource("blocs_marque", bloque_marque)
+  dir <- pkg_resource("blocs_marque", logo)
   file <- list.files(dir, full.names = TRUE)
   return(file)
 }
