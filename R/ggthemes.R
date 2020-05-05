@@ -14,11 +14,20 @@ onload_function <- function() {
 load_fonts <- function() {
   # load fonts
   # Run it once in every R session
+
+  # The extrafont package uses a non standard way to call functions:
+  # we need to assign the pdfFonts() function from grDevices
+  # in the current environment
   pdfFonts <- grDevices::pdfFonts
+
   extrafont::loadfonts(quiet = TRUE)
   # On windows only
   if (.Platform$OS.type == "windows") {
+    # The extrafont package uses a non standard way to call functions:
+    # we need to assign the windowsFonts() function from grDevices
+    # in the current environment
     windowsFonts <- grDevices::windowsFonts
+
     extrafont::loadfonts(device = "win", quiet = TRUE)
   }
 }
