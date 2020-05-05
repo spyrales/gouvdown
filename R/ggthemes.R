@@ -62,7 +62,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
     fonts_no_space <- gsub(" ", "", fonts)
     res <- lapply(fonts_no_space, function(x) {
       res <- tryCatch(
-        extrafont::font_import(path = dirname(systemfonts::match_font(x)$path), pattern = x, prompt = FALSE),
+        extrafont::font_import(paths = dirname(systemfonts::match_font(x)$path), pattern = x, prompt = FALSE),
         error = function(e) FALSE
       )
       if (is.null(res)) {
