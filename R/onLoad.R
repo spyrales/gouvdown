@@ -1,5 +1,5 @@
 .onAttach <- function(libname, pkgname) {
-  # switch the default ggplot2 theme to theme_dreal
+  # switch the default ggplot2 theme to theme_gouv
   # ggplot2::theme_set(theme_gouv())
   packageStartupMessage("\n\n*******************************************************")
   # packageStartupMessage("Note: gouvdown changes the default ggplot2 theme.")

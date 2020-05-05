@@ -14,9 +14,11 @@ onload_function <- function() {
 load_fonts <- function() {
   # load fonts
   # Run it once in every R session
+  pdfFonts <- grDevices::pdfFonts
   extrafont::loadfonts(quiet = TRUE)
   # On windows only
   if (.Platform$OS.type == "windows") {
+    windowsFonts <- grDevices::windowsFonts
     extrafont::loadfonts(device = "win", quiet = TRUE)
   }
 }
@@ -81,7 +83,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
     res <- lapply(fonts, function(x) {
       (extrafont::choose_font(x) != "")
     })
-    
+
     res <- unlist(res)
     names(res) <- fonts
   }
@@ -143,7 +145,7 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
                        plot_title_family = "Marianne", plot_title_size = 28,
                        plot_title_face = "bold", plot_title_margin = 10,
                        subtitle_family = "Marianne Light", subtitle_size = 22,
-                       subtitle_face = "plain", subtitle_margin = 9,
+                       subtitle_face = "plain", subtitle_margin = 15,
                        strip_text_family = base_family, strip_text_size = 22,
                        strip_text_face = "plain",
                        caption_family = base_family, caption_size = 12,
