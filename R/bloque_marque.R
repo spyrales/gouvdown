@@ -16,7 +16,7 @@ list_logo <- function() {
 #' @export
 get_logo <- function(logo) {
 
-  liste_bloque_marque <- list_bloque_marque()
+  liste_blocs_marque <- list_logo()
 
   if (!bloque_marque %in% liste_bloque_marque) {
     stop("Error Message: this logo is not known")
