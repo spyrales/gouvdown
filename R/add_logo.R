@@ -27,11 +27,11 @@
 #' create_logo(alias = "marianne")
 create_logo <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
   if (length(file) > 1) {
-    stop("Error Message: please select only one file")
+    stop("please select only one file")
   }
 
   if (length(alias) > 1) {
-    stop("Error Message: please select only one alias")
+    stop("please select only one alias")
   }
 
   if (!is.null(file)) {
@@ -42,10 +42,10 @@ create_logo <- function(file = NULL, alias = NULL, x_pos = 0.04, y_pos = 0.96) {
     logo <- get_logo(alias)
   }
   if (!is.null(alias) && !is.null(file)) {
-    stop("Error Message: use either a local file or an alias to the package bloque marque")
+    stop("use either a local file or an alias to the package bloque marque")
   }
   if (is.null(alias) && is.null(file)) {
-    stop("Error Message: use either a local file or an alias to the package bloque marque")
+    stop("use either a local file or an alias to the package bloque marque")
   }
 
   #Make the header
