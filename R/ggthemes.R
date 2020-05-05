@@ -77,12 +77,14 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
     load_fonts()
   }
 
-  res <- lapply(fonts, function(x) {
-    (extrafont::choose_font(x) != "")
-  })
-
-  res <- unlist(res)
-  names(res) <- fonts
+  else{
+    res <- lapply(fonts, function(x) {
+      (extrafont::choose_font(x) != "")
+    })
+    
+    res <- unlist(res)
+    names(res) <- fonts
+  }
 
   # If some are missing
   if (!all(res) && isTRUE(verbose)) {
