@@ -101,6 +101,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
 
 #' ggplot2 theme with french government design template
 #'
+#' @details All font sizes are set in points and colors are either a color name or a hex code.
 #' @param base_family,base_size Base font family and size.
 #' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin Plot title family, face, size and margin.
 #' @param subtitle_family,subtitle_face,subtitle_size Plot subtitle family, face and size.
