@@ -1,6 +1,6 @@
 #' Create a grid graphical object from an image file
 #'
-#' @param file local file
+#' @param file Path to a local `png` file.
 #' @param alias Name of a logo available in `gouvdown`.
 #' @param x_pos,y_pos `x` and `y` positions of the logo relative to the border.
 #'

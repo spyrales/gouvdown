@@ -1,5 +1,5 @@
 
-#' list all marque etat available
+#' List available logos
 #'
 #' @return A list with the names of the logos available in `gouvdown`.
 #' @export
@@ -9,7 +9,7 @@ list_bloque_marque <- function() {
 
 #' Get the path to the logo file in the package directory
 #'
-#' @param bloque_marque name of the bloque marque
+#' @param logo Name of the logo.
 #'
 #'
 #' @return A character string with the path to the logo file.
