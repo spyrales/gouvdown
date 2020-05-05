@@ -27,5 +27,5 @@ get_logo <- function(logo) {
   }
   dir <- pkg_resource("blocs_marque", bloque_marque)
   file <- list.files(dir, full.names = TRUE)
-  return(files)
+  return(file)
 }
