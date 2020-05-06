@@ -102,10 +102,12 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
   # If some are missing
   if (!all(res) && isTRUE(verbose)) {
     warning(
-      "To use the complete ggplot gouv_theme, you need to install the following fonts on your computer: ",
-      paste(names(res)[!res], collapse = ", "), ".",
-      "\n  To install, see for instance: https://www.howtogeek.com/192980/how-to-install-remove-and-manage-fonts-on-windows-mac-and-linux/",
-      "\n  Run gouvdown::check_fonts_in_r() after fonts installation.",
+      "To use the complete ggplot theme_gouv(), you need\n",
+      "to install the following fonts on your computer:\n",
+      paste(names(res)[!res], collapse = ", "), ".\n",
+      "\nTo install, see for instance:\n",
+      "https://www.howtogeek.com/192980/how-to-install-remove-and-manage-fonts-on-windows-mac-and-linux/\n",
+      "Run gouvdown::check_fonts_in_r() after fonts installation.",
       call. = FALSE, immediate. = TRUE
     )
   }
