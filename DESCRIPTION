@@ -16,7 +16,10 @@ Authors@R:
              role = "aut",
              email = "tvroylandt@gmail.com"),
       person(family = "République Française",
-             role = "cph"))
+             role = "cph"),
+      person(family = "ThinkR",
+             role = "cph",
+             comment = "helper functions from drealdown"))
 Description: Produce documents compliants with the French
     government design system.
 License: EUPL (>= 1.2) | file LICENCE
