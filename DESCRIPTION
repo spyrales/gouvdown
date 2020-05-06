@@ -26,15 +26,15 @@ Depends:
     R (>= 2.10)
 Imports: 
     colorspace,
-    ggplot2,
-    htmltools,
-    utils,
-    xfun,
     extrafont,
-    systemfonts,
+    ggplot2,
     ggpubr,
     grid,
-    png
+    htmltools,
+    png,
+    systemfonts,
+    utils,
+    xfun
 Suggests: 
     pals,
     testthat
