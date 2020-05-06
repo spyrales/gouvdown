@@ -15,6 +15,9 @@
 
 #' List available logos
 #'
+#' `list_logos()` is a helper function that can be used to obtain the list of
+#' the official design marks contained in the `gouvdown` package.
+#'
 #' @return A list with the names of the logos available in `gouvdown`.
 #' @export
 list_logos <- function() {
@@ -24,7 +27,6 @@ list_logos <- function() {
 #' Get the path to the logo file in the package directory
 #'
 #' @param logo Name of the logo.
-#'
 #'
 #' @return A character string with the path to the logo file.
 #' @export

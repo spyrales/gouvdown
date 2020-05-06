@@ -10,5 +10,6 @@ list_logos()
 A list with the names of the logos available in \code{gouvdown}.
 }
 \description{
-List available logos
+\code{list_logos()} is a helper function that can be used to obtain the list of
+the official design marks contained in the \code{gouvdown} package.
 }

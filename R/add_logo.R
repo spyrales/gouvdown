@@ -22,7 +22,7 @@
 #' parameters are provided.
 #'
 #' @inheritParams grid::rasterGrob
-#' @param png Path to a `png` file.
+#' @param file Path to a `png` file.
 #' @param logo Name of a logo available in `gouvdown`. The list of available
 #'   logos can be obtained with [list_logos()].
 #' @param x,y `x` and `y` positions of the logo relative to the border. Since
@@ -43,19 +43,19 @@
 #' pushViewport(vp)
 #' grid.draw(header)
 gglogo <- function(
-  logo, png = logo_file_path(logo), x = 0.04, y = 0.96,
+  logo, file = logo_file_path(logo), x = 0.04, y = 0.96,
   just = c("left", "top"), ...
 ) {
-  if (!xor(missing(logo), missing(png))) {
-    stop("use either a logo name or a path to a png file")
+  if (!xor(missing(logo), missing(file))) {
+    stop("use either a logo name or a path to a file")
   }
 
   if (!missing(logo)) {
     match.arg(logo, list_logos())
   }
 
-  if (length(png) > 1) {
-    stop("please select only one png file")
+  if (length(file) > 1) {
+    stop("please select only one file")
   }
 
   #Make the header

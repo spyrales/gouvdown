@@ -6,7 +6,7 @@
 \usage{
 gglogo(
   logo,
-  png = logo_file_path(logo),
+  file = logo_file_path(logo),
   x = 0.04,
   y = 0.96,
   just = c("left", "top"),
@@ -17,7 +17,7 @@ gglogo(
 \item{logo}{Name of a logo available in \code{gouvdown}. The list of available
 logos can be obtained with \code{\link[=list_logos]{list_logos()}}.}
 
-\item{png}{Path to a \code{png} file.}
+\item{file}{Path to a \code{png} file.}
 
 \item{x, y}{\code{x} and \code{y} positions of the logo relative to the border. Since
 these arguments are passed to \code{\link[grid:rasterGrob]{grid::rasterGrob()}},
