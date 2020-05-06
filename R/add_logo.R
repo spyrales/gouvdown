@@ -13,31 +13,55 @@
 # See the Licence for the specific language governing permissions and
 # limitations under the Licence.
 
-#' Create a grid graphical object from an image file
+#' Create a graphical object from a logo file
 #'
-#' @details Fill either `file` or `logo` parameter:  an error is thrown if both parameters are provided.
-#' @param file Path to a local `png` file.
-#' @param logo Name of a logo available in `gouvdown`.
-#' @param x_pos,y_pos `x` and `y` positions of the logo relative to the border.
+#' The `gglogo()` function creates a `grob` (a `grid` graphical object) from
+#' a logo file. This `grob` can be combined with a `ggplot2` plot.
+#'
+#' Fill either `logo` or `file` parameter: an error is thrown if both
+#' parameters are provided.
+#'
+#' @inheritParams grid::rasterGrob
+#' @param png Path to a `png` file.
+#' @param logo Name of a logo available in `gouvdown`. The list of available
+#'   logos can be obtained with [list_logos()].
+#' @param x,y `x` and `y` positions of the logo relative to the border. Since
+#'   these arguments are passed to [grid::rasterGrob()],
+#'   [unit objects][grid::unit()] are allowed.
+#' @param ... Other arguments passed to [grid::rasterGrob()].
 #'
 #' @return An object of class "grob".
 #' @export
 #'
 #' @examples
-#' create_logo("marianne")
-create_logo <- function(logo = NULL, file = logo_file_path(logo), x_pos = 0.04, y_pos = 0.96) {
-  if (!xor(missing(logo), missing(file))) {
-    stop("use either a local file or an logo for a gouvdown logo")
+#' library(grid)
+#'
+#' header <- gglogo("marianne", x = 0, y = 1)
+#' vp <- viewport(x = 0.22, y = 0.78,
+#'                width = 0.2, height = 0.2,
+#'                just = c("right", "bottom"))
+#' pushViewport(vp)
+#' grid.draw(header)
+gglogo <- function(
+  logo, png = logo_file_path(logo), x = 0.04, y = 0.96,
+  just = c("left", "top"), ...
+) {
+  if (!xor(missing(logo), missing(png))) {
+    stop("use either a logo name or a path to a png file")
   }
 
-  match.arg(logo, list_logos())
+  if (!missing(logo)) {
+    match.arg(logo, list_logos())
+  }
 
-  if (length(file) > 1) {
-    stop("please select only one file")
+  if (length(png) > 1) {
+    stop("please select only one png file")
   }
 
   #Make the header
-  header <- grid::grobTree(grid::rasterGrob(png::readPNG(file), x = x_pos, y = y_pos))
+  image <- png::readPNG(png)
+  raster <- grid::rasterGrob(image, x = x, y = y, just = just, ...)
+  header <- grid::grobTree(raster)
   return(header)
 }
 

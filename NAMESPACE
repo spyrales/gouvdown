@@ -2,7 +2,7 @@
 
 export(add_logo)
 export(check_fonts_in_r)
-export(create_logo)
+export(gglogo)
 export(gouv_colors)
 export(list_logos)
 export(load_fonts)
