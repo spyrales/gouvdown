@@ -90,9 +90,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
 
     # load installed fonts
     load_fonts()
-  }
-
-  else {
+  } else {
     res <- lapply(fonts, function(x) {
       (extrafont::choose_font(x) != "")
     })
@@ -107,7 +105,8 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
       "To use the complete ggplot gouv_theme, you need to install the following fonts on your computer: ",
       paste(names(res)[!res], collapse = ", "), ".",
       "\n  To install, see for instance: https://www.howtogeek.com/192980/how-to-install-remove-and-manage-fonts-on-windows-mac-and-linux/",
-      "\n  Run gouvdown::check_fonts_in_r() after fonts installation."
+      "\n  Run gouvdown::check_fonts_in_r() after fonts installation.",
+      call. = FALSE, immediate. = TRUE
     )
   }
 

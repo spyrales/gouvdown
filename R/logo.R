@@ -81,7 +81,7 @@ gglogo <- function(
   }
 
   #Make the header
-  image <- png::readPNG(png)
+  image <- png::readPNG(file)
   raster <- grid::rasterGrob(image, x = x, y = y, just = just, ...)
   header <- grid::grobTree(raster)
   return(header)

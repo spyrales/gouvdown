@@ -21,11 +21,11 @@
   # packageStartupMessage("To recover the default ggplot2 theme, execute:\n  theme_set(theme_gray())")
   packageStartupMessage("theme_gouv() for ggplot2 is not set as default,\nto do so, execute:\n  theme_set(theme_gouv())")
   packageStartupMessage("*******************************************************\n")
-}
 
-.onLoad <- function(libname, pkgname) {
   # load fonts
   load_fonts()
   # test for fonts
-  check_fonts_in_r(import = FALSE)
+  tryCatch(check_fonts_in_r(import = FALSE), warning = function(w) {
+    packageStartupMessage(w$message)
+  })
 }
