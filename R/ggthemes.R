@@ -13,14 +13,6 @@
 # See the Licence for the specific language governing permissions and
 # limitations under the Licence.
 
-#' Function to run onLoad
-onload_function <- function() {
-  # load fonts
-  load_fonts()
-  # test for fonts
-  check_fonts_in_r(import = FALSE)
-}
-
 #' Load installed fonts
 #' @export
 #' @examples

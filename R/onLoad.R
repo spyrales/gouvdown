@@ -24,5 +24,8 @@
 }
 
 .onLoad <- function(libname, pkgname) {
-  onload_function()
+  # load fonts
+  load_fonts()
+  # test for fonts
+  check_fonts_in_r(import = FALSE)
 }
