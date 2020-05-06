@@ -1,6 +1,6 @@
 # gouvdown 0.0.0.9000
 
-* Added `add_logo()` to add a design mark in a ggplot (#15).
+* Added `add_plot_header()` to add a design mark in a ggplot (#15).
 
 * Added `logo_file_path()` and `list_logos()` to use a design mark as logo (#15).
 

@@ -39,7 +39,7 @@ An object of class "grob".
 }
 \description{
 The \code{gglogo()} function creates a \code{grob} (a \code{grid} graphical object) from
-a logo file. This \code{grob} can be combined with a \code{ggplot2} plot.
+a logo file. This \code{grob} can be combined with a \code{ggplot2} plot object.
 }
 \details{
 Fill either \code{logo} or \code{file} parameter: an error is thrown if both

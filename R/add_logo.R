@@ -16,7 +16,7 @@
 #' Create a graphical object from a logo file
 #'
 #' The `gglogo()` function creates a `grob` (a `grid` graphical object) from
-#' a logo file. This `grob` can be combined with a `ggplot2` plot.
+#' a logo file. This `grob` can be combined with a `ggplot2` plot object.
 #'
 #' Fill either `logo` or `file` parameter: an error is thrown if both
 #' parameters are provided.
@@ -67,13 +67,20 @@ gglogo <- function(
 
 #' Add a logo to a plot
 #'
-#' @param plot A plot.
+#' @param plot A `ggplot2` plot object.
 #' @param header The header to add.
 #' @param ratio The ratio in % between the header and the plot.
 #'
-#' @return A `ggplot` object.
+#' @return A `ggplot2` plot object.
 #' @export
-add_logo <- function(plot = ggplot2::last_plot(), header, ratio = 10) {
+#' @examples
+#' library(ggplot2)
+#'
+#' p <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+#'   geom_point(aes(color = Species, shape = Species))
+#'
+#' add_plot_header(p, gglogo("marianne"))
+add_plot_header <- function(plot = ggplot2::last_plot(), header, ratio = 10) {
   plot_grid <- ggpubr::ggarrange(header, plot,
                                  ncol = 1, nrow = 2,
                                  heights = c(ratio/100, 1))
