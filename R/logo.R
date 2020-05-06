@@ -94,7 +94,6 @@ gglogo <- function(
 #' @return A character string with the path to the logo file.
 #' @export
 logo_file_path <- function(logo) {
-
   match.arg(logo, list_logos())
 
   dir <- pkg_resource("blocs_marque", logo)
