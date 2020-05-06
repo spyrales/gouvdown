@@ -41,19 +41,19 @@ load_fonts <- function() {
 #' Test if fonts are available on the system and import them in R
 #'
 #' @param fonts Vector of fonts.
-#' @param import Logical. Whether to import `ttf` font files in R. (Otherwise just check)
+#' @param import Logical. Whether to import `ttf` font files in R (otherwise
+#'   just check).
 #' @param verbose List fonts to install if needed.
-#'
 #'
 #' @details
 #' For fonts to be used, they need to be installed on the machine.
 #'
 #' @export
 #' @examples
+#' \donttest{
 #' check_fonts_in_r(import = FALSE)
 #'
 #' # Test if working
-#' \dontrun{
 #' library(ggplot2)
 #' ggplot(mtcars) +
 #'   geom_point(aes(cyl, mpg)) +
@@ -68,7 +68,6 @@ load_fonts <- function() {
 #'     axis.title.y = element_text(family = "Spectral")
 #'   )
 #' }
-#'
 check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
                              import = TRUE,
                              verbose = TRUE) {
@@ -93,7 +92,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
     load_fonts()
   }
 
-  else{
+  else {
     res <- lapply(fonts, function(x) {
       (extrafont::choose_font(x) != "")
     })
@@ -111,6 +110,7 @@ check_fonts_in_r <- function(fonts = c("Marianne", "Spectral"),
       "\n  Run gouvdown::check_fonts_in_r() after fonts installation."
     )
   }
+
   res
 }
 

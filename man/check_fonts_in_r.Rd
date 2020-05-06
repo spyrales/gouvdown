@@ -13,7 +13,8 @@ check_fonts_in_r(
 \arguments{
 \item{fonts}{Vector of fonts.}
 
-\item{import}{Logical. Whether to import \code{ttf} font files in R. (Otherwise just check)}
+\item{import}{Logical. Whether to import \code{ttf} font files in R (otherwise
+just check).}
 
 \item{verbose}{List fonts to install if needed.}
 }
@@ -24,10 +25,10 @@ Test if fonts are available on the system and import them in R
 For fonts to be used, they need to be installed on the machine.
 }
 \examples{
+\donttest{
 check_fonts_in_r(import = FALSE)
 
 # Test if working
-\dontrun{
 library(ggplot2)
 ggplot(mtcars) +
   geom_point(aes(cyl, mpg)) +
@@ -42,5 +43,4 @@ ggplot(mtcars) +
     axis.title.y = element_text(family = "Spectral")
   )
 }
-
 }
