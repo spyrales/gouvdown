@@ -17,7 +17,6 @@ jobs:
       - name: Install tools
         run: |
           # CI fails if rlang is not installed first:
-          install.packages(c("rlang", "openxlsx"))
           install.packages(c("remotes", "rcmdcheck", "devtools", "covr"))
         shell: Rscript {0}
       - name: Checkout gouvdown.fonts
@@ -33,7 +32,7 @@ jobs:
         run: rm -rf gouvdown.fonts
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: remotes::install_deps(dependencies = TRUE)
+        run: remotes::install_deps(dependencies = TRUE, type = "mac.binary")
         shell: Rscript {0}
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "warning")
