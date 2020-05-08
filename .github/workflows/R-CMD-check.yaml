@@ -15,7 +15,9 @@ jobs:
       - uses: r-lib/actions/setup-r@master
       - uses: r-lib/actions/setup-pandoc@master
       - name: Install tools
-        run: install.packages(c("remotes", "rcmdcheck", "devtools", "covr"))
+        run: |
+          # CI fails if rlang is not installed first:
+          install.packages(c("remotes", "rcmdcheck", "devtools", "covr"))
         shell: Rscript {0}
       - name: Checkout gouvdown.fonts
         uses: actions/checkout@v2
@@ -30,7 +32,7 @@ jobs:
         run: rm -rf gouvdown.fonts
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: remotes::install_deps(dependencies = TRUE)
+        run: remotes::install_deps(dependencies = TRUE, type = "mac.binary")
         shell: Rscript {0}
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "warning")
