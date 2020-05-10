@@ -4,14 +4,17 @@
 \name{gouv_palettes}
 \alias{gouv_palettes}
 \title{Colors palettes for France design system}
-\format{
-A named list with 23 palettes.
-}
+\format{A named list with \verb{r length(gouvdown::gouv_palettes)} palettes.}
 \usage{
 gouv_palettes
 }
 \description{
-\figure{palettes-1.png}
+\if{html}{\out{<div class="{r palettes, echo=FALSE}">}}\preformatted{pal <- gouvdown::gouv_palettes
+labels <- names(pal)
+do.call(pals::pal.bands,
+        c(pal, list(labels = labels, gap = 0.2, main = "gouvdown palettes"))
+)
+}\if{html}{\out{</div>}}
 }
 \references{
 \url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}
