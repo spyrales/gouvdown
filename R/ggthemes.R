@@ -209,7 +209,7 @@ theme_grey_gouv <- function(...) {
   )
 }
 
-#' ggplot2 theme for map with french government design template
+#' ggplot2 theme for map with French government design template
 #'
 #' @details
 #' This theme is designed for making map with ggplot plot with `ggplot2::geom_sf()`.
