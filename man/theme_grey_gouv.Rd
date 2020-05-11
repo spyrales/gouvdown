@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggthemes.R
 \name{theme_grey_gouv}
 \alias{theme_grey_gouv}
-\title{ggplot2 grey theme with french government design template}
+\title{ggplot2 grey theme with French government design template}
 \usage{
 theme_grey_gouv(...)
 }
@@ -13,7 +13,7 @@ theme_grey_gouv(...)
 A \code{ggplot2} theme.
 }
 \description{
-ggplot2 grey theme with french government design template
+ggplot2 grey theme with French government design template
 }
 \examples{
 \dontrun{

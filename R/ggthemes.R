@@ -13,7 +13,7 @@
 # See the Licence for the specific language governing permissions and
 # limitations under the Licence.
 
-#' ggplot2 theme with french government design template
+#' ggplot2 theme with French government design template
 #'
 #' @details All font sizes are set in points and colors are either a color name or a hex code.
 #' @param base_family,base_size Base font family and size.
@@ -179,7 +179,7 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
   ret
 }
 
-#' ggplot2 grey theme with french government design template
+#' ggplot2 grey theme with French government design template
 #'
 #' @param ... Other params passed to `theme_gouv()`.
 #' @return A `ggplot2` theme.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggthemes.R
 \name{theme_gouv}
 \alias{theme_gouv}
-\title{ggplot2 theme with french government design template}
+\title{ggplot2 theme with French government design template}
 \usage{
 theme_gouv(
   base_family = "Spectral",
@@ -84,7 +84,7 @@ theme_gouv(
 A \code{ggplot2} theme.
 }
 \description{
-ggplot2 theme with french government design template
+ggplot2 theme with French government design template
 }
 \details{
 All font sizes are set in points and colors are either a color name or a hex code.

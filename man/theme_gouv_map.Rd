@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggthemes.R
 \name{theme_gouv_map}
 \alias{theme_gouv_map}
-\title{ggplot2 theme for map with french government design template}
+\title{ggplot2 theme for map with French government design template}
 \usage{
 theme_gouv_map(
   base_family = "Spectral",
@@ -54,7 +54,7 @@ theme_gouv_map(
 A \code{ggplot2} theme.
 }
 \description{
-ggplot2 theme for map with french government design template
+ggplot2 theme for map with French government design template
 }
 \details{
 This theme is designed for making map with ggplot plot with \code{ggplot2::geom_sf()}.
