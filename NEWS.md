@@ -4,7 +4,7 @@
 
 * Added the official Marianne and French government logos (#15). 
 
-* Added `theme_gouv()` and `theme_grey_gouv()` (#1 and #15) ggplot themes
+* Added `theme_gouv()` `theme_gouv_map()` and `theme_grey_gouv()` (#1 and #15) ggplot2 themes
 
 * Display the palettes in the documentation (#14).
 

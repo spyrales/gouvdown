@@ -30,6 +30,12 @@ remotes::install_github("spyrales/gouvdown")
 
 <img src="man/figures/README-palettes-1.png" width="100%" />
 
+## Theme
+
+gouvdown provides themes for `ggplot2` graphics and maps.
+
+<img src="man/figures/README-theme-1.png" width="100%" />
+
 ## References
 
   - Design system:

@@ -41,9 +41,29 @@ remotes::install_github("spyrales/gouvdown")
 pal <- gouvdown::gouv_palettes
 labels <- names(pal)
 
-do.call(pals::pal.bands, 
-        c(pal, list(labels = labels, gap = 0.2, main = "gouvdown palettes"))
+do.call(
+  pals::pal.bands,
+  c(pal, list(labels = labels, gap = 0.2, main = "gouvdown palettes"))
 )
+```
+
+
+## Theme
+
+gouvdown provides themes for `ggplot2` graphics and maps.
+
+
+```{r theme, echo = FALSE, warning = FALSE, message = FALSE}
+library(ggplot2)
+library(gouvdown)
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(aes(color = Species, shape = Species)) +
+  labs(
+    x = "Sepal Length", y = "Sepal Width", title = "Sepal Length-Width",
+    subtitle = "with theme_gouv()"
+  ) +
+  theme_gouv() +
+  scale_color_gouv_discrete(palette = "pal_gouv_qual1")
 ```
 
 ## References

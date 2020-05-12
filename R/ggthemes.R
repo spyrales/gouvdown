@@ -13,14 +13,15 @@
 # See the Licence for the specific language governing permissions and
 # limitations under the Licence.
 
-#' ggplot2 theme with french government design template
+#' ggplot2 theme with French government design template
 #'
 #' @details All font sizes are set in points and colors are either a color name or a hex code.
 #' @param base_family,base_size Base font family and size.
 #' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin Plot title family, face, size and margin.
 #' @param subtitle_family,subtitle_face,subtitle_size Plot subtitle family, face and size.
 #' @param subtitle_margin Plot subtitle margin bottom (single numeric value).
-#' @param strip_text_family,strip_text_face,strip_text_size Facet label font family, face and size.
+#' @param strip_text_family,strip_text_face,strip_text_size,strip_text_color Facet label font family, face, size and color.
+#' @param strip_background_color Facel label background color.
 #' @param caption_family,caption_face,caption_size,caption_margin Plot caption family, face, size and margin.
 #' @param axis_title_family,axis_title_face,axis_title_size Axis title font family, face and size.
 #' @param axis_title_just Axis title font justification, one of `[blmcrt]`.
@@ -59,7 +60,8 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
                        subtitle_family = "Marianne Light", subtitle_size = 22,
                        subtitle_face = "plain", subtitle_margin = 15,
                        strip_text_family = base_family, strip_text_size = 22,
-                       strip_text_face = "plain",
+                       strip_text_face = "plain", strip_text_color = "black",
+                       strip_background_color = "#FFFFFF",
                        caption_family = base_family, caption_size = 12,
                        caption_face = "plain", caption_margin = 10,
                        axis_text_size = base_size,
@@ -67,11 +69,11 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
                        axis_title_face = "plain", axis_title_just = "rt",
                        plot_margin = margin(30, 30, 30, 30),
                        grid_col = "#888888", grid = TRUE,
-                       panel_background_color = "#ffffff",
-                       panel_border_color = "#ffffff",
-                       legend_background_color = "#ffffff",
-                       legend_border_color = "#ffffff",
-                       axis_col = "#cccccc", axis = FALSE, ticks = FALSE) {
+                       panel_background_color = "#FFFFFF",
+                       panel_border_color = "#FFFFFF",
+                       legend_background_color = "#FFFFFF",
+                       legend_border_color = "#FFFFFF",
+                       axis_col = "#CCCCCC", axis = FALSE, ticks = FALSE) {
   ret <- ggplot2::theme_minimal(base_family = base_family, base_size = base_size)
 
   ret <- ret + theme(legend.background = element_rect(
@@ -147,10 +149,14 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
     hjust = yj, size = axis_title_size, angle = 90,
     family = axis_title_family, face = axis_title_face
   ))
-  ret <- ret + theme(strip.text = element_text(
-    hjust = 0, size = strip_text_size,
-    face = strip_text_face, family = strip_text_family
-  ))
+  ret <- ret + theme(
+    strip.text = element_text(
+      hjust = 0, size = strip_text_size, color = strip_text_color,
+      face = strip_text_face, family = strip_text_family
+    ),
+    strip.background = element_rect(fill = strip_background_color)
+  )
+
   ret <- ret + theme(panel.spacing = grid::unit(2, "lines"))
   ret <- ret + theme(plot.title = element_text(
     hjust = 0, size = plot_title_size,
@@ -173,7 +179,7 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
   ret
 }
 
-#' ggplot2 grey theme with french government design template
+#' ggplot2 grey theme with French government design template
 #'
 #' @param ... Other params passed to `theme_gouv()`.
 #' @return A `ggplot2` theme.
@@ -195,10 +201,109 @@ theme_gouv <- function(base_family = "Spectral", base_size = 12,
 #'
 theme_grey_gouv <- function(...) {
   theme_gouv(...,
-    grid_col = "#ffffff",
+    grid_col = "#FFFFFF",
     panel_background_color = "#C0C0C0",
     panel_border_color = "#888888",
     legend_background_color = "#C0C0C0",
     legend_border_color = "#888888"
   )
+}
+
+#' ggplot2 theme for map with French government design template
+#'
+#' @details
+#' This theme is designed for making map with ggplot plot with `ggplot2::geom_sf()`.
+#' All font sizes are set in points and colors are either a color name or a hex code.
+#' @param base_family,base_size Base font family and size.
+#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin Plot title family, face, size and margin.
+#' @param subtitle_family,subtitle_face,subtitle_size Plot subtitle family, face and size.
+#' @param subtitle_margin Plot subtitle margin bottom (single numeric value).
+#' @param strip_text_family,strip_text_face,strip_text_size,strip_text_color Facet label font family, face, size and color.
+#' @param strip_background_color Facel label background color.
+#' @param caption_family,caption_face,caption_size,caption_margin Plot caption family, face, size and margin.
+#' @param plot_margin Plot margin (specify with `ggplot2::margin()`).
+#' @param legend_background_color Legend background fill color; default to `white`.
+#' @param legend_border_color Legend border color; default to `white`.
+#'
+#' @importFrom ggplot2 element_blank element_line element_text margin theme element_rect
+#' @return A `ggplot2` theme.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' library(ggplot2)
+#' library(sf)
+#' demo(nc, ask = FALSE, echo = FALSE)
+#'
+#' ggplot(data = nc) +
+#'   geom_sf(aes(fill = BIR79)) +
+#'   theme_gouv_map() +
+#'   scale_color_gouv_continuous() +
+#'   labs(title = "North Carolina SIDS", subtitle = "with theme_gouv_map()")
+#' }
+theme_gouv_map <- function(base_family = "Spectral", base_size = 12,
+                           plot_title_family = "Marianne", plot_title_size = 28,
+                           plot_title_face = "bold", plot_title_margin = 10,
+                           subtitle_family = "Marianne Light", subtitle_size = 22,
+                           subtitle_face = "plain", subtitle_margin = 15,
+                           strip_text_family = base_family, strip_text_size = 14,
+                           strip_text_face = "plain", strip_text_color = "black",
+                           strip_background_color = "#FFFFFF",
+                           caption_family = base_family, caption_size = 12,
+                           caption_face = "plain", caption_margin = 10,
+                           plot_margin = margin(30, 30, 30, 30),
+                           legend_background_color = "#FFFFFF",
+                           legend_border_color = "#FFFFFF") {
+  ret <- ggplot2::theme_minimal(base_family = base_family, base_size = base_size)
+
+  ret <- ret + theme(legend.background = element_rect(
+    fill = legend_background_color,
+    color = legend_border_color
+  ))
+  ret <- ret + theme(legend.key = element_blank())
+
+  ret <- ret + theme(panel.grid = element_blank())
+  ret <- ret + theme(panel.background = element_blank())
+  ret <- ret + theme(panel.border = element_blank())
+  ret <- ret + theme(panel.grid = element_blank())
+  ret <- ret + theme(plot.background = element_blank())
+  ret <- ret + theme(axis.line = element_blank())
+  ret <- ret + theme(axis.text = element_blank())
+  ret <- ret + theme(axis.ticks = element_blank())
+  ret <- ret + theme(axis.title = element_blank())
+
+
+  ret <- ret + theme(
+    strip.text = element_text(
+      hjust = 0, size = strip_text_size, color = strip_text_color,
+      face = strip_text_face, family = strip_text_family
+    ),
+    strip.background = element_rect(fill = strip_background_color)
+  )
+
+  ret <- ret + theme(panel.spacing = grid::unit(2, "lines"))
+
+  ret <- ret + theme(plot.title = element_text(
+    hjust = 0, size = plot_title_size,
+    margin = margin(b = plot_title_margin),
+    family = plot_title_family, face = plot_title_face
+  ))
+
+  ret <- ret + theme(plot.subtitle = element_text(
+    hjust = 0, size = subtitle_size,
+    margin = margin(b = subtitle_margin),
+    family = subtitle_family, face = subtitle_face
+  ))
+
+  ret <- ret + theme(plot.title.position = "plot")
+
+  ret <- ret + theme(plot.caption = element_text(
+    hjust = 1, size = caption_size,
+    margin = margin(t = caption_margin),
+    family = caption_family, face = caption_face
+  ))
+
+  ret <- ret + theme(plot.margin = plot_margin)
+
+  ret
 }
