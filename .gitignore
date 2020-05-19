@@ -1,3 +1,8 @@
+# Environnement Mac
+.DS_Store
+
+
+# Environnement R
 .Rproj.user
 .Rhistory
 .RData
