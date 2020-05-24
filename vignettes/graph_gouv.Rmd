@@ -1,0 +1,145 @@
+---
+title: "Réaliser vos graphiques avec `gouvdown`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Graphics with gouvdown}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.height = 5,
+  fig.width = 8
+)
+```
+
+Cette vignette vous montre la réalisation de quelques types de graphiques à l'aide de `gouvdown`. Les données présentées sont issues des fichiers de l'état civil sur les mariages de 1998 à 2018, mis à disposition par l'Insee sur son site (https://www.insee.fr/fr/statistiques?taille=100&debut=0&theme=4&categorie=3&collection=4). Elles ont été compilées et mises en cohérence.
+
+```{r setup}
+library(gouvdown)
+library(tidyverse)
+library(sf)
+library(here)
+```
+
+## Import des données
+
+On charge les données, composées d'un croisement année / département / état matrimonial antérieur recodé. On importe aussi un fond de carte départemental.
+
+```{r import}
+df_mariages_etat_dep_an <- read_rds(here("inst/extdata/df_mariages_etat_dep_an.rds"))
+
+shp_dep <- st_read(here("inst/extdata/shp_dep/FR_DEP_DOM_IDF.shp"))
+```
+
+## Graphiques
+
+Ce fichier permet de réaliser un diagramme en barres du nombre de mariages par an au niveau national. Pour plus de visibilité, on choisit de colorer les barres en rouge à l'aide des codes couleurs présents dans la fonction `gouv_colors()`. L'utilisation de `theme_gouv()` permet simplement d'apposer l'identité graphique.
+
+A noter qu'il faut que les polices Marianne et Spectral soient installées.
+
+```{r histo}
+df_mariages_etat_dep_an %>%
+  group_by(amar) %>%
+  summarise(n = sum(n)) %>%
+  ggplot(aes(x = amar, y = n)) +
+  geom_col(fill = gouv_colors("rouge_marianne"), color = "black") +
+  scale_x_continuous(name = "Année", breaks = seq(1998, 2018, 2)) +
+  scale_y_continuous(
+    name = "Nombre de mariages",
+    breaks = seq(0, 350000, 50000),
+    labels = scales::label_number(big.mark = " ")
+  ) +
+  labs(title = "Nombre de mariages par an",
+       caption = "Source : Insee, fichiers d'état civil") +
+  theme_gouv()
+```
+
+De façon similaire, on peut réaliser un graphique en ligne sur des évolutions du nombre de mariage par type d'état matrimonial. On utilise ici `scale_color_gouv_discrete()` en précisant la palette à utiliser pour avoir les bonnes couleurs.
+
+```{r ligne}
+plot_etamat_type <- df_mariages_etat_dep_an %>%
+  group_by(amar, etamat_type) %>%
+  summarise(n = sum(n)) %>%
+  ggplot(aes(x = amar, y = n, color = str_wrap(etamat_type, 15))) +
+  geom_line(size = 1.1) +
+  scale_x_continuous(name = "Année", breaks = seq(1998, 2018, 2)) +
+  scale_y_continuous(
+    name = "Nombre de mariages",
+    breaks = seq(0, 350000, 50000),
+    labels = scales::label_number(big.mark = " ")
+  ) +
+  scale_color_gouv_discrete(name = "", palette = "pal_gouv_qual2") +
+  labs(title = "Nombre de mariages par an",
+       subtitle = "En fonction de l'état matrimonial des mariés",
+       caption = "Source : Insee, fichiers d'état civil") +
+  theme_gouv()
+
+plot_etamat_type
+```
+
+Pour un usage des graphiques hors publication (usage seul ou dans une présentation par exemple), on peut choisir d'y apposer la Marianne. La fonction `add_plot_header()` permet de le faire simplement.
+
+```{r ligne marianne}
+plot_etamat_type %>% 
+  add_plot_header(gglogo("marianne"), ratio = 8)
+```
+
+## Cartes
+
+Pour les cartes, on préférera l'utilisation de `theme_gouv_map()` qui est plus adapté.
+
+```{r carte_simple}
+shp_dep %>%
+  left_join((
+    df_mariages_etat_dep_an %>%
+      filter(amar == 2018) %>%
+      group_by(depmar) %>%
+      summarise(n = sum(n))
+  ),
+  by = c("INSEE_DEP" = "depmar")
+  ) %>%
+  ggplot(aes(fill = n)) +
+  geom_sf() +
+  scale_fill_gouv_continuous(name = "",
+                             palette = "pal_gouv_g",
+                             reverse = TRUE,
+                             breaks = seq(0, 10000, 2000),
+                             labels = scales::label_number(big.mark = " ")) +
+  labs(title = "Nombre de mariages",
+       subtitle = "Par département en 2018",
+       caption = "Source : Insee, fichiers d'état civil") +
+  theme_gouv_map()
+```
+
+Il est bien sûr aussi possible de réaliser des cartes en facettes.
+
+```{r carte_facet}
+shp_dep %>%
+  left_join((
+    df_mariages_etat_dep_an %>%
+      filter(amar %in% seq(1998, 2018, 4)) %>%
+      group_by(amar, depmar) %>%
+      mutate(part = n / sum(n)) %>%
+      filter(etamat_type == "Deux célibataires")
+  ),
+  by = c("INSEE_DEP" = "depmar")
+  ) %>%
+  ggplot(aes(fill = part)) +
+  geom_sf() +
+  scale_fill_gouv_continuous(
+    name = "",
+    palette = "pal_gouv_f",
+    reverse = TRUE,
+    breaks = seq(0, 1, 0.05),
+    labels = scales::label_percent(accuracy = 1)
+  ) +
+  facet_wrap(vars(amar), nrow = 2) +
+  labs(title = "Part des mariages de deux célibataires",
+       subtitle = "Évolution par département",
+       caption = "Source : Insee, fichiers d'état civil") +
+  theme_gouv_map()
+```
