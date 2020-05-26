@@ -30,9 +30,14 @@ library(here)
 On charge les données, composées d'un croisement année / département / état matrimonial antérieur recodé. On importe aussi un fond de carte départemental.
 
 ```{r import}
-df_mariages_etat_dep_an <- read_rds(here("inst/extdata/df_mariages_etat_dep_an.rds"))
 
-shp_dep <- st_read(here("inst/extdata/shp_dep/FR_DEP_DOM_IDF.shp"))
+file_data <- system.file("extdata", "df_mariages_etat_dep_an.rds", package = "gouvdown")
+
+file_geo <- system.file("extdata", "shp_dep", "FR_DEP_DOM_IDF.shp", package = "gouvdown")
+
+df_mariages_etat_dep_an <- read_rds(file_data)
+
+shp_dep <- st_read(file_geo)
 ```
 
 ## Graphiques
@@ -86,6 +91,33 @@ Pour un usage des graphiques hors publication (usage seul ou dans une présentat
 ```{r ligne marianne}
 plot_etamat_type %>% 
   add_plot_header(gglogo("marianne"), ratio = 8)
+```
+
+Ainsi, décliner un graphique national sur son territoire pour un service régional de l'Etat devient très simple. Il suffit de filtrer les données en entrée, et de changer le logo.
+
+```{r}
+plot_etamat_type <- df_mariages_etat_dep_an %>%
+  filter(depmar %in% c('44','49','53','72','85')) %>% 
+  group_by(amar, etamat_type) %>%
+  summarise(n = sum(n)) %>%
+  ggplot(aes(x = amar, y = n, color = str_wrap(etamat_type, 15))) +
+  geom_line(size = 1.1) +
+  scale_x_continuous(name = "Année", breaks = seq(1998, 2018, 2)) +
+  scale_y_continuous(
+    name = "Nombre de mariages",
+    breaks = seq(0, 350000, 50000),
+    labels = scales::label_number(big.mark = " ")
+  ) +
+  scale_color_gouv_discrete(name = "", palette = "pal_gouv_qual2") +
+  labs(title = "Nombre de mariages par an en Pays de la Loire",
+       subtitle = "En fonction de l'état matrimonial des mariés",
+       caption = "Source : Insee, fichiers d'état civil") +
+  theme_gouv()
+
+
+plot_etamat_type %>% 
+  add_plot_header(gglogo("prefecture_pdl"), ratio = 20)
+
 ```
 
 ## Cartes
