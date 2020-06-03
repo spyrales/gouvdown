@@ -38,7 +38,7 @@ jobs:
         run: devtools::install("gouvdown.fonts")
         shell: Rscript {0}
       - name: Install gouvdown fonts to mac os
-        run: cp /Users/runner/runners/2.263.0/work/gouvdown/gouvdown/gouvdown.fonts/inst/resources/fonts/spectral/*.ttf /Library/Fonts/
+        run: cp /Users/runner/runners/2.263.0/work/gouvdown/gouvdown/gouvdown.fonts/inst/resources/fonts/spectral/desktop/truetype/*.ttf /Library/Fonts/
       - uses: actions/checkout@v2
       - name: Remove gouvdown.fonts directory
         run: rm -rf gouvdown.fonts
