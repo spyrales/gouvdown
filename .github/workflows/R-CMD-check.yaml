@@ -19,6 +19,12 @@ jobs:
           # CI fails if rlang is not installed first:
           install.packages(c("remotes", "rcmdcheck", "devtools", "covr"))
         shell: Rscript {0}
+      - name: Install sf dependencies
+        run:  brew install pkg-config
+              brew install gdal
+      - name: Install sf
+        run:  install.packages("sf", configure.args = "--with-proj-lib=/usr/local/lib/")
+        shell: Rscript {0}
       - name: Checkout gouvdown.fonts
         uses: actions/checkout@v2
         with:
