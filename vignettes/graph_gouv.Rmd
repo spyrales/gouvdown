@@ -12,7 +12,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.height = 5,
-  fig.width = 8
+  fig.width = 8,
+  message = FALSE,
+  warning = FALSE
 )
 ```
 
@@ -109,7 +111,7 @@ plot_etamat_type <- df_mariages_etat_dep_an %>%
     labels = scales::label_number(big.mark = " ")
   ) +
   scale_color_gouv_discrete(name = "", palette = "pal_gouv_qual2") +
-  labs(title = "Nombre de mariages par an en Pays de la Loire",
+  labs(title = "Nombre de mariages par an en région",
        subtitle = "En fonction de l'état matrimonial des mariés",
        caption = "Source : Insee, fichiers d'état civil") +
   theme_gouv()
@@ -149,7 +151,7 @@ shp_dep %>%
 
 Il est bien sûr aussi possible de réaliser des cartes en facettes.
 
-```{r carte_facet}
+```{r carte_facet,  fig.width = 10,fig.height=8}
 shp_dep %>%
   left_join((
     df_mariages_etat_dep_an %>%
