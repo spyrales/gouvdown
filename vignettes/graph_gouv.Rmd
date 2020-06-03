@@ -34,7 +34,9 @@ On charge les données, composées d'un croisement année / département / état
 ```{r}
 nc <- sf::st_read(system.file("shape/nc.shp", package = "sf"), quiet = TRUE)
 ggplot(nc) +
-  geom_sf(aes(fill = AREA))
+  geom_sf(aes(fill = AREA)) +
+  labs(title = "Test") +
+  theme_gouv_map()
 ```
 
 
