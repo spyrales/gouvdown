@@ -40,7 +40,7 @@ jobs:
       - name: Remove gouvdown.fonts directory
         run: rm -rf gouvdown.fonts
       - name: Install gouvdown fonts to mac os
-        run: cp /Users/runner/runners/2.263.0/work/_temp/Library/gouvdown.fonts/resources/fonts/Spectral/*.ttf /Library/Fonts/
+        run: cp /Users/runner/runners/2.263.0/work/_temp/Library/gouvdown.fonts/resources/fonts/spectral/*.ttf /Library/Fonts/
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: remotes::install_deps(dependencies = TRUE, type = "mac.binary")
