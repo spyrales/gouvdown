@@ -1,5 +1,9 @@
 # gouvdown 0.0.0.9000
 
+* Added a vignette on using the `scale_` and `theme_gouv_` functions.
+
+* Added a `pkgdown` Actions.
+
 * Added several helper functions for logos management: `list_logos()` to list logos contained in `gouvdown`, `logo_file_path()` to retrieve the logos file paths on system, `gglogo()` and `add_plot_header()` to add a logo in a ggplot2 plot object (#15).
 
 * Added the official Marianne and French government logos (#15). 
