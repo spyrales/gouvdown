@@ -32,7 +32,7 @@ jobs:
         run: |
           cp /Users/runner/runners/2.263.0/work/gouvdown/gouvdown/gouvdown.fonts/inst/resources/fonts/spectral/desktop/truetype/*.ttf /Library/Fonts/
           cp /Users/runner/runners/2.263.0/work/gouvdown/gouvdown/gouvdown.fonts/inst/resources/fonts/marianne/truetype/*.ttf /Library/Fonts/
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Remove gouvdown.fonts directory
         run: rm -rf gouvdown.fonts
       - name: Install dependencies
