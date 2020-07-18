@@ -16,7 +16,6 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@master
       - name: Install tools
         run: |
-          # CI fails if rlang is not installed first:
           install.packages(c("remotes", "rcmdcheck", "devtools", "covr"))
         shell: Rscript {0}
       - name: Checkout gouvdown.fonts
@@ -25,7 +24,7 @@ jobs:
           repository: spyrales/gouvdown.fonts
           token: ${{ secrets.BOT_GITHUB_PAT }}
           path: gouvdown.fonts
-      - name: Install gouvdown.fonts
+      - name: Install gouvdown.fonts package
         run: devtools::install("gouvdown.fonts")
         shell: Rscript {0}
       - name: Install gouvdown fonts to mac os
