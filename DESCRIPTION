@@ -39,15 +39,16 @@ Imports:
     utils,
     xfun
 Suggests: 
-    pals,
-    testthat,
     knitr,
+    pals,
     rmarkdown,
     scales,
-    tidyverse,
-    sf
+    sf,
+    testthat,
+    tidyverse
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-VignetteBuilder: knitr
