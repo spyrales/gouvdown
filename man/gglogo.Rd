@@ -20,7 +20,7 @@ logos can be obtained with \code{\link[=list_logos]{list_logos()}}.}
 \item{file}{Path to a \code{png} file.}
 
 \item{x, y}{\code{x} and \code{y} positions of the logo relative to the border. Since
-these arguments are passed to \code{\link[grid:rasterGrob]{grid::rasterGrob()}},
+these arguments are passed to \code{\link[grid:grid.raster]{grid::rasterGrob()}},
 \link[grid:unit]{unit objects} are allowed.}
 
 \item{just}{The justification of the rectangle
@@ -32,7 +32,7 @@ these arguments are passed to \code{\link[grid:rasterGrob]{grid::rasterGrob()}},
     and 1 means right alignment.
   }
 
-\item{...}{Other arguments passed to \code{\link[grid:rasterGrob]{grid::rasterGrob()}}.}
+\item{...}{Other arguments passed to \code{\link[grid:grid.raster]{grid::rasterGrob()}}.}
 }
 \value{
 An object of class "grob".

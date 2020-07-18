@@ -11,7 +11,7 @@ scale_color_gouv_continuous(palette = "pal_gouv_a", reverse = FALSE, ...)
 
 \item{reverse}{Boolean indicating whether the palette should be reversed.}
 
-\item{...}{Additional arguments passed to \code{\link[ggplot2:scale_color_gradientn]{ggplot2::scale_color_gradientn()}}.}
+\item{...}{Additional arguments passed to \code{\link[ggplot2:scale_gradient]{ggplot2::scale_color_gradientn()}}.}
 }
 \description{
 Continuous color scale
