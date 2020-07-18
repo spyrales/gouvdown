@@ -26,7 +26,7 @@ License: EUPL (>= 1.2) | file LICENCE
 URL: https://github.com/spyrales/gouvdown
 BugReports: https://github.com/spyrales/gouvdown/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5)
 Imports: 
     colorspace,
     extrafont,
