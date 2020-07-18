@@ -43,6 +43,7 @@ Suggests:
     testthat,
     knitr,
     rmarkdown,
+    scales,
     tidyverse,
     sf
 Encoding: UTF-8
