@@ -35,6 +35,9 @@ jobs:
           cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/spectral/desktop/truetype/*.ttf /Library/Fonts/
           cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/marianne/truetype/*.ttf /Library/Fonts/
 
+      - name: Remove gouvdown.fonts directory
+        run: rm -rf gouvdown.fonts
+
       - uses: actions/checkout@v2
 
       - name: Query dependencies
