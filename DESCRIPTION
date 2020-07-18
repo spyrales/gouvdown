@@ -26,7 +26,7 @@ License: EUPL (>= 1.2) | file LICENCE
 URL: https://github.com/spyrales/gouvdown
 BugReports: https://github.com/spyrales/gouvdown/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5)
 Imports: 
     colorspace,
     extrafont,
@@ -39,9 +39,16 @@ Imports:
     utils,
     xfun
 Suggests: 
+    knitr,
     pals,
-    testthat
+    rmarkdown,
+    scales,
+    sf,
+    testthat,
+    tidyverse
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

@@ -1,0 +1,68 @@
+on:
+  push:
+    branches: master
+
+name: pkgdown
+
+jobs:
+  pkgdown:
+    runs-on: macOS-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: r-lib/actions/setup-r@master
+
+      - uses: r-lib/actions/setup-pandoc@master
+
+      - name: Install tools
+        run: |
+          install.packages("devtools")
+        shell: Rscript {0}
+
+      - name: Checkout gouvdown.fonts
+        uses: actions/checkout@v2
+        with:
+          repository: spyrales/gouvdown.fonts
+          token: ${{ secrets.BOT_GITHUB_PAT }}
+          path: gouvdown.fonts
+
+      - name: Install gouvdown.fonts package
+        run: devtools::install("gouvdown.fonts")
+        shell: Rscript {0}
+
+      - name: Install gouvdown fonts to mac os
+        run: |
+          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/spectral/desktop/truetype/*.ttf /Library/Fonts/
+          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/marianne/truetype/*.ttf /Library/Fonts/
+
+      - name: Remove gouvdown.fonts directory
+        run: rm -rf gouvdown.fonts
+
+      - uses: actions/checkout@v2
+
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+        shell: Rscript {0}
+
+      - name: Cache R packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+      - name: Install dependencies
+        run: |
+          remotes::install_deps(dependencies = TRUE, type = "mac.binary")
+          remotes::install_dev("pkgdown")
+        shell: Rscript {0}
+
+      - name: Install package
+        run: R CMD INSTALL .
+
+      - name: Deploy pkdown website
+        run: pkgdown::deploy_to_branch(new_process = FALSE)
+        shell: Rscript {0}

@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 .Renviron
+inst/doc
+docs
