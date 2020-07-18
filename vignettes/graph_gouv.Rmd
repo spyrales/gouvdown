@@ -24,7 +24,6 @@ Cette vignette vous montre la réalisation de quelques types de graphiques à l'
 library(gouvdown)
 library(tidyverse)
 library(sf)
-library(here)
 ```
 
 ## Import des données
