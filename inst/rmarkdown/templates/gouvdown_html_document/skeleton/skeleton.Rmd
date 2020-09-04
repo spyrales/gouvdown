@@ -1,0 +1,56 @@
+---
+title: "a title"
+author: "Your Name"
+date: "The Date"
+output: 
+  gouvdown::html_gouv:
+    toc: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Adding an RMarkdown Template
+
+
+### Subtitle
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+
+this is [a link](https://rmarkdown.rstudio.com/)
+
+
+## Other title
+
+this is a table
+
+```{r, result = 'asis'}
+library(knitr)
+kable(mtcars[1:5,],caption = "a table")
+```
+
+## This is a tabset {.tabset}
+
+### tab1
+
+This is a ggplot 2
+
+```{r theme, echo = FALSE, warning = FALSE, message = FALSE}
+library(ggplot2)
+library(gouvdown)
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(aes(color = Species, shape = Species)) +
+  labs(
+    x = "Sepal Length", y = "Sepal Width", title = "Sepal Length-Width",
+    subtitle = "with theme_gouv()"
+  ) +
+  theme_gouv() +
+  scale_color_gouv_discrete(palette = "pal_gouv_qual1")
+```
+
+### tab2
