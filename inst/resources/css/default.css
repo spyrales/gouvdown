@@ -5,7 +5,18 @@ body{
 
 h1 {
   display: block;
-  font-size: 2em;
+  font-size: 2.5em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: Marianne;
+}
+
+h1.title {
+  display: block;
+  font-size: 4em;
   margin-top: 0.67em;
   margin-bottom: 0.67em;
   margin-left: 0;
@@ -15,9 +26,10 @@ h1 {
 }
 
 
+
 h2 {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin-top: 0.67em;
   margin-bottom: 0.67em;
   margin-left: 0;
@@ -28,10 +40,21 @@ h2 {
 
 h3 {
   display: block;
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin-top: 0.4em;
   margin-bottom: 0.4em;
-  margin-left: 2;
+  margin-left: 20px;
+  margin-right: 0;
+  font-weight: regular;
+  font-family: Marianne;
+}
+
+h4 {
+  display: block;
+  font-size: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 40px;
   margin-right: 0;
   font-weight: regular;
   font-family: Marianne;
@@ -173,3 +196,70 @@ table {
     margin-top: 0px;
 }
 
+/* TOC */
+
+#TOC {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 0.5em #ddd;
+}
+
+#TOC ul {
+    margin: 0;
+    padding: 2px;
+    list-style: square inside;
+}
+
+#TOC ul ul {
+    margin-left: 5px;
+    padding-left: 6px;
+    list-style: square inside;
+}
+
+
+#TOC a:link {
+  color: #000000;
+}
+
+#TOC a:visited {
+  color: #000000;
+}
+
+#TOC a:focus {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#TOC a:hover {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
+
+.author {
+  display: block;
+  font-size: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: regular;
+  font-family: Marianne;
+}
+
+.date {
+  display: block;
+  font-size: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: regular;
+  font-family: Marianne;
+}
