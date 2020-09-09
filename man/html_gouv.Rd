@@ -7,7 +7,7 @@
 html_gouv(..., extra_dependencies = list(), css = NULL, header = "header.html")
 }
 \arguments{
-\item{...}{Additional arguments passed to \code{rmarkdown::html_document()}.}
+\item{...}{Additional arguments passed to \code{rmarkdown::\link{html_document}()}.}
 
 \item{extra_dependencies}{extra dep}
 

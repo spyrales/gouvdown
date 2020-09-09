@@ -43,7 +43,6 @@ Imports:
     utils,
     xfun
 Suggests: 
-    gouvdown.fonts,
     pals,
     scales,
     sf,

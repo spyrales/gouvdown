@@ -44,7 +44,7 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
 
 #' gouvdown html document
 #'
-#' @param ... Additional arguments passed to \code{rmarkdown::html_document()}.
+#' @param ... Additional arguments passed to \code{rmarkdown::\link{html_document}()}.
 #' @param extra_dependencies  extra dep
 #' @param css css
 #' @param header header to include
@@ -54,11 +54,13 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
 #' @export
 html_gouv = function(..., extra_dependencies = list(),css = NULL,header = 'header.html') {
   default_css <- pkg_resource('css','default.css')
-  if (requireNamespace("gouvdown.fonts", quietly = TRUE)) {
+  if (xfun::loadable("gouvdown.fonts")) {
   extra_deps <- append(extra_dependencies,
                                list(
-                                 gouvdown.fonts::html_dependency_marianne(),
-                                 gouvdown.fonts::html_dependency_spectral())
+                                 marianne_font_dep(),
+                                 spectral_font_dep(),
+                                 spectral_sc_font_dep()
+                                 )
   )
   }
   else {
