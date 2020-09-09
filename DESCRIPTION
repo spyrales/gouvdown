@@ -48,8 +48,6 @@ Suggests:
     sf,
     testthat,
     tidyverse
-Remotes:
-    spyrales/gouvdown.fonts
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
