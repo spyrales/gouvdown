@@ -36,7 +36,7 @@ this is [a link](https://rmarkdown.rstudio.com/)
 
 ### ggplot
 
-This is a ggplot 2
+This is a ggplot.
 
 ```{r theme, echo = FALSE, warning = FALSE, message = FALSE}
 library(ggplot2)
@@ -53,7 +53,7 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 
 ### table
 
-this is a table
+This is a table.
 
 ```{r, result = 'asis'}
 library(knitr)
