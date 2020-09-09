@@ -1,14 +1,21 @@
 ---
 title: "a title"
 author: "Your Name"
-date: "The Date"
+date: "The date"
+bloque_marque: "gouvernement"
 output: 
   gouvdown::html_gouv:
     toc: TRUE
+params:
+  logo: "gouvernement"
 ---
 
 ```{r setup, include=FALSE}
+library(gouvdown)
 knitr::opts_chunk$set(echo = TRUE)
+# The fonction below create the header.html file included in the document.
+# Change params$logo to change the logo in the header or put in `create_header_html_gouv()` a `file` parameter that link to a png file.
+create_header_html_gouv(logo = params$logo)
 ```
 
 ## Adding an RMarkdown Template
@@ -25,18 +32,9 @@ Finally, be sure to remove this message!
 this is [a link](https://rmarkdown.rstudio.com/)
 
 
-## Other title
-
-this is a table
-
-```{r, result = 'asis'}
-library(knitr)
-kable(mtcars[1:5,],caption = "a table")
-```
-
 ## This is a tabset {.tabset}
 
-### tab1
+### ggplot
 
 This is a ggplot 2
 
@@ -53,4 +51,11 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   scale_color_gouv_discrete(palette = "pal_gouv_qual1")
 ```
 
-### tab2
+### table
+
+this is a table
+
+```{r, result = 'asis'}
+library(knitr)
+kable(mtcars[1:5,],caption = "a table")
+```

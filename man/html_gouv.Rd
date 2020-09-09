@@ -4,15 +4,20 @@
 \alias{html_gouv}
 \title{gouvdown html document}
 \usage{
-html_gouv(..., extra_dependencies = list(), css = NULL)
+html_gouv(..., extra_dependencies = list(), css = NULL, header = "header.html")
 }
 \arguments{
+\item{...}{Additional arguments passed to \code{rmarkdown::html_document()}.}
+
 \item{extra_dependencies}{extra dep}
 
-\item{css}{csss}
+\item{css}{css}
+
+\item{header}{header to include}
 }
 \value{
-
+An R Markdown output format object to be passed to
+\code{rmarkdown::\link{render}()}.
 }
 \description{
 gouvdown html document
