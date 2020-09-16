@@ -1,0 +1,265 @@
+body{
+  font-family: Spectral;
+  font-size: 16px;
+}
+
+h1 {
+  display: block;
+  font-size: 2.5em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: Marianne;
+}
+
+h1.title {
+  display: block;
+  font-size: 3.6em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: Marianne;
+}
+
+
+
+h2 {
+  display: block;
+  font-size: 1.7em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: Marianne;
+}
+
+h3 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 20px;
+  margin-right: 0;
+  font-weight: regular;
+  font-family: Marianne;
+}
+
+h4 {
+  display: block;
+  font-size: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 40px;
+  margin-right: 0;
+  font-weight: regular;
+  font-family: Marianne;
+}
+
+
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #000091;
+}
+
+a:visited {
+  color: #E18B63;
+}
+
+a:focus {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+a:hover {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+a:active {
+
+}
+
+
+.tocify {
+  font-family: Marianne;
+}
+
+.author {
+  font-family: Marianne;
+}
+
+.date {
+  font-family: Marianne;
+}
+
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #000091;
+    border-color: #000091;
+}
+
+
+.nav-tabs {
+  font-family: Marianne;
+}
+
+.nav-tabs > li > a {
+    color: #808080;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    cursor: default;
+    background-color: #fff;
+    color: #000000;
+    font-weight: bold;
+    border: 2px solid #fff;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: : transparent;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-bottom-color: #000091;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+}
+
+
+/* Tables */
+
+table {
+  font-family: Marianne;
+}
+
+.table {
+    margin: 25px 0px 35px 20px;
+    width: auto !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 0.5em #ddd;
+}
+
+
+.table thead>tr {
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    height: 56px;
+}
+
+.table thead>tr>th {
+    padding: 3px 15px !important;
+    height: 56px;
+}
+
+.table tbody>tr>td {
+    padding: 3px 15px !important;
+    height: 56px;
+}
+
+.table tbody tr.even {
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+}
+
+.table tr.odd {
+    background: #FFF;
+}
+
+.table tbody tr:hover {
+    background: #e9f0fb;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.tab-content .table {
+    margin-top: 0px;
+}
+
+/* TOC */
+
+#TOC {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 0.5em #ddd;
+}
+
+#TOC ul {
+    margin: 0;
+    padding: 2px;
+    list-style: square inside;
+}
+
+#TOC ul ul {
+    margin-left: 5px;
+    padding-left: 6px;
+    list-style: square inside;
+}
+
+
+#TOC a:link {
+  color: #000000;
+}
+
+#TOC a:visited {
+  color: #000000;
+}
+
+#TOC a:focus {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#TOC a:hover {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
+
+.author {
+  display: block;
+  font-size: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: regular;
+  font-family: Marianne;
+}
+
+.date {
+  display: block;
+  font-size: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: regular;
+  font-family: Marianne;
+}

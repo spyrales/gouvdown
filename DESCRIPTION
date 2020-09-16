@@ -30,18 +30,20 @@ Depends:
 Imports: 
     colorspace,
     extrafont,
+    glue,
     ggplot2 (>= 3.3.0),
     ggpubr,
     grid,
+    here,
     htmltools,
+    knitr,
     png,
+    rmarkdown,
     systemfonts,
     utils,
     xfun
 Suggests: 
-    knitr,
     pals,
-    rmarkdown,
     scales,
     sf,
     testthat,
