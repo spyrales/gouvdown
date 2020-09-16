@@ -161,14 +161,13 @@ Markdown output formats or Shiny applications.</p>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/spyrales/gouvdown'>gouvdown</a></span>)
 
-<span class='kw'>tag</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(
-  <span class='st'>"The quick brown fox jumps over the lazy dog"</span>,
-  style = <span class='st'>"font-family: 'Marianne', Arial, sans-serif"</span>
-)
+<span class='kw'>tag</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"The quick brown fox jumps over the lazy dog"</span>, 
+    style = <span class='st'>"font-family: 'Marianne', Arial, sans-serif"</span>)
 
 <span class='kw'>tag</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/htmlDependencies.html'>attachDependencies</a></span>(<span class='kw'>tag</span>, <span class='fu'>marianne_font_dep</span>())
 
-<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/html_print.html'>html_print</a></span>(<span class='kw'>tag</span>)</div></pre>
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/html_print.html'>html_print</a></span>(<span class='kw'>tag</span>)
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -184,7 +183,7 @@ Markdown output formats or Shiny applications.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Authors • gouvdown</title>
+<title>create html_gouv header — create_header_html_gouv • gouvdown</title>
 
 
 <!-- jquery -->
@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
-<link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script>
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -33,13 +33,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Authors" />
+<meta property="og:title" content="create html_gouv header — create_header_html_gouv" />
+<meta property="og:description" content="create html_gouv header" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -70,7 +71,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">gouvdown</a>
+        <a class="navbar-link" href="../index.html">gouvdown</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
       </span>
     </div>
@@ -78,13 +79,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -94,12 +95,12 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/graph_gouv.html">Réaliser vos graphiques avec `gouvdown`</a>
+      <a href="../articles/graph_gouv.html">Réaliser vos graphiques avec `gouvdown`</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="news/index.html">Changelog</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -120,38 +121,55 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Authors</h1>
+    <h1>create html_gouv header</h1>
+    <small class="dont-index">Source: <a href='https://github.com/spyrales/gouvdown/blob/master/R/html_gouv.R'><code>R/html_gouv.R</code></a></small>
+    <div class="hidden name"><code>create_header_html_gouv.Rd</code></div>
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong>Maël Theulière</strong>. Author, maintainer. 
-        </p>
-      </li>
-      <li>
-        <p><strong>Romain Lesur</strong>. Author. <a href='https://orcid.org/0000-0002-0721-5595' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
-        </p>
-      </li>
-      <li>
-        <p><strong>Thomas Vroylandt</strong>. Author. 
-        </p>
-      </li>
-      <li>
-        <p><strong> République Française</strong>. Copyright holder. 
-        </p>
-      </li>
-      <li>
-        <p><strong> ThinkR</strong>. Copyright holder. 
-        <br /><small>helper functions from drealdown</small></p>
-      </li>
-    </ul>
+    <div class="ref-description">
+    <p>create html_gouv header</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>create_header_html_gouv</span>(
+  logo = <span class='kw'>NULL</span>,
+  file = <span class='fu'><a href='logo_file_path.html'>logo_file_path</a></span>(<span class='kw'>logo</span>),
+  output = <span class='st'>"header.html"</span>
+)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>logo</th>
+      <td><p>Name of a logo available in <code>gouvdown</code>. The list of available
+logos can be obtained with <code><a href='list_logos.html'>list_logos()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>file</th>
+      <td><p>Path to a <code>png</code> file.</p></td>
+    </tr>
+    <tr>
+      <th>output</th>
+      <td><p>name of the header. The logo is copied in an 'www' subfolder</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>an html file</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>create_header_html_gouv</span>(logo = <span class='st'>"gouvernement"</span>)
+</div></pre>
   </div>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
+  </div>
 </div>
-
 
 
       <footer>
