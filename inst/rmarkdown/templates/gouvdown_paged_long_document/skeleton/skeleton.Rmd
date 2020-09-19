@@ -1,0 +1,69 @@
+---
+title: "a title"
+subtitle : "a subtitle"
+author: "Your Name"
+date: "The date"
+bloque_marque: "gouvernement"
+output: 
+  gouvdown::html_paged_long_gouv:
+    toc: FALSE
+params:
+  logo: "gouvernement"
+knit: pagedown::chrome_print
+---
+
+```{r setup, include=FALSE}
+library(gouvdown)
+knitr::opts_chunk$set(echo = TRUE)
+# The fonction below create the header.html file included in the document.
+# Change params$logo to change the logo in the header or put in `create_header_html_gouv()` a `file` parameter that link to a png file.
+create_header_html_gouv(logo = params$logo)
+```
+
+# New chapter page {-}
+
+## Adding an RMarkdown Template {-}
+
+### Subtitle {-}
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+
+this is [a link](https://rmarkdown.rstudio.com/)
+
+
+## Figures and tables {-}
+
+### ggplot {-}
+
+This is a ggplot.
+
+```{r theme, echo = FALSE, warning = FALSE, message = FALSE, fig.height = 3.5}
+library(ggplot2)
+library(gouvdown)
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(aes(color = Species, shape = Species)) +
+  labs(
+    x = "Sepal Length", y = "Sepal Width", title = "Sepal Length-Width",
+    subtitle = "with theme_gouv()"
+  ) +
+  theme_gouv() +
+  scale_color_gouv_discrete(palette = "pal_gouv_qual1")
+```
+
+### table  {-}
+
+This is a table.
+
+```{r, result = 'asis'}
+library(knitr)
+kable(mtcars[1:5,],caption = "a table")
+```
+
+# New chapter page {-}
+
+Some text
+

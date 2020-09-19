@@ -1,0 +1,180 @@
+/* ------------------------ */
+/* - Long gouvdown template -*/
+/* ------------------------ */
+
+/* ---------------------- */
+/* pour l'affichage web - debug*/
+/* on def les variables */
+:root {
+  --background: whitesmoke;
+  --pagedjs-width: 210mm;
+  --pagedjs-height: 297mm;
+  --color-paper: white;
+  --color-mbox: rgba(0, 0, 0, 0.2);
+  --running-title-width: 2.5in;
+  --screen-pages-spacing: 5mm;
+}
+
+/* two pages in a row if possible on screen */
+@media screen {
+  body {
+    background-color: var(--background);
+    margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+    display: flex;
+    max-width: calc(var(--pagedjs-width) * 2);
+    flex: 0;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .pagedjs_page {
+    background-color: var(--color-paper);
+    box-shadow: 0 0 0 1px var(--color-mbox);
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: auto auto var(--screen-pages-spacing) auto;
+  }
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+  .pagedjs_page {
+    margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+    margin-left: var(--pagedjs-width);
+  }
+}
+
+/* ---------------------- */
+
+/* page size */
+@page {
+  size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+}
+
+@page :blank {
+
+}
+
+/* compteur de pages */
+/* + footer picto */
+@page chapter{
+  @bottom-center {
+    content: counter(page);
+    font-family: Marianne;
+  }
+}
+
+/* Nouvelle page de chapitre */
+@page chapter:first {
+}
+
+h1 span.header-section-number{
+  position: absolute;
+  top: 1.2cm;
+  left: 7.52cm;
+  margin: 0 0 3cm 0;
+}
+
+/* On overwrite la marge défaut de h1 */
+h1 {
+  margin-block-start: 3.3cm;
+  margin-left: 2cm;
+  margin-right: 2cm;
+  text-align: center;
+
+}
+
+/* mais en ajoutant une exception pour le titre */
+h1.title {
+  margin-block-start: 1cm;
+  text-align: center;
+  font-size: 30pt;
+}
+
+/* On force le saut de page avant le bloc subtitle/auteur/date */
+/* Et après pour avoir une page quasi blanche */
+.subtitle {
+  font-size: 18pt;
+  text-align: center;
+  text-transform: none;
+}
+
+.author {
+  font-size: 18pt;
+  margin-top:12cm;
+}
+
+.date {
+  font-size: 18pt;
+  margin-top: -1.2cm;
+  margin-left: 12cm;
+}
+
+/* Page de garde */
+@page :first{
+}
+
+/* Derniere page */
+.pagedjs_page:last-of-type {
+}
+
+
+/* page breaks; aka CSS fragmentation */
+.level1 {
+  page: chapter;
+}
+
+.section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+  break-after: avoid;
+}
+.footenotes {
+  break-before: always;
+  break-after: always;
+}
+.figure {
+  break-inside: avoid;
+}
+
+/* reset page numbering for main content */
+.main .level1:first-child h1 {
+  counter-reset: page;
+}
+
+/* do not break captions */
+caption {
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* misc elements */
+.subtitle span {
+  font-size: .9em;
+}
+img {
+  max-width: 100%;
+}
+
+/* verbatim */
+blockquote {
+  break-inside: avoid;
+  border-style: dashed none;
+  border-color: #003a5d;
+  margin-left: 2cm;
+  margin-right: 2cm;
+  margin-block-start: 1cm !important;
+}
+
+blockquote > h1{
+  margin-block-start : 1cm;
+}
+
+/* pour le saut de page final qui n'a pas a a voir lieu */
+html, body {
+  border: 1px solid white;
+  height: 99%;
+  page-break-after: avoid;
+  page-break-before: avoid;
+}
