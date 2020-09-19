@@ -41,7 +41,8 @@ Imports:
     rmarkdown,
     systemfonts,
     utils,
-    xfun
+    xfun,
+    pagedown
 Suggests: 
     pals,
     scales,

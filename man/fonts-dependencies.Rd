@@ -18,7 +18,7 @@ spectral_sc_font_dep(use_gouvdown_fonts = TRUE)
 }
 \value{
 An object that can be included in a list of dependencies passed to
-\link[htmltools:htmlDependencies]{attachDependencies}.
+\link[htmltools:attachDependencies]{attachDependencies}.
 }
 \description{
 These functions provide common HTML dependencies for re-use by other R

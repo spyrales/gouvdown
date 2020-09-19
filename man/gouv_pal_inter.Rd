@@ -11,7 +11,7 @@ gouv_pal_inter(palette = "pal_gouv_fr", reverse = FALSE, ...)
 
 \item{reverse}{Boolean indicating whether the palette should be reversed.}
 
-\item{...}{Additional arguments passed to \code{\link[grDevices:colorRamp]{grDevices::colorRampPalette()}}.}
+\item{...}{Additional arguments passed to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}}.}
 }
 \value{
 A function that takes an integer argument (the required number of

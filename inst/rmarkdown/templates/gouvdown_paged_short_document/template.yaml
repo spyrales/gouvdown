@@ -1,0 +1,5 @@
+name: gouvdown_paged_short_document
+description: >
+   Output HTML paged document, printable as PDF.
+   Short version (without table of content).
+create_dir: FALSE
