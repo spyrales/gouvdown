@@ -2,7 +2,7 @@
 % Please edit documentation in R/html_gouv.R
 \name{create_header_html_gouv}
 \alias{create_header_html_gouv}
-\title{create html_gouv header}
+\title{create html_gouv bootstrap header}
 \usage{
 create_header_html_gouv(
   logo = NULL,
@@ -22,8 +22,8 @@ logos can be obtained with \code{\link[=list_logos]{list_logos()}}.}
 an html file
 }
 \description{
-create html_gouv header
+create html_gouv bootstrap header
 }
 \examples{
-create_header_html_gouv(logo = "gouvernement")
+create_header_html_gouv(logo = 'gouvernement')
 }

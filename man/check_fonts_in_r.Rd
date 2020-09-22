@@ -30,10 +30,17 @@ check_fonts_in_r(import = FALSE)
 
 # Test if working
 library(ggplot2)
-ggplot(mtcars) + geom_point(aes(cyl, mpg)) + labs(title = "Mon titre avec Marianne", 
-    x = "lab X avec Spectral", y = "Lab Y avec Spectral") + 
-    theme(title = element_text(family = "Marianne"), 
-        axis.title.x = element_text(family = "Spectral"), 
-        axis.title.y = element_text(family = "Spectral"))
+ggplot(mtcars) +
+  geom_point(aes(cyl, mpg)) +
+  labs(
+    title = "Mon titre avec Marianne",
+    x = "lab X avec Spectral",
+    y = "Lab Y avec Spectral"
+  ) +
+  theme(
+    title = element_text(family = "Marianne"),
+    axis.title.x = element_text(family = "Spectral"),
+    axis.title.y = element_text(family = "Spectral")
+  )
 }
 }

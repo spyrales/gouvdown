@@ -1,4 +1,4 @@
-#' create html_gouv header
+#' create html_gouv bootstrap header
 #'
 #' @param file Path to a `png` file.
 #' @param logo Name of a logo available in `gouvdown`. The list of available
@@ -54,7 +54,17 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
 #' @export
 html_gouv = function(..., extra_dependencies = list(),css = NULL,header = 'header.html') {
   default_css <- pkg_resource('css','default.css')
-  if (xfun::loadable("gouvdown.fonts")) {
+  if (xfun::loadable("gouvdown.fonts")){
+    all_css <- c(default_css,css)
+    in_header_gouv <- NULL
+  }
+  else {
+    marianne_css <- pkg_resource('fonts','marianne','stylesheet.css')
+    all_css <- c(default_css,marianne_css,css)
+    spectral_header <- pkg_resource('fonts','spectral','desktop','head.html')
+    spectral_sc_header <- pkg_resource('fonts','spectral','sc','head.html')
+    in_header_gouv <- c(spectral_header,spectral_sc_header)
+  }
   extra_deps <- append(extra_dependencies,
                                list(
                                  marianne_font_dep(),
@@ -62,11 +72,7 @@ html_gouv = function(..., extra_dependencies = list(),css = NULL,header = 'heade
                                  spectral_sc_font_dep()
                                  )
   )
-  }
-  else {
-    extra_deps <- append(extra_dependencies)
-  }
   rmarkdown::html_document(..., extra_dependencies = extra_deps,
-  css = c(default_css,css),
-  includes = includes(before_body = header))
+  css = all_css,
+  includes = includes(in_header = in_header_gouv,before_body = header))
 }

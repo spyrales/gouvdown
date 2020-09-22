@@ -92,11 +92,15 @@ All font sizes are set in points and colors are either a color name or a hex cod
 \examples{
 \dontrun{
 library(ggplot2)
-ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) + 
-    geom_point(aes(color = Species, shape = Species)) + 
-    labs(x = "Sepal Length", y = "Sepal Width", title = "Sepal Length-Width", 
-        subtitle = "with theme_gouv()") + theme_gouv() + 
-    scale_color_gouv_discrete()
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point(aes(color = Species, shape = Species)) +
+  labs(
+    x = "Sepal Length", y = "Sepal Width",
+    title = "Sepal Length-Width",
+    subtitle = "with theme_gouv()"
+  ) +
+  theme_gouv() +
+  scale_color_gouv_discrete()
 }
 
 }
