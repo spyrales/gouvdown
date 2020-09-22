@@ -20,7 +20,9 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
   if (!missing(logo)) {
     match.arg(logo, list_logos())
   }
-
+  if (!missing(file) & !file.exists(file)) {
+    stop("the file argument doesn't exist")
+  }
   if (length(file) > 1) {
     stop("please select only one file")
   }
@@ -44,15 +46,22 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
 
 #' gouvdown html document
 #'
-#' @param ... Additional arguments passed to \code{rmarkdown::\link{html_document}()}.
+#' @param ... Additional arguments passed to \code{rmarkdown::\link{html_document}()} except `includes`.
 #' @param extra_dependencies  extra dep
 #' @param css css
-#' @param header header to include
+#' @param logo a logo available in \code{gouvdown::\link{list_logos}()} or a file path to image file
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
 #' @importFrom rmarkdown includes
 #' @export
-html_gouv = function(..., extra_dependencies = list(),css = NULL,header = 'header.html') {
+html_gouv = function(..., extra_dependencies = list(),css = NULL,logo = 'rf') {
+  if (xfun::file_ext(logo) == "") {
+  create_header_html_gouv(logo = logo)
+  }
+  else {
+    match.arg(xfun::file_ext(logo),c("png","svg","jpg","gif"))
+    create_header_html_gouv(file = logo)
+  }
   default_css <- pkg_resource('css','default.css')
   if (xfun::loadable("gouvdown.fonts")){
     all_css <- c(default_css,css)
@@ -74,5 +83,5 @@ html_gouv = function(..., extra_dependencies = list(),css = NULL,header = 'heade
   )
   rmarkdown::html_document(..., extra_dependencies = extra_deps,
   css = all_css,
-  includes = includes(in_header = in_header_gouv,before_body = header))
+  includes = includes(in_header = in_header_gouv,before_body = 'header.html'))
 }

@@ -4,7 +4,7 @@
 \alias{html_gouv}
 \title{gouvdown html document}
 \usage{
-html_gouv(..., extra_dependencies = list(), css = NULL, header = "header.html")
+html_gouv(..., extra_dependencies = list(), css = NULL, logo = "gouvernement")
 }
 \arguments{
 \item{...}{Additional arguments passed to \code{rmarkdown::\link{html_document}()}.}
@@ -13,7 +13,7 @@ html_gouv(..., extra_dependencies = list(), css = NULL, header = "header.html")
 
 \item{css}{css}
 
-\item{header}{header to include}
+\item{logo}{a logo available in \code{gouvdown::\link{list_logos}()} or a file path to image file}
 }
 \value{
 An R Markdown output format object to be passed to

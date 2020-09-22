@@ -2,20 +2,15 @@
 title: "a title"
 author: "Your Name"
 date: "The date"
-bloque_marque: "gouvernement"
 output: 
   gouvdown::html_gouv:
     toc: TRUE
-params:
-  logo: "gouvernement"
+    logo: "rf"
 ---
 
 ```{r setup, include=FALSE}
 library(gouvdown)
 knitr::opts_chunk$set(echo = TRUE)
-# The fonction below create the header.html file included in the document.
-# Change params$logo to change the logo in the header or put in `create_header_html_gouv()` a `file` parameter that link to a png file.
-create_header_html_gouv(logo = params$logo)
 ```
 
 ## Adding an RMarkdown Template
