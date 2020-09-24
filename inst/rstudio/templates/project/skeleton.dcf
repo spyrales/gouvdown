@@ -1,0 +1,4 @@
+Title: Book Project using gouvdown
+Binding: gouvdown_book_skeleton
+OpenFiles: README.md, _bookdown.yml, _output.yml, index.Rmd
+Icon: rf.png

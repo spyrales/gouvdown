@@ -1,0 +1,11 @@
+.book .book-header, .book .book-summary {
+    font-family: "Marianne",Arial,sans-serif;
+    background: #FFFFFF;
+    color: #000091;
+}
+.book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
+    color: #000091;
+}
+.book.font-family-1 p {
+  font-family: Spectral ;
+}

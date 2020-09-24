@@ -4,7 +4,7 @@
 \alias{html_gouv}
 \title{gouvdown html document}
 \usage{
-html_gouv(..., extra_dependencies = list(), css = NULL, logo = "rf")
+html_gouv(..., extra_dependencies = list(), css = NULL, logo = NULL)
 }
 \arguments{
 \item{...}{Additional arguments passed to \code{rmarkdown::\link{html_document}()} except \code{includes}.}

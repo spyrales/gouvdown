@@ -54,13 +54,15 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
 #'   \code{rmarkdown::\link{render}()}.
 #' @importFrom rmarkdown includes
 #' @export
-html_gouv = function(..., extra_dependencies = list(),css = NULL,logo = 'rf') {
-  if (xfun::file_ext(logo) == "") {
-  create_header_html_gouv(logo = logo)
-  }
-  else {
-    match.arg(xfun::file_ext(logo),c("png","svg","jpg","gif"))
-    create_header_html_gouv(file = logo)
+html_gouv = function(..., extra_dependencies = list(),css = NULL,logo = NULL) {
+  if (!is.null(logo)){
+    if (xfun::file_ext(logo) == "") {
+      create_header_html_gouv(logo = logo)
+    }
+    else {
+      match.arg(xfun::file_ext(logo),c("png","svg","jpg","gif"))
+      create_header_html_gouv(file = logo)
+    }
   }
   default_css <- pkg_resource('css','default.css')
   if (xfun::loadable("gouvdown.fonts")){
@@ -81,7 +83,13 @@ html_gouv = function(..., extra_dependencies = list(),css = NULL,logo = 'rf') {
                                  spectral_sc_font_dep()
                                  )
   )
+  if (is.null(logo)) {
+    inc <- includes(in_header = in_header_gouv)
+  }
+  else {
+    inc <- includes(in_header = in_header_gouv,before_body = 'header.html')
+  }
   rmarkdown::html_document(..., extra_dependencies = extra_deps,
   css = all_css,
-  includes = includes(in_header = in_header_gouv,before_body = 'header.html'))
+  includes = inc)
 }
