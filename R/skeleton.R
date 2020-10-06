@@ -5,6 +5,9 @@ gouvdown_book_skeleton <- function(path, ...) {
   if (logo_name != "" & logo_file != "") {
     stop("please select either a logo name or a logo file")
   }
+  if (logo_name !="" & !(logo_name %in% list_logos())){
+    stop(sprintf("%s is not a logo included in {gouvdown}.\nPlease select a logo name in the following list : %s",logo_name, paste(list_logos(),collapse = ", ")))
+  }
   # ensure directory exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
   dir.create(file.path(path, "www"), recursive = TRUE, showWarnings = FALSE)
