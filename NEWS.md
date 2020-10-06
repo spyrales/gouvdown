@@ -1,5 +1,7 @@
 # gouvdown 0.0.0.9000
 
+* Added `Book project using gouvdown` template
+
 * Added `html_gouv()` rmarkdown template and `create_header_html_gouv()` function to make html report.
 
 * Added a vignette on using the `scale_` and `theme_gouv_` functions.
