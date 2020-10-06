@@ -3,11 +3,18 @@
     background: #FFFFFF;
     color: #000091;
 }
+
 .book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
     color: #000091;
 }
+
+
 .book.font-family-1 p {
   font-family: Spectral ;
+}
+
+.book.font-family-1 h1,h2,h3,h4,h5 {
+  font-family: Marianne ;
 }
 
 .book .book-body .navigation:hover  {
