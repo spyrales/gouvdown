@@ -9,3 +9,10 @@
 .book.font-family-1 p {
   font-family: Spectral ;
 }
+
+.book .book-body .navigation:hover  {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
