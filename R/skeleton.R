@@ -12,7 +12,7 @@ gouvdown_book_skeleton <- function(path) {
   target <- file.path(path, files)
   file.copy(source, target)
   # copy 'default.css' and 'gouv_book.css' file to path
-  css <- gouvdown:::pkg_resource('css',c('default.css','gouv_book.css'))
+  css <- pkg_resource('css',c('default.css','gouv_book.css'))
   file.copy(css, path)
   # add book_filename to _bookdown.yml and default to the base path name
   f = file.path(path, '_bookdown.yml')
