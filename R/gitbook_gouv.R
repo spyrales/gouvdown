@@ -2,17 +2,26 @@
 #'
 #' This output format function ported a style provided by GitBook
 #' (\url{https://www.gitbook.com}) for R Markdown.
-#' @inheritParams html_chapters
 #' @param fig_caption,number_sections,self_contained,lib_dir,pandoc_args ...
 #'   Arguments to be passed to \code{rmarkdown::\link{html_document}()}
 #'   (\code{...} not including \code{toc}, and \code{theme}).
+#' @param ... Other arguments to be passed to base_format. For html_book() and tufte_html_book(),
+#'   ... is passed to html_chapters().
 #' @param template Pandoc template to use for rendering. Pass \code{"default"}
 #'   to use the bookdown default template; pass a path to use a custom template.
 #'   The default template should be sufficient for most use cases. In case you
 #'   want to develop a custom template, we highly recommend to start from the
 #'   default template:
 #'   \url{https://github.com/rstudio/bookdown/blob/master/inst/templates/gitbook.html}.
-#'
+#' @param split_by How to name the HTML output files from the book: rmd uses the base filenames of
+#'    the input Rmd files to create the HTML filenames, e.g. generate ‘chapter1.html’ for
+#'    ‘chapter1.Rmd’; none means do not split the HTML file (the book will be a single HTML file);
+#'    chapter means split the file by the first-level headers; section means the second-level headers.
+#'    For chapter and section, the HTML filenames will be determined by the header ID's, e.g.
+#'    the filename for the first chapter with a chapter title # Introduction will be ‘introduction.html’;
+#'    for chapter+number and section+number, the chapter/section numbers will be prepended to the HTML
+#'    filenames, e.g. ‘1-introduction.html’ and ‘2-1-literature.html’.
+#' @param split_bib Whether to split the bibliography onto separate pages where the citations are actually used.
 #' @param config A list of configuration options for the gitbook style, such as
 #'   the font/theme settings.
 #' @param table_css \code{TRUE} to load gitbook's default CSS for tables. Choose
