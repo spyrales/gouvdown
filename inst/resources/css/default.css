@@ -1,7 +1,24 @@
 body{
-  font-family: Spectral;
+  font-family: Marianne;
   font-size: 16px;
 }
+
+blockquote {
+  font-family: Spectral;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding: 0 70px 0 15px !important;
+  border-left: 5px solid #000091;
+  background: transparent;
+  transition: .3s all;
+}
+
+blockquote:hover {
+  border-left: 10px solid #000091;
+  transition: .3s all;
+}
+
 
 h1 {
   display: block;
