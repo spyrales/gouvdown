@@ -1,5 +1,5 @@
 gouvdown::gitbook_gouv:
-  css: ["style.css","marque_etat.css","gouv_book.css"]
+  css: ["style.css","default.css","gouv_book.css"]
   config:
     toc:
       before: |
