@@ -5,7 +5,7 @@
 \title{ggplot2 theme with French government design template}
 \usage{
 theme_gouv(
-  base_family = "Spectral",
+  base_family = "Marianne",
   base_size = 12,
   plot_title_family = "Marianne",
   plot_title_size = 28,

@@ -54,7 +54,7 @@
 #'   scale_color_gouv_discrete()
 #' }
 #'
-theme_gouv <- function(base_family = "Spectral", base_size = 12,
+theme_gouv <- function(base_family = "Marianne", base_size = 12,
                        plot_title_family = "Marianne", plot_title_size = 28,
                        plot_title_face = "bold", plot_title_margin = 10,
                        subtitle_family = "Marianne Light", subtitle_size = 22,
@@ -241,7 +241,7 @@ theme_grey_gouv <- function(...) {
 #'   scale_color_gouv_continuous() +
 #'   labs(title = "North Carolina SIDS", subtitle = "with theme_gouv_map()")
 #' }
-theme_gouv_map <- function(base_family = "Spectral", base_size = 12,
+theme_gouv_map <- function(base_family = "Marianne", base_size = 12,
                            plot_title_family = "Marianne", plot_title_size = 28,
                            plot_title_face = "bold", plot_title_margin = 10,
                            subtitle_family = "Marianne Light", subtitle_size = 22,
