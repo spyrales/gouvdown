@@ -161,6 +161,18 @@ a:active {
         border-bottom-width: 2px;
 }
 
+.tab-content>.tab-pane {
+    animation: fadein .8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
 
 /* Tables */
 
