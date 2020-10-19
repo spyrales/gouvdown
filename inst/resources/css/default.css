@@ -83,6 +83,8 @@ a {
   outline: none;
   text-decoration: none;
   padding: 2px 1px 0;
+  transition-property: background, color;
+  transition-duration: 1s;
 }
 
 a:link {

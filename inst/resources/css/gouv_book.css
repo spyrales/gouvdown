@@ -39,6 +39,43 @@
   text-decoration: none;
 }
 
+#link
+
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  transition-property: background, color;
+  transition-duration: 1s;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:link {
+  color: #000091;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:visited {
+  color: #E18B63;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:focus {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:hover {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:active {
+
+}
+
 #table
 
 .book .book-body .page-wrapper .page-inner section.normal table {
