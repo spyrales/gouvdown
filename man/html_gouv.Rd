@@ -4,12 +4,20 @@
 \alias{html_gouv}
 \title{gouvdown html document}
 \usage{
-html_gouv(..., extra_dependencies = list(), css = NULL, logo = NULL)
+html_gouv(
+  ...,
+  extra_dependencies = list(),
+  includes = NULL,
+  css = NULL,
+  logo = NULL
+)
 }
 \arguments{
-\item{...}{Additional arguments passed to \code{rmarkdown::\link{html_document}()} except \code{includes}.}
+\item{...}{Additional arguments passed to \code{rmarkdown::\link{html_document}()}.}
 
 \item{extra_dependencies}{extra dep}
+
+\item{includes}{Named list of additional content to include within the document (typically created using the \code{rmarkdown::\link{includes}()} function).}
 
 \item{css}{css}
 

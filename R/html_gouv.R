@@ -46,15 +46,16 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
 
 #' gouvdown html document
 #'
-#' @param ... Additional arguments passed to \code{rmarkdown::\link{html_document}()} except `includes`.
 #' @param extra_dependencies  extra dep
+#' @param includes Named list of additional content to include within the document (typically created using the \code{rmarkdown::\link{includes}()} function).
 #' @param css css
+#' @param ... Additional arguments passed to \code{rmarkdown::\link{html_document}()}.
 #' @param logo a logo available in \code{gouvdown::\link{list_logos}()} or a file path to image file
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
 #' @importFrom rmarkdown includes
 #' @export
-html_gouv = function(..., extra_dependencies = list(),css = NULL,logo = NULL) {
+html_gouv = function(..., extra_dependencies = list(),includes=NULL,css = NULL,logo = NULL) {
   if (!is.null(logo)){
     if (xfun::file_ext(logo) == "") {
       create_header_html_gouv(logo = logo)
@@ -89,6 +90,7 @@ html_gouv = function(..., extra_dependencies = list(),css = NULL,logo = NULL) {
   else {
     inc <- includes(in_header = in_header_gouv,before_body = 'header.html')
   }
+  inc <- mapply(c,inc,includes(includes), SIMPLIFY = FALSE)
   rmarkdown::html_document(..., extra_dependencies = extra_deps,
   css = all_css,
   includes = inc)
