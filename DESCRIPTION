@@ -28,6 +28,7 @@ BugReports: https://github.com/spyrales/gouvdown/issues
 Depends: 
     R (>= 3.5)
 Imports: 
+    bookdown,
     colorspace,
     extrafont,
     glue,
