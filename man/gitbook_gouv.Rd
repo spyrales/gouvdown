@@ -4,54 +4,20 @@
 \alias{gitbook_gouv}
 \title{The gouvdown GitBook output format}
 \usage{
-gitbook_gouv(
-  fig_caption = TRUE,
-  number_sections = TRUE,
-  self_contained = FALSE,
-  lib_dir = "libs",
-  pandoc_args = NULL,
-  ...,
-  template = "default",
-  split_by = c("chapter", "chapter+number", "section", "section+number", "rmd", "none"),
-  split_bib = TRUE,
-  config = list(),
-  table_css = TRUE
-)
+gitbook_gouv(..., extra_dependencies = list(), use_gouvdown_fonts = TRUE)
 }
 \arguments{
-\item{fig_caption, number_sections, self_contained, lib_dir, pandoc_args}{...
-Arguments to be passed to \code{rmarkdown::\link{html_document}()}
-(\code{...} not including \code{toc}, and \code{theme}).}
+\item{...}{Additional arguments passed to \code{bookdown::\link{gitbook}()}.}
 
-\item{...}{Other arguments to be passed to base_format. For html_book() and tufte_html_book(),
-... is passed to html_chapters().}
+\item{extra_dependencies}{Additional function arguments to pass to the
+base R Markdown HTML output formatter \code{\link[rmarkdown]{html_document_base}}}
 
-\item{template}{Pandoc template to use for rendering. Pass \code{"default"}
-to use the bookdown default template; pass a path to use a custom template.
-The default template should be sufficient for most use cases. In case you
-want to develop a custom template, we highly recommend to start from the
-default template:
-\url{https://github.com/rstudio/bookdown/blob/master/inst/templates/gitbook.html}.}
-
-\item{split_by}{How to name the HTML output files from the book: rmd uses the base filenames of
-the input Rmd files to create the HTML filenames, e.g. generate ‘chapter1.html’ for
-‘chapter1.Rmd’; none means do not split the HTML file (the book will be a single HTML file);
-chapter means split the file by the first-level headers; section means the second-level headers.
-For chapter and section, the HTML filenames will be determined by the header ID's, e.g.
-the filename for the first chapter with a chapter title # Introduction will be ‘introduction.html’;
-for chapter+number and section+number, the chapter/section numbers will be prepended to the HTML
-filenames, e.g. ‘1-introduction.html’ and ‘2-1-literature.html’.}
-
-\item{split_bib}{Whether to split the bibliography onto separate pages where the citations are actually used.}
-
-\item{config}{A list of configuration options for the gitbook style, such as
-the font/theme settings.}
-
-\item{table_css}{\code{TRUE} to load gitbook's default CSS for tables. Choose
-\code{FALSE} to unload and use customized CSS (for exmaple, bootstrap) via
-the \code{css} option. Default is \code{TRUE}.}
+\item{use_gouvdown_fonts}{Use the fonts provided by the \code{gouvdown.fonts} package, if installed.}
+}
+\value{
+An R Markdown output format object to be passed to
+\code{rmarkdown::\link{render}()}.
 }
 \description{
-This output format function ported a style provided by GitBook
-(\url{https://www.gitbook.com}) for R Markdown.
+The gouvdown GitBook output format
 }
