@@ -8,8 +8,8 @@ NULL
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
 #' @export
-gitbook_gouv <- function(...,
-                         extra_dependencies = list(),
+gitbook_gouv <- function(extra_dependencies = list(),
+                         ...,
                          use_gouvdown_fonts = TRUE) {
   extra_dependencies <- c(
     gouvdown_dependencies(use_gouvdown_fonts),

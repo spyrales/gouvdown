@@ -4,13 +4,13 @@
 \alias{gitbook_gouv}
 \title{The gouvdown GitBook output format}
 \usage{
-gitbook_gouv(..., extra_dependencies = list(), use_gouvdown_fonts = TRUE)
+gitbook_gouv(extra_dependencies = list(), ..., use_gouvdown_fonts = TRUE)
 }
 \arguments{
-\item{...}{Additional arguments passed to \code{bookdown::\link{gitbook}()}.}
-
 \item{extra_dependencies}{Additional function arguments to pass to the
 base R Markdown HTML output formatter \code{\link[rmarkdown]{html_document_base}}}
+
+\item{...}{Additional arguments passed to \code{bookdown::\link{gitbook}()}.}
 
 \item{use_gouvdown_fonts}{Use the fonts provided by the \code{gouvdown.fonts} package, if installed.}
 }

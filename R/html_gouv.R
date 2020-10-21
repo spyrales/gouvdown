@@ -57,9 +57,9 @@ create_header_html_gouv <- function(logo = NULL,
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
 #' @export
-html_gouv = function(...,
-                     extra_dependencies = list(),
+html_gouv <- function(extra_dependencies = list(),
                      includes = NULL,
+                     ...,
                      logo = NULL,
                      use_gouvdown_fonts = TRUE) {
   # init variable
