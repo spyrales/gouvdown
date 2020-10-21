@@ -1,4 +1,4 @@
-#' create html_gouv header
+#' create html_gouv bootstrap header
 #'
 #' @param file Path to a `png` file.
 #' @param logo Name of a logo available in `gouvdown`. The list of available
@@ -12,7 +12,9 @@
 #'
 #' @examples
 #' create_header_html_gouv(logo = 'gouvernement')
-create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), output = 'header.html') {
+create_header_html_gouv <- function(logo = NULL,
+                                    file = logo_file_path(logo),
+                                    output = 'header.html') {
   if (!xor(missing(logo), missing(file))) {
     stop("use either a logo name or a path to a file")
   }
@@ -20,7 +22,9 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
   if (!missing(logo)) {
     match.arg(logo, list_logos())
   }
-
+  if (!missing(file) & !file.exists(file)) {
+    stop("the file argument doesn't exist")
+  }
   if (length(file) > 1) {
     stop("please select only one file")
   }
@@ -40,33 +44,64 @@ create_header_html_gouv <- function(logo = NULL, file = logo_file_path(logo), ou
 </div>"),
     output
   )
+
+  invisible(output)
 }
 
-#' gouvdown html document
+#' gouvdown HTML document
 #'
+#' @inheritParams rmarkdown::html_document
 #' @param ... Additional arguments passed to \code{rmarkdown::\link{html_document}()}.
-#' @param extra_dependencies  extra dep
-#' @param css css
-#' @param header header to include
+#' @param logo a logo available in \code{gouvdown::\link{list_logos}()} or a file path to image file
+#' @param use_gouvdown_fonts Use the fonts provided by the `gouvdown.fonts` package, if installed.
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
-#' @importFrom rmarkdown includes
 #' @export
-html_gouv = function(..., extra_dependencies = list(),css = NULL,header = 'header.html') {
-  default_css <- pkg_resource('css','default.css')
-  if (xfun::loadable("gouvdown.fonts")) {
-  extra_deps <- append(extra_dependencies,
-                               list(
-                                 marianne_font_dep(),
-                                 spectral_font_dep(),
-                                 spectral_sc_font_dep()
-                                 )
+html_gouv <- function(extra_dependencies = list(),
+                     includes = NULL,
+                     ...,
+                     logo = NULL,
+                     use_gouvdown_fonts = TRUE) {
+  # init variable
+  logo_html_fragment <- NULL
+
+  # create HTML fragment for logo
+  if (!is.null(logo)){
+    if (xfun::file_ext(logo) == "") {
+      logo_html_fragment <- create_header_html_gouv(logo = logo)
+    }
+    else {
+      match.arg(xfun::file_ext(logo), c("png", "svg", "jpg", "gif"))
+      logo_html_fragment <- create_header_html_gouv(file = logo)
+    }
+  }
+
+  includes <- as.list(includes)
+  includes$before_body <- c(includes$before_body, logo_html_fragment)
+
+  extra_dependencies <- c(
+    gouvdown_dependencies(use_gouvdown_fonts),
+    extra_dependencies
   )
-  }
-  else {
-    extra_deps <- append(extra_dependencies)
-  }
-  rmarkdown::html_document(..., extra_dependencies = extra_deps,
-  css = c(default_css,css),
-  includes = includes(before_body = header))
+
+  rmarkdown::html_document(
+    extra_dependencies = extra_dependencies,
+    includes = includes, ...
+  )
+}
+
+gouvdown_dependencies <- function(use_gouvdown_fonts = TRUE) {
+  # default CSS stylesheet
+  default_dep <- list(htmltools::htmlDependency(
+    'gouvdown-default', utils::packageVersion('gouvdown'),
+    src = pkg_resource('css'), stylesheet = file.path('default.css')
+  ))
+
+  # fonts dependencies (see R/fonts.R)
+  font_deps <- lapply(
+    paste0(c('marianne', 'spectral', 'spectral_sc'), '_font_dep'),
+    function(x) do.call(x, list(use_gouvdown_fonts = use_gouvdown_fonts))
+  )
+
+  c(font_deps, default_dep)
 }

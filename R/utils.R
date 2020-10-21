@@ -16,3 +16,8 @@
 pkg_resource <- function(...) {
   system.file("resources", ..., package = "gouvdown", mustWork = TRUE)
 }
+
+
+pkg_file <- function(...) {
+  system.file(..., package = "gouvdown", mustWork = TRUE)
+}

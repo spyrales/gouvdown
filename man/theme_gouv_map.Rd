@@ -5,7 +5,7 @@
 \title{ggplot2 theme for map with French government design template}
 \usage{
 theme_gouv_map(
-  base_family = "Spectral",
+  base_family = "Marianne",
   base_size = 12,
   plot_title_family = "Marianne",
   plot_title_size = 28,
@@ -66,8 +66,10 @@ library(ggplot2)
 library(sf)
 demo(nc, ask = FALSE, echo = FALSE)
 
-ggplot(data = nc) + geom_sf(aes(fill = BIR79)) + theme_gouv_map() + 
-    scale_color_gouv_continuous() + labs(title = "North Carolina SIDS", 
-    subtitle = "with theme_gouv_map()")
+ggplot(data = nc) +
+  geom_sf(aes(fill = BIR79)) +
+  theme_gouv_map() +
+  scale_color_gouv_continuous() +
+  labs(title = "North Carolina SIDS", subtitle = "with theme_gouv_map()")
 }
 }

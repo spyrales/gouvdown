@@ -1,7 +1,24 @@
 body{
-  font-family: Spectral;
+  font-family: Marianne;
   font-size: 16px;
 }
+
+blockquote {
+  font-family: Spectral;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding: 0 70px 0 15px !important;
+  border-left: 5px solid #000091;
+  background: transparent;
+  transition: .3s all;
+}
+
+blockquote:hover {
+  border-left: 10px solid #000091;
+  transition: .3s all;
+}
+
 
 h1 {
   display: block;
@@ -66,6 +83,8 @@ a {
   outline: none;
   text-decoration: none;
   padding: 2px 1px 0;
+  transition-property: background, color;
+  transition-duration: 1s;
 }
 
 a:link {
@@ -144,6 +163,18 @@ a:active {
         border-bottom-width: 2px;
 }
 
+.tab-content>.tab-pane {
+    animation: fadein .8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
 
 /* Tables */
 

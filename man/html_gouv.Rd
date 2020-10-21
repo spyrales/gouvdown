@@ -2,23 +2,33 @@
 % Please edit documentation in R/html_gouv.R
 \name{html_gouv}
 \alias{html_gouv}
-\title{gouvdown html document}
+\title{gouvdown HTML document}
 \usage{
-html_gouv(..., extra_dependencies = list(), css = NULL, header = "header.html")
+html_gouv(
+  extra_dependencies = list(),
+  includes = NULL,
+  ...,
+  logo = NULL,
+  use_gouvdown_fonts = TRUE
+)
 }
 \arguments{
+\item{extra_dependencies}{Additional function arguments to pass to the
+base R Markdown HTML output formatter \code{\link[rmarkdown]{html_document_base}}}
+
+\item{includes}{Named list of additional content to include within the
+document (typically created using the \code{\link[rmarkdown]{includes}} function).}
+
 \item{...}{Additional arguments passed to \code{rmarkdown::\link{html_document}()}.}
 
-\item{extra_dependencies}{extra dep}
+\item{logo}{a logo available in \code{gouvdown::\link{list_logos}()} or a file path to image file}
 
-\item{css}{css}
-
-\item{header}{header to include}
+\item{use_gouvdown_fonts}{Use the fonts provided by the \code{gouvdown.fonts} package, if installed.}
 }
 \value{
 An R Markdown output format object to be passed to
 \code{rmarkdown::\link{render}()}.
 }
 \description{
-gouvdown html document
+gouvdown HTML document
 }

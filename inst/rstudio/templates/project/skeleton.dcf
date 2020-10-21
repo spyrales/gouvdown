@@ -1,0 +1,13 @@
+Title: Book Project using gouvdown
+Binding: gouvdown_book_skeleton
+OpenFiles: README.md, _bookdown.yml, _output.yml, index.Rmd
+Icon: rf.png
+
+Parameter: logo_name
+Widget: TextInput
+Label: Select a logo name from `gouvdown::list_logos()`
+
+Parameter: logo_file
+Widget: FileInput
+Label: Import an image file that will be used as logo
+

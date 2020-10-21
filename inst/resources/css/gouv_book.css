@@ -1,0 +1,128 @@
+.book .book-header, .book .book-summary {
+    font-family: "Marianne", Arial, sans-serif;
+    background: #FFFFFF;
+    color: #000091;
+}
+
+.book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
+    color: #000091;
+}
+
+
+.book.font-family-1  {
+  font-family: "Marianne" ;
+}
+
+.book.font-family-1 h1,h2,h3,h4,h5 {
+  font-family: Marianne ;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal  blockquote {
+  font-family: Spectral;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding: 0 70px 0 15px !important;
+  border-left: 5px solid #000091;
+  background: transparent;
+  transition: .3s all;
+}
+.book .book-body .page-wrapper .page-inner section.normal  blockquote:hover {
+  border-left: 10px solid #000091;
+  transition: .3s all;
+}
+
+.book .book-body .navigation:hover  {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#link
+
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  transition-property: background, color;
+  transition-duration: 1s;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:link {
+  color: #000091;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:visited {
+  color: #E18B63;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:focus {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:hover {
+  outline: none;
+  background: #000091;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:active {
+
+}
+
+#table
+
+.book .book-body .page-wrapper .page-inner section.normal table {
+  font-family: Marianne;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table {
+    margin: 25px 0px 35px 20px;
+    width: auto !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 0.5em #ddd;
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal table thead>tr {
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    height: 56px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table thead>tr>th {
+    padding: 3px 15px !important;
+    height: 56px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table tbody>tr>td {
+    padding: 3px 15px !important;
+    height: 56px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table tbody tr.even {
+    background: #FFFFFF;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table tr.odd {
+    background: #FFF;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table tbody tr:hover {
+    background: #e9f0fb;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal .tab-content .table {
+    margin-top: 0px;
+}

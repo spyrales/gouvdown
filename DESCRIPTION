@@ -28,6 +28,7 @@ BugReports: https://github.com/spyrales/gouvdown/issues
 Depends: 
     R (>= 3.5)
 Imports: 
+    bookdown,
     colorspace,
     extrafont,
     glue,
@@ -54,3 +55,14 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Collate: 
+    'colors.R'
+    'fonts.R'
+    'ggthemes.R'
+    'html_gouv.R'
+    'gitbook_gouv.R'
+    'gouv_palettes.R'
+    'logo.R'
+    'skeleton.R'
+    'utils.R'
+    'zzz.R'
