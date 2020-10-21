@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -132,30 +126,30 @@
     <p>ggplot2 theme for map with French government design template</p>
     </div>
 
-    <pre class="usage"><span class='fu'>theme_gouv_map</span>(
-  base_family = <span class='st'>"Spectral"</span>,
-  base_size = <span class='fl'>12</span>,
-  plot_title_family = <span class='st'>"Marianne"</span>,
-  plot_title_size = <span class='fl'>28</span>,
-  plot_title_face = <span class='st'>"bold"</span>,
-  plot_title_margin = <span class='fl'>10</span>,
-  subtitle_family = <span class='st'>"Marianne Light"</span>,
-  subtitle_size = <span class='fl'>22</span>,
-  subtitle_face = <span class='st'>"plain"</span>,
-  subtitle_margin = <span class='fl'>15</span>,
-  strip_text_family = <span class='kw'>base_family</span>,
-  strip_text_size = <span class='fl'>14</span>,
-  strip_text_face = <span class='st'>"plain"</span>,
-  strip_text_color = <span class='st'>"black"</span>,
-  strip_background_color = <span class='st'>"#FFFFFF"</span>,
-  caption_family = <span class='kw'>base_family</span>,
-  caption_size = <span class='fl'>12</span>,
-  caption_face = <span class='st'>"plain"</span>,
-  caption_margin = <span class='fl'>10</span>,
-  plot_margin = <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span>(<span class='fl'>30</span>, <span class='fl'>30</span>, <span class='fl'>30</span>, <span class='fl'>30</span>),
-  legend_background_color = <span class='st'>"#FFFFFF"</span>,
-  legend_border_color = <span class='st'>"#FFFFFF"</span>
-)</pre>
+    <pre class="usage"><span class='fu'>theme_gouv_map</span><span class='op'>(</span>
+  base_family <span class='op'>=</span> <span class='st'>"Marianne"</span>,
+  base_size <span class='op'>=</span> <span class='fl'>12</span>,
+  plot_title_family <span class='op'>=</span> <span class='st'>"Marianne"</span>,
+  plot_title_size <span class='op'>=</span> <span class='fl'>28</span>,
+  plot_title_face <span class='op'>=</span> <span class='st'>"bold"</span>,
+  plot_title_margin <span class='op'>=</span> <span class='fl'>10</span>,
+  subtitle_family <span class='op'>=</span> <span class='st'>"Marianne Light"</span>,
+  subtitle_size <span class='op'>=</span> <span class='fl'>22</span>,
+  subtitle_face <span class='op'>=</span> <span class='st'>"plain"</span>,
+  subtitle_margin <span class='op'>=</span> <span class='fl'>15</span>,
+  strip_text_family <span class='op'>=</span> <span class='va'>base_family</span>,
+  strip_text_size <span class='op'>=</span> <span class='fl'>14</span>,
+  strip_text_face <span class='op'>=</span> <span class='st'>"plain"</span>,
+  strip_text_color <span class='op'>=</span> <span class='st'>"black"</span>,
+  strip_background_color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span>,
+  caption_family <span class='op'>=</span> <span class='va'>base_family</span>,
+  caption_size <span class='op'>=</span> <span class='fl'>12</span>,
+  caption_face <span class='op'>=</span> <span class='st'>"plain"</span>,
+  caption_margin <span class='op'>=</span> <span class='fl'>10</span>,
+  plot_margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span><span class='fl'>30</span>, <span class='fl'>30</span>, <span class='fl'>30</span>, <span class='fl'>30</span><span class='op'>)</span>,
+  legend_background_color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span>,
+  legend_border_color <span class='op'>=</span> <span class='st'>"#FFFFFF"</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -211,15 +205,17 @@
 All font sizes are set in points and colors are either a color name or a hex code.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='http://ggplot2.tidyverse.org'>ggplot2</a></span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://r-spatial.github.io/sf'>sf</a></span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/demo.html'>demo</a></span>(<span class='kw'>nc</span>, ask = <span class='fl'>FALSE</span>, echo = <span class='fl'>FALSE</span>)
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-spatial.github.io/sf/'>sf</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/demo.html'>demo</a></span><span class='op'>(</span><span class='va'>nc</span>, ask <span class='op'>=</span> <span class='cn'>FALSE</span>, echo <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(data = <span class='kw'>nc</span>) <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggsf.html'>geom_sf</a></span>(<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(fill = <span class='kw'>BIR79</span>)) <span class='op'>+</span> <span class='fu'>theme_gouv_map</span>() <span class='op'>+</span> 
-    <span class='fu'><a href='scale_color_gouv_continuous.html'>scale_color_gouv_continuous</a></span>() <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span>(title = <span class='st'>"North Carolina SIDS"</span>, 
-    subtitle = <span class='st'>"with theme_gouv_map()"</span>)
-}
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>nc</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggsf.html'>geom_sf</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>BIR79</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme_gouv_map</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='scale_color_gouv_continuous.html'>scale_color_gouv_continuous</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"North Carolina SIDS"</span>, subtitle <span class='op'>=</span> <span class='st'>"with theme_gouv_map()"</span><span class='op'>)</span>
+<span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

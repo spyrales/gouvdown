@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>gouvdown html document — html_gouv • gouvdown</title>
+<title>gouvdown HTML document — html_gouv • gouvdown</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="gouvdown html document — html_gouv" />
-<meta property="og:description" content="gouvdown html document" />
+<meta property="og:title" content="gouvdown HTML document — html_gouv" />
+<meta property="og:description" content="gouvdown HTML document" />
 
 
 
@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -123,35 +117,47 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>gouvdown html document</h1>
+    <h1>gouvdown HTML document</h1>
     <small class="dont-index">Source: <a href='https://github.com/spyrales/gouvdown/blob/master/R/html_gouv.R'><code>R/html_gouv.R</code></a></small>
     <div class="hidden name"><code>html_gouv.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>gouvdown html document</p>
+    <p>gouvdown HTML document</p>
     </div>
 
-    <pre class="usage"><span class='fu'>html_gouv</span>(<span class='kw'>...</span>, extra_dependencies = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(), css = <span class='kw'>NULL</span>, header = <span class='st'>"header.html"</span>)</pre>
+    <pre class="usage"><span class='fu'>html_gouv</span><span class='op'>(</span>
+  extra_dependencies <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
+  includes <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>...</span>,
+  logo <span class='op'>=</span> <span class='cn'>NULL</span>,
+  use_gouvdown_fonts <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>extra_dependencies</th>
+      <td><p>Additional function arguments to pass to the
+base R Markdown HTML output formatter <code><a href='https://rdrr.io/pkg/rmarkdown/man/html_document_base.html'>html_document_base</a></code></p></td>
+    </tr>
+    <tr>
+      <th>includes</th>
+      <td><p>Named list of additional content to include within the
+document (typically created using the <code><a href='https://rdrr.io/pkg/rmarkdown/man/includes.html'>includes</a></code> function).</p></td>
+    </tr>
+    <tr>
       <th>...</th>
       <td><p>Additional arguments passed to <code><a href='https://rdrr.io/pkg/rmarkdown/man/html_document.html'>rmarkdown::html_document()</a></code>.</p></td>
     </tr>
     <tr>
-      <th>extra_dependencies</th>
-      <td><p>extra dep</p></td>
+      <th>logo</th>
+      <td><p>a logo available in <code>gouvdown::<a href='list_logos.html'>list_logos</a>()</code> or a file path to image file</p></td>
     </tr>
     <tr>
-      <th>css</th>
-      <td><p>css</p></td>
-    </tr>
-    <tr>
-      <th>header</th>
-      <td><p>header to include</p></td>
+      <th>use_gouvdown_fonts</th>
+      <td><p>Use the fonts provided by the <code>gouvdown.fonts</code> package, if installed.</p></td>
     </tr>
     </table>
 
