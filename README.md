@@ -32,9 +32,23 @@ remotes::install_github("spyrales/gouvdown")
 
 ## Theme
 
-gouvdown provides themes for `ggplot2` graphics and maps.
+**gouvdown** provides themes for `{ggplot2}` graphics and maps.
 
 <img src="man/figures/README-theme-1.png" width="100%" />
+
+## Rmarkdown
+
+### html\_document
+
+**gouvdown** provides a html template for `{Rmarkdown}`
+
+![](man/figures/html_gouv.png)
+
+### bookdown
+
+**gouvdown** provides a bookdown project template for `{bookdown}`
+
+![](man/figures/gouvbook.png)
 
 ## References
 

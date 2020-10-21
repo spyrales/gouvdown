@@ -50,7 +50,7 @@ do.call(
 
 ## Theme
 
-gouvdown provides themes for `ggplot2` graphics and maps.
+**gouvdown** provides themes for `{ggplot2}` graphics and maps.
 
 
 ```{r theme, echo = FALSE, warning = FALSE, message = FALSE}
@@ -65,6 +65,20 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   theme_gouv() +
   scale_color_gouv_discrete(palette = "pal_gouv_qual1")
 ```
+
+## Rmarkdown
+
+### html_document
+
+**gouvdown** provides a html template for `{Rmarkdown}`
+
+![](man/figures/html_gouv.png)
+
+### bookdown
+
+**gouvdown** provides a bookdown project template for `{bookdown}`
+
+![](man/figures/gouvbook.png)
 
 ## References
 
