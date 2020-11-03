@@ -117,7 +117,7 @@ plot_etamat_type <- df_mariages_etat_dep_an %>%
 
 
 plot_etamat_type %>%
-  add_plot_header(gglogo("prefecture_pdl"), ratio = 20)
+  add_plot_header(gglogo("prefecture_r52"), ratio = 20)
 
 ```
 

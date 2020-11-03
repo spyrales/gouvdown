@@ -1,5 +1,7 @@
 # gouvdown 0.0.0.9000
 
+* Add logos for regional prefecture and 3 ministries
+
 * Added `Book project using gouvdown` template
 
 * Added `html_gouv()` rmarkdown template and `create_header_html_gouv()` function to make html report.
