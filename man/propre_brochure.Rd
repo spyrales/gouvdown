@@ -4,12 +4,19 @@
 \alias{propre_brochure}
 \title{gouvdown PDF brochure - PROPRE style}
 \usage{
-propre_brochure(..., css = NULL)
+propre_brochure(
+  extra_dependencies = list(),
+  ...,
+  css = NULL,
+  use_gouvdown_fonts = TRUE
+)
 }
 \arguments{
 \item{...}{Additional arguments passed to \code{bookdown::\link{html_document2}()}.}
 
 \item{css}{A character vector of additionnal CSS file paths.}
+
+\item{use_gouvdown_fonts}{Use the fonts provided by the \code{gouvdown.fonts} package, if installed.}
 }
 \value{
 An R Markdown output format object to be passed to
