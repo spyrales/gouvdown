@@ -1,0 +1,8 @@
+name: propre_brochure
+description: >
+   This template implements the French official public design system into a
+   RMarkdown document with a ODF output. This is based on the pagedown package
+   and on pagedjs.
+   This work has been created during the PROPRE process by Julien Taquet and ThinkR.
+   --> TO BE CONTINUED <--
+create_dir: FALSE

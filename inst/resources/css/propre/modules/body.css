@@ -1,0 +1,101 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--font-lineHeight);
+  color: var(--color-body);
+  font-variant-ligatures: common-ligatures;
+}
+
+ul + p,
+ol + p,
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  text-indent: 0;
+}
+
+p {
+  text-indent: var(--text-indent);
+}
+
+ul,
+ol,
+blockquote,
+p {
+  /* baseline reset*/
+  margin: 0;
+  padding: 0;
+  orphans: 2;
+  widows: 2;
+}
+
+.sc-continuous-paragraph {
+  text-indent: 0;
+}
+
+p,
+li {
+  font-size: var(--font-size);
+  line-height: var(--font-lineHeight);
+  text-align: left;
+  hyphens: none;
+}
+
+p + p {
+  text-indent: var(--text-indent);
+}
+
+hr {
+  height: var(--font-lineHeight);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: calc(var(--font-lineHeight));
+  margin-bottom: calc(var(--font-lineHeight));
+  position: relative;
+  top: 4px;
+}
+
+hr::before {
+  width: 100%;
+  position: absolute;
+  display: block;
+  content: "* * *";
+  text-align: center;
+  margin: 0;
+}
+
+blockquote {
+  margin-top: calc(var(--font-lineHeight));
+  line-height: var(--font-lineHeight);
+  margin-bottom: calc(var(--font-lineHeight));
+  padding-left: 20px;
+  margin-left: var(--text-indent);
+  font-style: italic;
+  font-weight: 400;
+  border-left: 5px solid var(--color-primary);
+}
+
+blockquote em {
+  font-style: normal;
+}
+
+em,
+sup,
+sub,
+strong,
+b,
+i {
+  line-height: 0;
+}
+
+.smallcaps {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}

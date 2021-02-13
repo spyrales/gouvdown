@@ -1,0 +1,214 @@
+.page4,
+.page4bis {
+  page: page4;
+}
+
+@page page4 {
+  margin: 8mm;
+}
+
+.colophon {
+  font-size: 0.9em;
+  line-height: 1.3;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-primary);
+  /* color: var(--color-primary); */
+  font-family: var(--font-sans);
+}
+
+.etapes {
+  display: grid;
+  /* grid-template-columns: [left] 1fr [right] 1fr; */
+  border: 1px solid var(--color-bleu-france);
+  padding: 2em;
+}
+
+.etapes .header {
+  grid-column: 1 / 3;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+}
+
+.etapes .header p {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.etape {
+  padding-right: 3ch;
+}
+
+.content ul,
+.content ol {
+  margin: 0;
+  padding: 0;
+}
+
+.content ol {
+  margin-top: 1em;
+}
+
+.handmade h3 {
+  font-family: inherit;
+}
+
+.etape li::marker {
+  color: var(--color-bleu-france);
+  font-size: 1.2em;
+}
+
+ol li::marker {
+  color: red;
+}
+
+#un-processus-technique-reproductible-par-étape h2 {
+  margin-top: 0;
+}
+
+[src*="images/gamer-monochrome.svg"] {
+  height: 150px;
+  position: absolute;
+  bottom: 73px;
+  left: 26%;
+}
+
+.page4bis {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+}
+
+.page4bis h3 {
+  margin-bottom: var(--font-lineHeight);
+  margin-top: calc(var(--font-lineHeight) * 2);
+  position: relative;
+  font-weight: 300;
+  color: var(--color-primary);
+}
+
+.page4bis h3 {
+  margin-bottom: var(--font-lineHeight);
+  margin-top: calc(var(--font-lineHeight) * 2);
+  position: relative;
+  font-weight: 300;
+  color: var(--color-primary);
+}
+
+.page4bis .section {
+  width: 100%;
+  margin: auto;
+  font-weight: 400;
+}
+
+.page4bis  ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 2ch;
+}
+
+.page4bis .etape ol {
+  border-right: none;
+}
+
+.page4bis .etape ol li {
+  margin: 0.5em 0em;
+}
+
+.page4bis h2 {
+  line-height: 1.3;
+}
+
+.page4bis .handmade {
+  font-family: var(--font-hand);
+  font-size: 1.1em;
+  padding-right: 1ch;
+  text-align: left;
+  width: 90%;
+}
+
+.handmade h2 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 1.3em;
+  margin: 1em 0 0 0;
+  line-height: 1.3;
+}
+
+.handmade::after {
+  width: 1px;
+  height: 100px;
+  position: absolute;
+  background: var(--color-body);
+  display: block;
+  margin: 0 auto;
+  left: 50%;
+}
+
+.handmade .fig {
+  align-self: flex-end;
+}
+
+.handmade ol {
+  font-size: 1.2em;
+  line-height: 1.1;
+  margin-bottom: 3em;
+  position: relative;
+  background: white;
+  list-style-type: none !important;
+  margin: 0;
+  padding: 1ch;
+  font-family: var(--font-hand);
+}
+
+.handmade ol li {
+  margin-top: 0.5em;
+}
+
+.handmade ol li p {
+  font-size: .9em;
+  line-height: 1.1;
+}
+
+.handmade + .section h3 {
+  font-size: 1.3em;
+  background: white;
+  padding: 0 2ch;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  margin-top: 2em;
+}
+
+.handmade ol li {
+  display: inline;
+}
+
+.handmade ol li p {
+  display: inline;
+}
+
+.handmade ol strong {
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  line-height: 1.3;
+  text-align: center;
+  width: 49%;
+  font-weight: 400;
+}
+
+.plus p {
+  margin-bottom: .5em;
+  font-family: var(--font-serif);
+  text-indent: 0;
+}
+

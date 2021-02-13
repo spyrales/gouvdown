@@ -1,0 +1,40 @@
+:root {
+  /* color for the interface */
+  --color-background: rgba(0, 0, 0, 0.2);
+  /* --color-marginBox: red; */
+  --color-pageBox: brown;
+  --color-paper: white;
+  --color-ruler: brown;
+  --link-background: var(--color-paper);
+
+  /* color used for the baseline */
+  --color-baseline: cyan;
+
+
+  /* fonts for the book */
+  
+  --font-serif: "Spectral";
+  --font-sans: "Marianne";
+  --font-hand: "Caveat";
+  
+  --font-body: var(--font-sans);
+  --font-body-small-caps: var(--font-sans);
+  --font-text: var(--font-sans);
+  --font-title: var(--font-sans);
+  
+  /* for the state stuff */
+  --unit: 6mm;
+
+  /* typographic related variables */
+  --font-size: 13px;
+  --font-lineHeight: 18px;
+  --text-indent: 3em;
+  --color-body: black;
+  --color-primary: var(--color-bleu-france);
+  --color-secondary: var(--color-rouge-marianne);
+
+
+
+  /* colors from the palette */
+}
+

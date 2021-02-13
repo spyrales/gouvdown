@@ -1,0 +1,51 @@
+img {
+  object-fit: contain;
+}
+
+figure {
+  /* border: 2px solid red; */
+  padding: 0;
+  margin: 0;
+  margin-top: var(--font-lineHeight);
+  margin-bottom: var(--font-lineHeight);
+}
+
+figcaption::before {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  margin-bottom: 0;
+  text-align: center;
+  display: block;
+  color: var(--color-primary);
+  line-height: 6px;
+  margin-top: 5px;
+}
+
+  figcaption p {
+    text-align: center;
+    /* max-width: 70%; */
+    hyphens: none;
+  }
+
+  figure {
+    border: 2px solid var(--color-primary);
+  }
+
+.screenshot img {
+  width: 100%;
+  height: calc(var(--font-lineHeight) * 19);
+}
+
+
+.full-page {
+page: fullpage;
+}
+
+@page fullpage {
+    /* background: greenyellow; */
+}
+
+
+.pagedjs_page figure:first-child { 
+  margin-top: 0;
+}

@@ -1,0 +1,33 @@
+table {
+  border-collapse: collapse;
+  /* border: 1px solid black; */
+  font-size: 0.9em;
+  line-height: 1.2;
+  table-layout: fixed;
+  margin-bottom: var(--font-lineHeight);
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid black;
+  padding: 0.3em;
+  vertical-align: top;
+}
+
+table th {
+  background: rgb(230, 230, 230);
+}
+
+p,
+li {
+  font-size: 1em;
+  text-align: left;
+  text-indent: 0;
+  line-height: 1.2;
+}
+
+th:empty {
+  border: 0;
+  background: unset;
+}

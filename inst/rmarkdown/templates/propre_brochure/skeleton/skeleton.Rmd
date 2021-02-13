@@ -1,0 +1,311 @@
+---
+title: "La démarche Propre"
+subtitle:
+abstract: 
+abstract-title: 
+author: 
+lang: fr
+paged-footnotes: true
+output: gouvdown::propre_brochure
+knit: pagedown::chrome_print
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+::: {#titlepage}
+
+
+:::: {#bloc-marianne}
+![Marianne — Liberté, égalité, fraternité](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/marianne.svg)
+
+## Ministères <br/>Transition écologique <br/> Cohésion des territoires <br/> Mer
+
+![Liberté, égalité, fraternité](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/lib-eg-fra.svg)
+
+
+::::
+
+
+::::{#header}
+
+# La démarche PROPRE
+
+## Et s’il existait un outil mutualisé, presque clef en main, qui permette aux DREAL/DEAL de publier périodiquement leurs analyses de façon homogène et dans des délais raccourcis ?
+
+
+::::
+
+
+
+<!-- ![ test ](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/online-community.svg) -->
+![  ](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/cover.svg)
+
+:::
+
+
+:::{.page2}
+
+::::{.header}
+
+Depuis 2015, le datalab de la DREAL Pays de la Loire a expérimenté de nouvelles méthodes de travail autour du *Design Thinking* et des process agile pour réaliser ses publications statistiques. En opérant le pivot d'une culture de la donnée vers une culture logicielle, il se dote de PROPRE pour PROcessus de Publications REproductibles et métamorphose son métier. Premier exemple de cette (r)évolution, la publication coordonnée inter-DREAL sur le répertoire du parc locatif social.
+
+::::
+
+::::{.sub}
+
+::::::{.intro}
+La démarche repose sur une adaptation pour la publication d'analyses statistiques de principes de développement logiciel. Un langage de programmation est utilisé pour scripter des actions dans un formalisme qui permet de construire un traitement reproductible et intégré, de la donnée jusqu'à la communication des résultats sous forme de pages web, d'applications interactives en ligne et de documents imprimés. 
+::::::
+
+![](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/schoolbooks-monochrome.svg)
+
+### R, langage à tout faire de la statistique
+
+R est un langage de programmation particulièrement adapté à une approche intégrée de l'exploitation de la donnée. Que ce soit pour structurer les données, les analyser, en tracer des graphiques ou les mettre en page dans des rapports : tout peut être développé dans ce même langage. Il n’est plus nécessaire d'opérer de multiples changements d'outils sujets à l'erreur. Propre est une chaîne de traitement normalisée où R est la cheville ouvrière de la publication tant dans sa dimension éditoriale que statistique. Sa mise en oeuvre est ici inspirée du mouvement *DevOps*, pratique d'ingéniérie logicielle fondée sur l'automation et le monitoring.
+
+:::::::{.rpls}
+Au début des travaux sur le Répertoire du parc locatif social (RPLS), les connaissances en R des acteurs impliqués dans le projet allaient de l'excellente maîtrise technique à la simple prise de conscience. C'est pour ses propriétés open source et sa polyvalence qu'il a été choisi pour Propre. 
+:::::::
+
+### La pratique Devops pour guide
+
+L'approche DevOps défend un *continuum* entre les *Dev* (chargés de développer de nouvelles solutions) et les *Ops* (garants de l'intégrité et de la stabilité des systèmes opérants) en plaçant l'utilisateur au cœur des préoccupations. Les “dev” vont programmmer, compiler, tester et livrer aux “ops” qui vont déployer, opérer, monitorer pour informer les “dev” des nouveaux développements à planifier et ainsi boucler la boucle. L’innovation se fait grâce au travail commun de l’ensemble des membres de l’équipe, dans une coopération de fait où chaque partie prenante prend sa part de responsabilité en se préoccupant de ce qui se passe en amont et de ce qui est attendu en aval. 
+
+:::::::{.rpls}
+Étant eux-aussi utilisateurs du produit logiciel, les agents impliqués dans le cas d'école RPLS ont été responsabilisés sur les liens de cause à effet de leurs choix. Cela s'est traduit par une importante solidarité. 
+:::::::
+
+### La forge logicielle pour fédérer
+
+Pour qu’une telle organisation puisse prendre vie, la démarche Propre s’appuie sur une forge logicielle, lieu de façonnage des publications. Elle est construite autour d’un outil qui monitore et sécurise les modifications du code et du contenu. À chaque mise à jour, les résultats sont vérifiés par un lot de tests de conformité automatisés et approuvés par un relecteur. Se tromper est permis par la possibilité de revenir en arrière à tout moment et en sécurité. L' *intégration continue* des modifications est rendue possible au moyen d'une importante communication, qu’il s’agisse de commentaires directement au niveau du code ou d’espaces de conversations synchrones ou asynchrones. 
+
+:::::::{.rpls}
+Véritable lieu de rencontre et de capitalisation, la forge RPLS est à la fois la mémoire et la manifestation tangible des travaux qui en sont issus.  
+:::::::
+
+### Le paquet R comme outil collaboratif
+
+
+
+L'objet logiciel produit dans la démarche Propre est particulier, c'est un paquet R. Une brique standardisée et réutilisable qui contient fonctionnalités, documentation et tests. Sa nature lui confère intégrité, maintenabilité et pérennité. Tout utilisateur est un potentiel contributeur en mesure de développer de nouvelles fonctionnalités, éventuellement reversées. Évolutivité et collaboration sont structurellement inscrites dans le concept de paquet R élaboré dans une forge logicielle.
+
+:::::::{.rpls}
+La mutualisation des travaux sous forme d'un outil empaqueté a permis une publication collaborative et coordonnée pour toutes les régions sur l'état du parc locatif social.
+:::::::
+
+### Mise en forme & maintenance
+
+Propre est une chaîne de publication réactive bénéficiant d'une mise en forme automatisée. Les contenus sont élaborés en parallèle de leur allure graphique en respectant le principe de séparation des préoccupations. Une mise à jour du fond présentera un résultat toujours homogène dans sa mise en forme. À l'inverse, une mise à jour de la forme pourra être répercutée sur tous les contenus. Les tests, intrinsèques à la démarche, enrayent d'éventuels effets de bord. La mise à jour du document est ainsi produite au fur et à mesure que les données sont actualisées. Et puisque les éléments sont rédigés et développés de manière sémantique, il est possible de les rendre lisibles dans un rapport imprimé, sur un terminal mobile, un écran ou une application, offrant de plus grandes possibilités d’interaction pour l’utilisateur.
+
+:::::::{.rpls}
+La transcription de la marque État en un paquet R prêt à l'emploi a permis aux équipes mobilisées sur le RPLS de se focaliser sur le fond plutôt que la forme tout en garantissant un résultat homogène.
+:::::::
+
+### Valorisation des agents
+
+Épouser l'approche Propre, c'est opter pour R au sein d'une forge logicielle conduite selon une approche *Devops* responsabilisante. C'est une expérience stimulante et enrichissante. L'élaboration de communs sculptés spécifiquement pour des besoins métiers adressés collectivement donne du sens aux travaux. Apporter de la valeur ajoutée au processus ne se traduit pas nécessairement par la production de code R mais aussi par l'élaboration de contenus éditoriaux, la documentation ou encore la traduction en spécifications de besoins utilisateurs. L'objet produit dans la démarche Propre concentre ainsi le fruit d'une intelligence collective, en lien avec l’évolution des usages et les métiers des agents. Il s'anime en temps réel grâce à une communication étroite et bienveillante.  
+
+:::::::{.rpls}
+L’aptitude à concevoir des paquets R en lien avec les usages de façon collaborative et solidaire est une nouvelle compétence pour les agents, transposable dans ses principes à d'autres projets de développement logiciel. 
+:::::::
+
+### Une question ? 
+
+Pour en savoir plus sur la démarche, vous pouvez vous mettre en relation avec juliette.engelaere@developpement-durable.gouv.fr ou mael.theuliere@developpement-durable.gouv.fr, à l’initiative de la démarche.
+
+
+::::{.chiffres}
+## Propre.rpls en quelques chiffres
+
+![](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/drawkit-full-stack-man-monochrome.svg)
+
+- 14 publications déployées sur ce canevas commun
+- 7 DREAL mobilisées ainsi que le SDES (producteur de la donnée)
+- 4,9 k messages asynchrones
+- 5 réunions synchrones
+- une forge publique qui compte un projet déployé et un guide de publication
+- 146 demandes (dont 114 closes) et 215 jalons de développements pour le paquet `{propre.rpls}`
+- 166 revues de code approuvées 
+- 96 % du code couvert par des tests fonctionnels
+- 300 litres de café
+
+::::
+
+
+::::
+
+
+:::
+
+
+
+
+
+:::{.page4bis}
+
+
+::::{.handmade}
+
+## Image rare d’un agent expliquant sa mission, avant la démarche Propre
+
+:::{.fig}
+
+1. D’abord, tu trouves le site où les données sont partagées (oui, cherche l’open data)
+
+1. là, tu vas pouvoir télécharger plusieurs séries de données, une pour chaque millésime normalement
+
+1. Tu as créé un dossier ? Place les données dedans.
+
+1. C’est un CSV ? Ouvre un des fichiers dans Excel… Oui Open Office ça marche aussi… 
+
+1. Attends, c’est pas normal. Tu m’envoies le fichier ? … Ah j’ai compris! Ils ont inversé les virgules et les points… oui, voilà, les milliers avec des virgules, des décimales avec les points
+
+1. T’es bon pour passer par notepad. Tu fais un rechercher-remplacer, les virgules en point et vice versa. Fais une copie du fichier!
+
+1. C’est bon t’as ouvert dans Excel ? Open Office pardon. Bon, parfait, faudra que tu fasses pareil pour les trois autres fichiers.
+
+1. Là, dans le classeur, y a les formules pour les transformations, faut que tu regardes dans le fichier docx sur le bureau, y a la liste des macros accessibles,
+
+1. Tu peux faire les graphiques que tu veux, sachant que de toute façon ça passera par la com’ qui voudra sûrement un fichier modifié pour leur site. 
+
+1. Là, tu te mets au propre sur le premier fichier, par ce qu’il te faudra faire pareil sur les autres… D’expérience, tu devrais le faire assez vite pour voir s’il te manque pas des données, ou si le tableau est différent.
+
+1. Une fois que t’as tes données, il te reste la partie intéressante, tu lances la version open office de Word et tu commences à rédiger… Oui Oui, tu copies-colles les graphes et les tableaux que tu veux avoir dedans, là où tu les veux.
+
+1. quand t’as fini, t’envoies au bureau d’au-dessus. Après avoir fait lire aux collègues, et tu fais une copie du fichier, et tu fais attention au nom des versions. Et tu attends le retour pour faire toutes les corrections en même temps.
+
+1. Oui, si y a besoin tu édites le fichier excel et tu copies-colles (encore) dans Word. Quand c’est tout bon, tu fais partir…
+
+1. Ah si, ça arrive… régulièrement… Quand il y a un changement dans les sources faut tout refaire… Comment on sait quoi ? Si les sources ont changé ? Ben tu vérifies… Je sais, mais y a pas trop le choix.
+
+1. Ah ben quand ça t’arrive t’es pas content non, personne n’aime tout refaire depuis le début, mais y' a pas vraiment d’autres solutions…
+
+1. **Mais tu verras, une fois que t’as compris le truc, c’est pas si compliqué**
+    
+:::
+
+![](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/gamer-monochrome.svg)
+
+::::
+
+
+::::{.content}
+
+
+:::{.header}
+## Avec la démarche Propre, c’est un processus technique de publication reproductible, par étape
+
+En adoptant la démarche Propre, les flux opérationnels deviennent plus techniques car ils demandent plus de connaissances et de compétences logicielles mais la nature des travaux s'en trouve enrichie. Le processus est sécurisé et fiable car reproductible, versionné et intégré. Une approche comparée illustre les bénéfices d'une approche programmatique et logicielle. 
+
+:::::{.etape}
+
+1. Créer un nouveau projet et appeler le paquet R Propre
+
+2. Appeler les jeux de données directement depuis RStudio
+
+3. Filtrer, agréger, résumer, transformer, modéliser, prédire, et ce dans un langage clair, lisible, « qui dit ce qu’il fait et qui fait ce qu’il dit »
+
+4. Utiliser la programmation fonctionnelle pour sécuriser et paralléliser les sorties ou outputs (calculs, tableaux, graphiques et rapports complets) dans R
+
+5. Soumettre les résultats versionnés à ses collègues et supérieurs en temps réel via des outils dédiés et performants où chacun peut intéragir dans un espace sécurisé (en utilisant l’outil open source Gitlab par exemple).
+
+6. Rejouer les analyses à la demande dans R (y compris en cas de modification des sources)
+
+7. Diffuser (en ligne, sur un serveur de partage, par envoi de mail, ou produire un document imprimé…) depuis R et de façon automatique et intégrée
+
+:::::
+
+
+
+:::{.plus}
+## Pour en savoir plus
+
+Quelques mots sur la démarche : https://gitlab.com/rdes_dreal/propre.rpls/-/wikis/d%C3%A9marche%20propre
+
+Le code source du paquet : https://gitlab.com/rdes_dreal/propre.rpls
+
+La documentation technique : https://rdes_dreal.gitlab.io/propre.rpls/dev/articles/aa-prise-en-main.html
+
+La trame des publications : https://gitlab.com/rdes_dreal/propre.rpls/-/wikis/Trame-de-publication-r%C3%A9gionale-RPLS
+
+
+:::
+
+
+::::
+
+
+
+
+:::
+
+
+::::{.colophon}
+
+Le document que vous avez sous les yeux a été réalisé dans le cadre de la démarche Propre: la mise en page a été réalisée en même temps que son contenu. Le code source de ce document est accessible [ici](https://gitlab.com/rdes_dreal/propre.brochure/). Les illustrations ont été réalisées par www.drawkit.io, les caractères typographiques Marianne et Spectral ont respectivement été dessinées et développées par Mathieu Réguer & par Production Type.
+
+::::
+
+
+::::
+
+
+
+
+
+
+
+
+```{js, echo=FALSE}
+
+PagedConfig.auto=true;
+
+class cleanLinks extends Paged.Handler {    
+  constructor(chunker, polisher, caller) {
+    super(chunker, polisher, caller);
+  }
+  
+  beforeParsed(content) {
+    cleanLink(content);
+    imgHandling(content);
+  }
+}
+
+function imgHandling(content) {
+  content.querySelectorAll("img").forEach(img => {
+    img.parentElement.classList.add("img-wrapper");
+    img.parentElement.id = `img-${img.src}`;
+  })
+}
+
+
+function cleanLink(content) {
+  //add wbr to / in links
+  const links = content.querySelectorAll('a[href^="http"], a[href^="www"]');
+  links.forEach(link => {
+    // Rerun to avoid large spaces. Break after a colon or a double slash (//) or before a single slash (/), a tilde (~), a period, a comma, a hyphen, an underline (_), a question mark, a number sign, or a percent symbol.
+    const content = link.textContent;
+    let printableUrl = content.replace(/\/\//g, "//\u003Cwbr\u003E");
+    printableUrl = printableUrl.replace(/\,/g, ",\u003Cwbr\u003E");
+    // put wbr around everything.
+    printableUrl = printableUrl.replace(
+      /(\/|\~|\-|\.|\,|\_|\?|\#|\%)/g,
+      "\u003Cwbr\u003E$1"
+    );
+    // turn hyphen in non breaking hyphen
+    printableUrl = printableUrl.replace(/\-/g, "\u003Cwbr\u003E&#x2011;");
+    link.setAttribute("data-print-url", printableUrl);
+    link.innerHTML = printableUrl;
+  });
+
+  }
+  
+
+  Paged.registerHandlers(cleanLinks);
+
+```
+
+
+

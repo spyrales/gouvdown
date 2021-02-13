@@ -1,0 +1,20 @@
+/* running elements  */
+
+@page {
+  size: A4;
+  
+  margin-right: 17mm;
+  margin-left: 17mm;
+  
+}
+
+
+
+
+[id*="page"] {
+  break-before: page;
+}
+
+
+
+#que-couvre-le-rapport h3  {margin-top: 0;}

@@ -1,0 +1,77 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-style: normal;
+  font-family: var(--font-title);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  min-height: calc(var(--font-lineHeight) * 14);
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 1.2;
+  font-style: normal;
+  margin-top: calc(var(--font-lineHeight) * 2);
+  margin-bottom: calc(var(--font-lineHeight) * 1);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: calc(var(--font-lineHeight) * 2);
+  margin-bottom: calc(var(--font-lineHeight) * 1);
+  font-style: normal;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 18px;
+  /* margin-left: 39px; */
+  margin-bottom: 0;
+  color: var(--color-primary);
+  margin-top: calc(var(--font-lineHeight) * 1);
+  color: black;
+  /* text-decoration: underline; */
+}
+
+h4 {
+  font-size: var(--font-size);
+  font-weight: 600;
+  margin-top: var(--font-lineHeight);
+  color: var(--color-body);
+}
+
+h5 {
+  font-size: var(--font-size);
+  font-weight: 400;
+  margin-top: calc(var(--font-lineHeight) / 2);
+  margin-bottom: calc(var(--font-lineHeight) / 2);
+  margin-left: var(--text-indent);
+  color: var(--color-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  break-after: avoid;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  text-indent: 0;
+}

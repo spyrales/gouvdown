@@ -42,7 +42,8 @@ Imports:
     rmarkdown,
     systemfonts,
     utils,
-    xfun
+    xfun,
+    pagedown
 Suggests: 
     pals,
     scales,
@@ -63,6 +64,7 @@ Collate:
     'gitbook_gouv.R'
     'gouv_palettes.R'
     'logo.R'
+    'propre_brochure.R'
     'skeleton.R'
     'utils.R'
     'zzz.R'

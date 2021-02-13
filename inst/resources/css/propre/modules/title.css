@@ -1,0 +1,88 @@
+img {
+  height: auto;
+}
+
+#titlepage {
+  page: title;
+}
+
+@page title {
+  margin-top: 8mm;
+  margin-bottom: 8mm;
+}
+
+#titlepage .caption {
+  display: none;
+}
+
+@media print {
+  /* page de titre (front page) */
+
+  /* front page crée automatiquement vient rendre problématique le 4 pages */
+
+
+  #bloc-marianne {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  #bloc-marianne h2 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  #bloc-marianne [src*="marianne.svg"] {
+    height: var(--unit);
+    width: auto;
+  }
+
+  #bloc-marianne [src*="lib-eg-fra.svg"] {
+    width: calc(3 * var(--unit));
+    margin-top: .3em;
+  }
+
+  #bloc-marianne {
+    margin-bottom: calc(2 * var(--unit));
+  }
+
+  #header {
+    margin: 0;
+    padding: 0;
+    margin-left: calc(2 * var(--unit));
+    display: flex;
+  }
+
+  #header h1 {
+    font-size: 5.5em;
+    line-height: 1.1;
+  }
+
+  #header h2 {
+    max-width: 30ch;
+    line-height: 1.4;
+    font-weight: 300;
+  }
+
+  #header + p {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+  }
+
+  #titlepage img {
+    width: 400px;
+  }
+
+  img[src*="cover"] {
+    position: absolute;
+    width: 348px;
+    right: 0;
+  }
+}

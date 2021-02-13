@@ -1,0 +1,41 @@
+/* import your fonts if you have some in the src/fonts folder */
+/* @import "modules/fonts.css"; */
+
+/* theming of the book  */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+@import 'modules/reset.css';
+@import "modules/fonts.css";
+@import "modules/colors.css";
+@import "modules/vars.css";
+@import "modules/body.css";
+@import "modules/header.css";
+@import "modules/pictures.css";
+@import "modules/list.css";
+@import "modules/table.css";
+@import "modules/numbering.css";
+@import "modules/notes.css";
+@import "modules/title.css";
+@import "modules/page2.css";
+@import "modules/page3.css";
+@import "modules/page4.css";
+/* @import "modules/title.css"; */
+
+
+/* css for the layouts */
+/* paged.js tool import */
+
+/* paged js interface and screen view css */
+@import "interface/interface.css";
+
+/* baseline helper */
+@import "interface/baseline.css";
+
+/* the book */
+@import "modules/layout.css";
+
+/* hack for stuff not implemented yet */
+@import "interface/hack.css";
+
+
+

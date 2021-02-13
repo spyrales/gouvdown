@@ -1,0 +1,48 @@
+ol,
+ul {
+  margin-left: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+li p {
+  text-indent: 0;
+}
+li {
+  text-indent: 0;
+}
+
+ol[data-split-from],
+ul[data-split-from] {
+  /* hack to get the grid back */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+section:not(.toc) ol {
+  list-style-type: none;
+  counter-reset: ol;
+}
+
+section:not(.toc) ol  li {
+  counter-increment: ol;
+}
+
+section:not(.toc) ol li::before {
+  content: counter(ol) ". ";
+  width: 14px;
+  display: block;
+  position: absolute;
+  margin-left: -25px;
+  text-align: right;
+  font-variant-numeric: oldstyle-nums;
+}
+
+
+ul ul {
+  break-before: avoid;
+}
