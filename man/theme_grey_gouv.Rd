@@ -18,15 +18,11 @@ ggplot2 grey theme with French government design template
 \examples{
 \dontrun{
 library(ggplot2)
-ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
-  geom_point(aes(color = Species, shape = Species)) +
-  labs(
-    x = "Sepal Length", y = "Sepal Width",
-    title = "Sepal Length-Width",
-    subtitle = "with gouv_theme()"
-  ) +
-  theme_grey_gouv() +
-  scale_color_gouv_discrete(palette = "pal_gouv_fr")
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) + 
+    geom_point(aes(color = Species, shape = Species)) + 
+    labs(x = "Sepal Length", y = "Sepal Width", title = "Sepal Length-Width", 
+        subtitle = "with gouv_theme()") + theme_grey_gouv() + 
+    scale_color_gouv_discrete(palette = "pal_gouv_fr")
 }
 
 }
