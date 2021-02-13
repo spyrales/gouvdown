@@ -6,13 +6,23 @@
 \usage{
 propre_brochure(
   extra_dependencies = list(),
+  includes = NULL,
   ...,
+  logo = NULL,
   css = NULL,
   use_gouvdown_fonts = TRUE
 )
 }
 \arguments{
+\item{extra_dependencies}{Additional function arguments to pass to the
+base R Markdown HTML output formatter \code{\link[rmarkdown]{html_document_base}}}
+
+\item{includes}{Named list of additional content to include within the
+document (typically created using the \code{\link[rmarkdown]{includes}} function).}
+
 \item{...}{Additional arguments passed to \code{bookdown::\link{html_document2}()}.}
+
+\item{logo}{a logo available in \code{gouvdown::\link{list_logos}()} or a file path to image file}
 
 \item{css}{A character vector of additionnal CSS file paths.}
 

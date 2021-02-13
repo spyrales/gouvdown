@@ -1,12 +1,14 @@
 ---
-title: "La démarche Propre"
+title: La démarche Propre
 subtitle:
 abstract: 
 abstract-title: 
 author: 
 lang: fr
 paged-footnotes: true
-output: gouvdown::propre_brochure
+output: 
+  gouvdown::propre_brochure:
+    logo: "ministere_te_tc_mer"
 knit: pagedown::chrome_print
 ---
 
@@ -15,18 +17,6 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ::: {#titlepage}
-
-
-:::: {#bloc-marianne}
-![Marianne — Liberté, égalité, fraternité](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/marianne.svg)
-
-## Ministères <br/>Transition écologique <br/> Cohésion des territoires <br/> Mer
-
-![Liberté, égalité, fraternité](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/lib-eg-fra.svg)
-
-
-::::
-
 
 ::::{#header}
 
