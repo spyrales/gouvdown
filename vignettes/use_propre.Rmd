@@ -1,0 +1,42 @@
+---
+title: "Documents PDF paginés"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Documents PDF paginés}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(gouvdown)
+```
+
+## Principes généraux
+
++ utilisation de `rmarkdown` et de `pagedown` (lien vers une ressource)
++ explication du principe de paged.js
++ apport de la production de fichiers PDF directement
++ au travers de styles web (HTML + CSS) plutôt qu'en passant par LaTeX
++ wrapper de l'ensemble dans `gouvdown` qui implémente les styles de la marque-État
+
+## Utilisation
+
++ YAML et arguments de la fonction (bloque-marque, largueur colonne)
++ rappel du `knit: pagedown::chrome_print` et de son action
++ utilisation en version simple
++ la force est de combiner avec les autres éléments du package `gouvdown`
++ exemple simple
+
+## Affiner
+
++ utiliser des styles avec des div en :::
++ revue des styles présents dans les fichiers
++ ajout d'un CSS en plus pour personnaliser ses éléments (et lien vers Mozilla pour apprendre le CSS)
++ exemple plus complexe au travers de la brochure (repo à part)
