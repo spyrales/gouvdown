@@ -48,7 +48,7 @@ propre_brochure <- function(extra_dependencies = list(),
                        number_sections = FALSE,
                        # self_contained = FALSE,
                        toc = FALSE,
-                       css = c(book_css, css),
+                       css = c(css, book_css),
                        template = brochure_html,
                        ...)
 }

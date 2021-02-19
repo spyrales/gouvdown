@@ -40,3 +40,52 @@ library(gouvdown)
 + revue des styles présents dans les fichiers
 + ajout d'un CSS en plus pour personnaliser ses éléments (et lien vers Mozilla pour apprendre le CSS)
 + exemple plus complexe au travers de la brochure (repo à part)
+
+# Titre de niveau 1
+
+Les titres de niveau 1 sont habituellement réservés pour les ouvrages, aux titres de chapitres ou de parties. 
+
+## Titre de niveau 2
+
+On privilégie l'usage des titres de niveaux 2 dans ce type de documents.
+
+Il est bien sûr possible de décliner plus finement.
+
+### Titre de niveau 3
+
+#### Titre de niveau 4
+
+## Quelques éléments
+
+### Mettre en valeur
+
+On peut **du gras**, de _l'italique_, des exposants^1^, des indices~a~ ou une `police à chasse fixe`.
+
+On peut aussi ajouter des notes de bas de pages^[contenu de la note de bas de page]
+
+### Intégrer du code R
+
+Il est aussi possible d'intégrer du code R, qui sera rendu visible en fonction des options du _chunk_.
+
+`gouvdown` propose par exemple des fonctions de thèmes utiles pour les graphiques.
+
+```{r graph_gouvdown}
+library(gouvdown)
+library(ggplot2)
+
+ggplot(data = mtcars, aes(x = mpg, y = disp, color = as.character(cyl))) +
+  geom_point(size = 2) +
+  scale_color_gouv_discrete(name = "", palette = "pal_gouv_qual2") +
+  labs(title = "Puissance des voitures par cylindres",
+       caption = "Source : mtcars") +
+  theme_gouv()
+```
+
+On peut aussi intégrer du code dans du texte directement par exemple en affichant le nombre de lignes d'un jeu de données comme `mtcars` : `r dim(mtcars)[1]`.
+
+### Styles HTML
+
+::::: {#div-id .div-class}
+Ceci est une _div_ HTML
+
+:::::
