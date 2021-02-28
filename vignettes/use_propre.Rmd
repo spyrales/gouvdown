@@ -1,5 +1,5 @@
 ---
-title: "Documents PDF paginés"
+title: "Documents PDF paginés en brochure"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Documents PDF paginés}
@@ -10,70 +10,167 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
-```{r setup}
-library(gouvdown)
-```
+De nombreuses publications statistiques demandent une mise en page fine et sur-mesure pour être publiées. C'est notamment le cas dans la plupart des organisations publiques qui publient et diffusent des chiffres et des analyses sous des formats courts (de 2 à 12 pages en général). 
+
+La fonction `propre_brochure` du package `gouvdown` et ses ressources associées vise à répondre à ces besoins de mise en page tout en permettant de s'inscrire dans le cadre de publications reproductibles grâce à l'utilisation de R et de RMarkdown.
+
+Pour davantage d'informations sur la reproductibilité des publications et son intérêt, vous pouvez vous tourner vers la documentation de la démarche PROPRE, mise en place par ThinkR et le réseau des DREAL :
+
+- au format long : **LIEN DOCUMENTATION LONGUE PROPRE** ;
+- au format court : **LIEN GITHUB PROPRE.BROCHURE** (cette brochure est-elle même réalisée grâce à la fonction `propre_brochure` présentée ici).
 
 ## Principes généraux
 
-+ utilisation de `rmarkdown` et de `pagedown` (lien vers une ressource)
-+ explication du principe de paged.js
-+ apport de la production de fichiers PDF directement
-+ au travers de styles web (HTML + CSS) plutôt qu'en passant par LaTeX
-+ wrapper de l'ensemble dans `gouvdown` qui implémente les styles de la marque-État
+> La création de ces documents s'inscrit dans le cadre du travail sur la marque-État et est donc plus spécifiquement adaptée aux institutions qui l'utilisent.
 
-## Utilisation
+La création de documents repose sur l'utilisation de [RMarkdown](https://rmarkdown.rstudio.com/) qui permet de générer des documents HTML en y incluant du code R et des options de formattage grâce à des [balises](https://abcdr.thinkr.fr/redaction-markdown/).
 
-+ YAML et arguments de la fonction (bloque-marque, largueur colonne)
-+ rappel du `knit: pagedown::chrome_print` et de son action
-+ utilisation en version simple
-+ la force est de combiner avec les autres éléments du package `gouvdown`
-+ exemple simple
+De bonnes ressources pour se former à RMarkdown existent, notamment :
 
-## Affiner
+- ressource 1
+- ressource 2
+- ressource 3
 
-+ utiliser des styles avec des div en :::
-+ revue des styles présents dans les fichiers
-+ ajout d'un CSS en plus pour personnaliser ses éléments (et lien vers Mozilla pour apprendre le CSS)
-+ exemple plus complexe au travers de la brochure (repo à part)
+## Éléments importants
 
-# Titre de niveau 1
+> Les utilisateurs plus avancés pourront passer cette partie.
 
-Les titres de niveau 1 sont habituellement réservés pour les ouvrages, aux titres de chapitres ou de parties. 
+Trois éléments principaux sont nécessaires pour bien comprendre l'utilisation de `propre_brochure`.
 
-## Titre de niveau 2
+### En-tête YAML
 
-On privilégie l'usage des titres de niveaux 2 dans ce type de documents.
+Un document RMarkdown se divise en deux parties principales, l'en-tête YAML (nom d'un format de fichier) et le texte. Cette en-tête va servir à paramétrer notre fichier et son aspect en sortie en lui donnant des instructions générales.
 
-Il est bien sûr possible de décliner plus finement.
+Elle se présente comme une suite d'instructions encadrées par deux `---`. Par exemple :
 
-### Titre de niveau 3
+```{yaml}
+---
+title: "Première médiation"
+subtitle: "Des choses que l'on peut révoquer en doute"
+author: "René Descartes"
+date: 1641
+lang: fr
+paged-footnotes: true
+output: 
+  gouvdown::propre_brochure:
+    logo: "rf"
+    width_main_column: 12
+knit: pagedown::chrome_print
+---
+```
 
-#### Titre de niveau 4
+Il faut retenir que l'indentation est très important car elle indique de quel élément va dépendre chaque ligne. Lorsque le fichier bloque dès le début de la compilation, c'est l'une des premières erreurs à rechercher.
 
-## Quelques éléments
+On peut comprendre cet élément comme une liste de variables où il faut indiquer des valeurs :
 
-### Mettre en valeur
+- le titre (`title`), le sous-titre (`subtitle`), la date (`date`), l'auteur (`author`) ;
+- le format de sortie (`output`) et des arguments qui le précise (`logo`, `width_main_column`). C'est ce qui permet d'utiliser la fonction `propre_brochure` ;
+- des arguments complémentaires (`knit`), qui sert ici à générer un fichier PDF directement en imprimant le contenu du fichier HTML.
 
-On peut **du gras**, de _l'italique_, des exposants^1^, des indices~a~ ou une `police à chasse fixe`.
+### Balisage
 
-On peut aussi ajouter des notes de bas de pages^[contenu de la note de bas de page]
+RMarkdown repose sur Markdown qui, contrairement à d'autres outils comme Work ou LibreOffice, n'affiche pas directement la mise en forme du document. Il faut une étape de compilation (en appuyant sur le boutant _Knit_ ou en utilisant la fonction `rmarkdown::render`) pour cela.
 
-### Intégrer du code R
+Cela implique que la mise en forme est directement incluse dans le texte au moyen de balises qui permettent d'indiquer le niveau du titre, si il s'agit d'un bloc de citation, d'un texte en gras, en italique ou d'une note de bas de page.
 
-Il est aussi possible d'intégrer du code R, qui sera rendu visible en fonction des options du _chunk_.
+EXEMPLE GRAS
 
-`gouvdown` propose par exemple des fonctions de thèmes utiles pour les graphiques.
+EXEMPLE ITALIQUE
 
-```{r graph_gouvdown}
+EXEMPLE TITRE
+
+EXEMPLE BLOCKQUOTE
+
+EXEMPLE FOOTNOTE
+
+Vous pourrez aussi rencontrer des blocs de code dans le texte ou séparé. Ils permettent d'intégrer du code R (ou d'un autre langage) directement dans le document.
+
+EXEMPLE CODE INLINE
+
+EXEMPLE CHUNK
+
+### Div
+
+Ces balises pré-formatées couvrent quelques cas bien précis. Il arrive toutefois que l'on souhaite personnaliser davantage les éléments en leur donnant une taille, une position ou autre.
+
+Pour cela on utilise des _div_ que l'on peut assimiler à des blocs auxquels il est possible de donner des instructions plus détaillées par l'utilisation de CSS. Comme un _div_ est un bloc, il faut l'ouvrir mais aussi le fermer.
+
+On peut déclarer les _div_ de deux façons :
+
+Soit en utilisant la syntaxe HTML :
+
+```
+<div>
+
+</div>
+```
+
+Soit le raccourci (avec autant de `:` que l'on souhaite à partir de 3 et tant que l'ouverture et la fermeture en comportent autant) :
+
+
+```
+:::
+
+:::
+```
+
+Pour styler ces éléments, il faut donner à chaque _div_ une classe qui porte un nom, afin que le programme puisse le retrouver. Exemple :
+
+```
+<div class="ma-classe">
+
+</div>
+```
+
+ou
+
+```
+:::{.ma-classe}
+
+:::
+```
+
+Un certain nombre de classes ont été définies par défaut dans `propre_brochure` et pourront donc être utilisées pour la mise en forme des éléments.
+
+## Utiliser `propre_brochure` et ses arguments
+
+L'utilisation du format `propre_brochure` se fait au sein de l'argument `output` dans le YAML.
+
+Deux arguments principaux sont proposés :
+
+- `logo` : bloque-marque à afficher. La liste des bloques-marques disponibles est présente [ici](https://github.com/spyrales/gouvdown/tree/master/inst/resources/blocs_marque). Si le votre n'y est pas, n'hésitez pas à en proposer l'ajout.
+- `width_main_column` : largeur (en cm) de la colonne de texte principale (de la classe `main-column`).
+
+CAPTURE ECRAN PROPRE AVEC LOGO ET YAML EN FACE - 2 situations
+
+IDEM WIDTH MAIN COLUMN - 2 situations
+
+Il est aussi possible d'utiliser les arguments proposés par la fonction `pagedown::html_paged` comme pour inclure en supplément un autre fichier `css`.
+
+## Le style
+
+Les styles présents suivent le design proposés par dans le cadre de la marque-État (polices notamment).
+
+Quelques exemples :
+
+METTRE CODE ET RESULTAT EN FACE A FACE SUR TITRES / GRAS / ITALIQUE / TEXTE / BLOCKQUOTE
+
+On peut aussi inclure directement des graphiques ou des tableaux (FORMAT DES TABLEAUX TO DO) qui pourront être directement dans la bonne charte.
+
+Par exemple :
+
+```{r graph_gouvdown, fig.width=8, fig.height=4}
 library(gouvdown)
 library(ggplot2)
 
-ggplot(data = mtcars, aes(x = mpg, y = disp, color = as.character(cyl))) +
+ggplot(data = mtcars, 
+       aes(x = mpg, y = disp, color = as.character(cyl))) +
   geom_point(size = 2) +
   scale_color_gouv_discrete(name = "", palette = "pal_gouv_qual2") +
   labs(title = "Puissance des voitures par cylindres",
@@ -81,11 +178,70 @@ ggplot(data = mtcars, aes(x = mpg, y = disp, color = as.character(cyl))) +
   theme_gouv()
 ```
 
-On peut aussi intégrer du code dans du texte directement par exemple en affichant le nombre de lignes d'un jeu de données comme `mtcars` : `r dim(mtcars)[1]`.
+Pour plus de détails sur ce point, on pourra utilement se reporter à la [vignette correspondante](../graph_gouv.html).
 
-### Styles HTML
+## Mise en page
 
-::::: {#div-id .div-class}
-Ceci est une _div_ HTML
+SECTION A ECRIRE APRES LE PASSAGE SUR LE CSS
 
-:::::
+gestion de la pagination
+utlisation des divs de colonnes
+
+autres divs présents dans les ressources
+
+## Affiner
+
+Le squelette du template constitue une première proposition de mise en page.
+
+Pour un exemple plus complet, on pourra se reporter à [la brochure de la démarche PROPRE](https://github.com/spyrales/propre.brochure). Les commentaires présents dans le fichier permettent de bien comprendre l'effet de chaque élément sur la mise en page.
+
+## Pour aller plus loin
+
+Si l'on souhaite aller encore plus loin, quelques possibilités s'ouvrent.
+
+### Inspecter le fichier HTML
+
+Avant la production du fichier PDF se trouve un fichier HTML, dans le même répertoire. Il est conseillé de s'y reporter pour tester et débugger lorsque cela est nécessaire.
+
+Pour cela on l'ouvre avec Chrome ou Chromium et on utlise l'option _Inspecter_ (faire clic-droit sur un élément).
+
+CAPTURE D'ECRAN INSPECTER BOUTON
+
+Le détail du fichier sous forme HTML apparaît alors. En cliquant sur un élément on peut retrouver ses propriétés CSS. Il est aussi possible de tester des changements de valeurs ou de propriété et d'y voir les effets.
+
+CAPTURE D'ECRAN EXEMPLE
+
+> La façon dont est produit le PDF fait qu'un programme (en JavaScript) vient modifier _a posteriori_ le CSS (notamment pour créeer la pagination). Certaines modifications que vous ferrez peuvent en être affectées.
+
+### Ajouter des fichiers CSS
+
+Il est possible de créer des classes personnalisées dans le fichier. On peut alors leur donner des valeurs et les utliser pour pousser davantage la personnalisation.
+
+Cela demande notamment de connaître le CSS. Une excellente ressource sur le sujet est proposée par [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS).
+
+Il faut alors créer un fichier en .css et l'appeler dans l'instruction `css` de notre fonction, dans le YAML.
+
+```{yaml}
+---
+title: "Un titre"
+output: 
+  gouvdown::propre_brochure:
+    css: "dossier1/dossier2/mon_fichier.css"
+knit: pagedown::chrome_print
+---
+```
+
+> A noter que vous pouvez recouvrir les propriétés des classes existantes en incluant un nouveau fichier avec la même propriété et une valeur différente pour une classe donnée.
+
+### `pagedown` et paged.js
+
+Pour mieux comprendre l'ensemble du template, il peut être souhaitable de revenir à la source.
+
+`propre_brochure` repose sur d'autres outils :
+
+- `paged.js` qui permet de découper les instructions en pages - [documentation](https://www.pagedjs.org/documentation/) ;
+- `pagedown` qui implémente le précédent dans RMarkdown - [documentation](https://pagedown.rbind.io/).
+
+La documentation de ces deux outils est très complète et l'on conseille de s'y reporter pour des utilisations avancées.
+
+
