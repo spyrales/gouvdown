@@ -3,6 +3,7 @@
 #' @inheritParams html_gouv
 #' @param ... Additional arguments passed to \code{bookdown::\link{html_document2}()}.
 #' @param css A character vector of additionnal CSS file paths.
+#' @param width_main_column Width of the main text column (in cm)
 #'
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
@@ -12,12 +13,13 @@ propre_brochure <- function(extra_dependencies = list(),
                             ...,
                             logo = NULL,
                             css = NULL,
-                            use_gouvdown_fonts = TRUE) {
+                            use_gouvdown_fonts = TRUE,
+                            width_main_column = 15) {
   # init variable
   logo_html_fragment <- NULL
 
   # create HTML fragment for logo
-  if (!is.null(logo)){
+  if (!is.null(logo)) {
     if (xfun::file_ext(logo) == "") {
       logo_html_fragment <- create_header_html_gouv(logo = logo)
     }
@@ -28,7 +30,8 @@ propre_brochure <- function(extra_dependencies = list(),
   }
 
   includes <- as.list(includes)
-  includes$before_body <- c(includes$before_body, logo_html_fragment)
+  includes$before_body <-
+    c(includes$before_body, logo_html_fragment)
 
   # custom css
   book_css <- pkg_resource("css/propre", "book.css")
@@ -37,18 +40,24 @@ propre_brochure <- function(extra_dependencies = list(),
   brochure_html <- pkg_resource("html", "propre_brochure.html")
 
   # fonts dependencies - taken from html_gouv
-  extra_dependencies <- c(
-    gouvdown_dependencies(use_gouvdown_fonts),
-    extra_dependencies
-  )
+  extra_dependencies <- c(gouvdown_dependencies(use_gouvdown_fonts),
+                          extra_dependencies)
+
+  # width of main column - write css
+  width_css <- tempfile(fileext = ".css")
+
+  writeLines(paste0(":root {--width-main-column:", width_main_column , "cm;}", sep = ""),
+             con = width_css)
 
   # render
-  pagedown::html_paged(extra_dependencies = extra_dependencies,
-                       includes = includes,
-                       number_sections = FALSE,
-                       # self_contained = FALSE,
-                       toc = FALSE,
-                       css = c(css, book_css),
-                       template = brochure_html,
-                       ...)
+  pagedown::html_paged(
+    extra_dependencies = extra_dependencies,
+    includes = includes,
+    number_sections = FALSE,
+    # self_contained = FALSE,
+    toc = FALSE,
+    css = c(css, book_css, width_css),
+    template = brochure_html,
+    ...
+  )
 }
