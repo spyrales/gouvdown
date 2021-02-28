@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   warning = FALSE,
-  message = FALSE
+  message = FALSE,
+  echo = FALSE
 )
 ```
 
@@ -77,23 +78,16 @@ On peut comprendre cet élément comme une liste de variables où il faut indiqu
 
 RMarkdown repose sur Markdown qui, contrairement à d'autres outils comme Work ou LibreOffice, n'affiche pas directement la mise en forme du document. Il faut une étape de compilation (en appuyant sur le boutant _Knit_ ou en utilisant la fonction `rmarkdown::render`) pour cela.
 
-Cela implique que la mise en forme est directement incluse dans le texte au moyen de balises qui permettent d'indiquer le niveau du titre, si il s'agit d'un bloc de citation, d'un texte en gras, en italique ou d'une note de bas de page.
+Cela implique que la mise en forme est directement incluse dans le texte au moyen de balises qui permettent d'indiquer le niveau du titre, si il s'agit d'un bloc de citation, d'un texte en gras, ou en italique.
 
-EXEMPLE GRAS
-
-EXEMPLE ITALIQUE
-
-EXEMPLE TITRE
-
-EXEMPLE BLOCKQUOTE
-
-EXEMPLE FOOTNOTE
+- `**texte en gras**`
+- `_texte en italique_`
+- `# Titre de niveau 1`
+- `## Titre de niveau 2`
+- `### Titre de niveau 3`
+- `> citation`
 
 Vous pourrez aussi rencontrer des blocs de code dans le texte ou séparé. Ils permettent d'intégrer du code R (ou d'un autre langage) directement dans le document.
-
-EXEMPLE CODE INLINE
-
-EXEMPLE CHUNK
 
 ### Div
 
@@ -144,28 +138,73 @@ L'utilisation du format `propre_brochure` se fait au sein de l'argument `output`
 
 Deux arguments principaux sont proposés :
 
-- `logo` : bloque-marque à afficher. La liste des bloques-marques disponibles est présente [ici](https://github.com/spyrales/gouvdown/tree/master/inst/resources/blocs_marque). Si le votre n'y est pas, n'hésitez pas à en proposer l'ajout.
-- `width_main_column` : largeur (en cm) de la colonne de texte principale (de la classe `main-column`).
+- `logo` : bloque-marque à afficher. La liste des bloques-marques disponibles est présente [ici](https://github.com/spyrales/gouvdown/tree/master/inst/resources/blocs_marque). Si le votre n'y est pas, n'hésitez pas à en proposer l'ajout. Par exemple les valeurs de logo suivantes donnent :
 
+```{r table_logo}
+df_logo <-
+  data.frame(
+    logo = c("rf",
+             "ministere_te_tc_mer"),
+    img = paste0("![](", c(
+      system.file(
+        "resources/blocs_marque/rf",
+        "Republique_Francaise_RVB.png",
+        package = "gouvdown"
+      )
+      ,
+      system.file(
+        "resources/blocs_marque/ministere_te_tc_mer",
+        "MIN_TE+CT+Mer_RVB.png",
+        package = "gouvdown"
+      )
+    )
+    , "){height=5%}")
+  )
+
+knitr::kable(df_logo, "html", col.names = c("Logo", "Bloc-marque"))
+```
+
+- `width_main_column` : largeur (en cm) de la colonne de texte principale (de la classe `main-column`).
 CAPTURE ECRAN PROPRE AVEC LOGO ET YAML EN FACE - 2 situations
 
-IDEM WIDTH MAIN COLUMN - 2 situations
+IDEM WIDTH MAIN COLUMN - 2 EXEMPLES
 
 Il est aussi possible d'utiliser les arguments proposés par la fonction `pagedown::html_paged` comme pour inclure en supplément un autre fichier `css`.
 
 ## Le style
 
+Les éléments de titre sont assignés à certaines places.
+
+CAPTURE ECRAN AVEC PLACES TITRE/SOUS-TITRE/DATE/AUTEUR
+
 Les styles présents suivent le design proposés par dans le cadre de la marque-État (polices notamment).
 
 Quelques exemples :
 
-METTRE CODE ET RESULTAT EN FACE A FACE SUR TITRES / GRAS / ITALIQUE / TEXTE / BLOCKQUOTE
+```{r table_style}
+df_styles <-
+  data.frame(
+    style = c(
+      "## Titre 2",
+      "### Titre 3",
+      "**texte en gras**",
+      "_italique_",
+      "texte normal",
+      "> citation"
+    ),
+    img = c("img/", "img/", "img/", "img/", "img/", "img/")
+  )
+
+knitr::kable(df_styles, "html", col.names = c("Style", "Résultat"))
+```
+
+-- IMAGE UNE FOIS LE CSS FINALISE
 
 On peut aussi inclure directement des graphiques ou des tableaux (FORMAT DES TABLEAUX TO DO) qui pourront être directement dans la bonne charte.
 
 Par exemple :
 
-```{r graph_gouvdown, fig.width=8, fig.height=4}
+```{r graph_gouvdown, fig.width=8, fig.height=4, echo = TRUE}
 library(gouvdown)
 library(ggplot2)
 
@@ -203,13 +242,14 @@ Si l'on souhaite aller encore plus loin, quelques possibilités s'ouvrent.
 
 Avant la production du fichier PDF se trouve un fichier HTML, dans le même répertoire. Il est conseillé de s'y reporter pour tester et débugger lorsque cela est nécessaire.
 
-Pour cela on l'ouvre avec Chrome ou Chromium et on utlise l'option _Inspecter_ (faire clic-droit sur un élément).
-
-CAPTURE D'ECRAN INSPECTER BOUTON
+Pour cela on l'ouvre avec Chrome ou Chromium et on utilise l'option _Inspecter_ (faire clic-droit sur un élément).
+L'apparence du fichier a été spécialement pensée pour faciliter l'analyse et la conception de la mise en page (ajout de repères visuels).
 
 Le détail du fichier sous forme HTML apparaît alors. En cliquant sur un élément on peut retrouver ses propriétés CSS. Il est aussi possible de tester des changements de valeurs ou de propriété et d'y voir les effets.
 
-CAPTURE D'ECRAN EXEMPLE
+```{r, out.width = '600px', out.height = '350px'}
+knitr::include_graphics("img/inspecter_chrome.png")
+```
 
 > La façon dont est produit le PDF fait qu'un programme (en JavaScript) vient modifier _a posteriori_ le CSS (notamment pour créeer la pagination). Certaines modifications que vous ferrez peuvent en être affectées.
 
