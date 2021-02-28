@@ -9,6 +9,7 @@ output:
   gouvdown::propre_brochure:
     # changer le nom du bloque-marque
     logo: "rf"
+    width_main_column: 12
 # la ligne suivante permet l'impression en PDF
 knit: pagedown::chrome_print
 ---
@@ -19,12 +20,23 @@ knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE)
 ```
 
+:::main-column
+
 Ce n’est pas d’aujourd’hui que je me suis aperçu que, _dès mes premières années_, j’ai reçu quantité de fausses opinions pour véritables, et que ce que j’ai depuis fondé sur des principes si mal assurés ne sauroit être que fort douteux et incertain ; et dès lors j’ai bien jugé qu’il me falloit entreprendre sérieusement une fois en ma vie de me défaire de toutes les opinions que j’avois reçues auparavant en ma créance, et commencer tout de nouveau dès les fondements, si je voulois établir quelque chose de ferme et de constant dans les sciences. Mais cette entreprise me semblant être fort grande, j’ai attendu que j’eusse atteint un âge qui fût si mûr que je n’en pusse espérer d’autre après lui auquel je fusse plus propre à l’exécuter ; ce qui m’a fait différer si long-temps, que désormais je croirois commettre une faute si j’employois encore à délibérer le temps qui me reste pour agir. Aujourd’hui donc que, fort à propos pour ce dessein, j’ai délivré mon esprit de toutes sortes de soins, que par bonheur je ne me sens agité d’aucunes passions, et que je me suis procuré un repos assuré dans une paisible solitude, je m’appliquerai sérieusement et avec liberté à détruire généralement toutes mes anciennes opinions. Or, pour cet effet, il ne sera pas nécessaire que je montre qu’elles sont toutes **fausses**, de quoi peut-être je ne viendrois jamais à bout. Mais, d’autant que la raison me persuade déjà que je ne dois pas moins soigneusement m’empêcher de donner créance aux choses qui ne sont pas entièrement certaines et indubitables, qu’à celles qui me paroissent manifestement être fausses, ce me sera assez pour les rejeter toutes, si je puis trouver en chacune quelque raison de douter. Et pour cela il ne sera pas aussi besoin que je les examine chacune en particulier, ce qui seroit d’un travail infini ; mais, parceque la ruine des fondements entraîne nécessairement avec soi tout le reste de l’édifice, je m’attaquerai d’abord aux principes sur lesquels toutes mes anciennes opinions étoient appuyées.
 
 ## Ceci est un titre de niveau 2
 
 Tout ce que j’ai reçu jusqu’à présent pour le plus vrai et assuré, **je l’ai appris des sens ou par les sens** : or j’ai quelquefois éprouvé que ces sens étoient trompeurs ; et il est de la prudence de ne se fier jamais entièrement à ceux qui nous ont une fois trompés.
 
+:::
+
+:::secondary-column
+
+Mais ce dessein est pénible et laborieux, et une certaine paresse m’entraîne insensiblement dans le train de ma vie ordinaire ; et tout de même qu’un esclave qui jouissoit dans le sommeil d’une liberté imaginaire, lorsqu’il commence à soupçonner que sa liberté n’est qu’un songe, craint de se réveiller, et conspire avec ces illusions agréables pour en être plus long-temps abusé, ainsi je retombe insensiblement de moi-même dans mes anciennes opinions, et j’appréhende de me réveiller de cet assoupissement, de peur que les veilles laborieuses qui auroient à succéder à la tranquillité de ce repos, au lieu de m’apporter quelque jour et quelque lumière dans la connoissance de la vérité, ne fussent pas suffisantes pour éclaircir toutes les ténèbres des difficultés qui viennent d’être agitées. 
+
+:::
+
+:::main-column
 
 Mais peut-être qu’encore que les sens nous trompent quelquefois touchant des choses fort peu sensibles et fort éloignées, il s’en rencontre néanmoins beaucoup d’autres desquelles on ne peut pas raisonnablement douter, quoique nous les connoissions par leur moyen : par exemple, que je suis ici, assis auprès du feu, vêtu d’une robe de chambre, ayant ce papier entre les mains, et autres choses de cette nature. Et comment est-ce que je pourrois nier que ces mains et ce corps soient à moi ? si ce n’est peut-être que je me compare à certains insensés, de qui le cerveau est tellement troublé et offusqué par les noires vapeurs de la bile, qu’ils assurent constamment qu’ils sont des rois, lorsqu’ils sont très pauvres ; qu’ils sont vêtus d’or et de pourpre, lorsqu’ils sont tout nus ; ou qui s’imaginent être des cruches ou avoir un corps de verre. Mais quoi ! ce sont des fous, et je ne serois pas moins extravagant si je me réglois sur leurs exemples.
 
@@ -38,7 +50,6 @@ df_descartes <-
     categorie = c("doute", "certain", "doute", "doute")
   )
 ```
-
 
 ```{r graph_descartes}
 library(gouvdown)
@@ -58,10 +69,21 @@ ggplot(df_descartes, aes(x = choses, y = pensees, fill = categorie)) +
 
 Toutefois j’ai ici à considérer que je suis homme, et par conséquent que j’ai coutume de dormir, et de me représenter en mes songes les mêmes choses, ou quelquefois de moins vraisemblables, que ces insensés lorsqu’ils veillent. Combien de fois m’est-il arrivé de songer la nuit que j’étois en ce lieu, que j’étois habillé, que j’étois auprès du feu, quoique je fusse tout nu dedans mon lit ! Il me semble bien à présent que ce n’est point avec des yeux endormis que je regarde ce papier ; que cette tête que je branle n’est point assoupie ; que c’est avec dessein et de propos délibéré que j’étends cette main, et que je la sens : ce qui arrive dans le sommeil ne semble point si clair ni si distinct que tout ceci. Mais, en y pensant soigneusement, je me ressouviens d’avoir souvent été trompé en dormant par de semblables illusions ; et, en m’arrêtant sur cette pensée, je vois si manifestement qu’il n’y a point d’indices certains par où l’on puisse distinguer nettement la veille d’avec le sommeil, que j’en suis tout étonné ; et mon étonnement est tel qu’il est presque capable de me persuader que je dors.
 
+:::
+
+:::secondary-column
+
 ### Ceci est un titre de niveau 3
 
-Supposons donc maintenant que nous sommes endormis, et que toutes ces particularités, à savoir que nous ouvrons les yeux, que nous branlons la tête, que nous étendons les mains, et choses semblables, ne sont que de fausses illusions ; et pensons que peut-être nos mains ni tout notre corps ne sont pas tels que nous les voyons. Toutefois il faut au moins avouer que les choses qui nous sont représentées dans le sommeil sont comme des tableaux et des peintures, qui ne peuvent être formées qu’à la ressemblance de quelque chose de réel et de véritable ; et qu’ainsi, pour le moins, ces choses générales, à savoir des yeux, une tête, des mains, et tout un corps, ne sont pas choses imaginaires, mais réelles et existantes. Car de vrai les peintres, lors même qu’ils s’étudient avec le plus d’artifice à représenter des sirènes et des satyres par des figures bizarres et extraordinaires, ne peuvent toutefois leur donner des formes et des natures entièrement nouvelles, mais font seulement un certain mélange et composition des membres de divers animaux ; ou bien si peut-être leur imagination est assez extravagante pour inventer quelque chose de si nouveau que jamais on n’ait rien vu de semblable, et qu’ainsi leur ouvrage représente une chose purement feinte et absolument fausse, certes à tout le moins les couleurs dont ils les composent doivent-elles être véritables.
+Supposons donc maintenant que nous sommes endormis, et que toutes ces particularités, à savoir que nous ouvrons les yeux, que nous branlons la tête, que nous étendons les mains, et choses semblables, ne sont que de fausses illusions ; et pensons que peut-être nos mains ni tout notre corps ne sont pas tels que nous les voyons. Toutefois il faut au moins avouer que les choses qui nous sont représentées dans le sommeil sont comme des tableaux et des peintures, qui ne peuvent être formées qu’à la ressemblance de quelque chose de réel et de véritable ;
 
+> et qu’ainsi, pour le moins, ces choses générales, à savoir des yeux, une tête, des mains, et tout un corps, ne sont pas choses imaginaires, mais réelles et existantes. 
+
+> Car de vrai les peintres, lors même qu’ils s’étudient avec le plus d’artifice à représenter des sirènes et des satyres par des figures bizarres et extraordinaires, ne peuvent toutefois leur donner des formes et des natures entièrement nouvelles, mais font seulement un certain mélange et composition des membres de divers animaux ; ou bien si peut-être leur imagination est assez extravagante pour inventer quelque chose de si nouveau que jamais on n’ait rien vu de semblable, et qu’ainsi leur ouvrage représente une chose purement feinte et absolument fausse, certes à tout le moins les couleurs dont ils les composent doivent-elles être véritables.
+
+:::
+
+<div class = "main-column">
 
 ```{r tab_descartes}
 knitr::kable(df_descartes, "html") # --> à ajuster quand le thème tableau sera fait
@@ -69,14 +91,11 @@ knitr::kable(df_descartes, "html") # --> à ajuster quand le thème tableau sera
 
 Et par la même raison, encore que ces choses générales, à savoir un corps, des yeux, une tête, des mains, et autres semblables, pussent être imaginaires, toutefois il faut nécessairement avouer qu’il y en a au moins quelques autres encore plus simples et plus universelles qui sont vraies et existantes ; du mélange desquelles, ni plus ni moins que de celui de quelques véritables couleurs, toutes ces images des choses qui résident en notre pensée, soit vraies et réelles, soit feintes et fantastiques, sont formées.
 
-<!-- mettre sur deux colonnes ici -->
-
 ## Ceci est un titre de niveau 2
 
 ### Ceci est un titre de niveau 3
 
 De ce genre de choses est la nature corporelle en général et son étendue ; ensemble la figure des choses étendues, leur quantité ou grandeur, et leur nombre ; comme aussi le lieu où elles sont, le temps qui mesure leur durée, et autres semblables. C’est pourquoi peut-être que de là nous ne conclurons pas mal, si nous disons que la physique, l’astronomie, la médecine, et toutes les autres sciences qui dépendent de la considération des choses composées, sont fort douteuses et incertaines, mais que l’arithmétique, la géométrie, et les autres sciences de cette nature, qui ne traitent que de choses fort simples et fort générales, sans se mettre beaucoup en peine si elles sont dans la nature ou si elles n’y sont pas, contiennent quelque chose de certain et d’indubitable : car, soit que je veille ou que je dorme, deux et trois joints ensemble formeront toujours le nombre de cinq, et le carré n’aura jamais plus de quatre côtés ; et il ne semble pas possible que des vérités si claires et si apparentes puissent être soupçonnées d’aucune fausseté ou d’incertitude.
-
 
 Toutefois, il y a long-temps que j’ai dans mon esprit une certaine opinion qu’il y a un Dieu qui peut tout, et par qui j’ai été fait et créé tel que je suis. Or, que sais-je s’il n’a point fait qu’il n’y ait aucune terre, aucun ciel, aucun corps étendu, aucune figure, aucune grandeur, aucun lieu, et que néanmoins j’aie les sentiments de toutes ces choses, et que tout cela ne me semble point exister autrement que je le vois ? Et même, comme je juge quelquefois que les autres se trompent dans les choses qu’ils pensent le mieux savoir, que sais-je s’il n’a point fait que je me trompe aussi toutes les fois que je fais l’addition de deux et de trois, ou que je nombre les côtés d’un carré, ou que je juge de quelque chose encore plus facile, si l’on se peut imaginer rien de plus facile que cela ? Mais peut-être que Dieu n’a pas voulu que je fusse déçu de la sorte, car il est dit souverainement bon. Toutefois, si cela répugnoit à sa bonté de m’avoir fait tel que je me trompasse toujours, cela sembleroit aussi lui être contraire de permettre que je me trompe quelquefois, et néanmoins je ne puis douter qu’il ne le permette. Il y aura peut-être ici des personnes qui aimeroient mieux nier l’existence d’un Dieu si puissant, que de croire que toutes les autres choses sont incertaines. Mais ne leur résistons pas pour le présent, et supposons en leur faveur que tout ce qui est dit ici d’un Dieu soit une fable : toutefois, de quelque façon qu’ils supposent que je sois parvenu à l’état et à l’être que je possède, soit qu’ils l’attribuent à quelque destin ou fatalité, soit qu’ils le réfèrent au hasard, soit qu’ils veuillent que ce soit par une continuelle suite et liaison des choses, ou enfin par quelque autre manière ; puisque faillir et se tromper est une imperfection, d’autant moins puissant sera l’auteur qu’ils assigneront à mon origine, d’autant plus sera-t-il probable que je suis tellement imparfait que je me trompe toujours. Auxquelles raisons je n’ai certes rien à répondre ; mais enfin je suis contraint d’avouer qu’il n’y a rien de tout ce que je croyois autrefois être véritable dont je ne puisse en quelque façon douter ; et cela non point par inconsidération ou légèreté, mais pour des raisons très fortes et mûrement considérées : de sorte que désormais je ne dois pas moins soigneusement m’empêcher d’y donner créance qu’à ce qui seroit manifestement faux, si je veux trouver quelque chose de certain et d’assuré dans les sciences.
 
@@ -84,10 +103,6 @@ Toutefois, il y a long-temps que j’ai dans mon esprit une certaine opinion qu�
 
 Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne soin de m’en souvenir ; car ces anciennes et ordinaires opinions me reviennent encore souvent en la pensée, le long et familier usage qu’elles ont eu avec moi leur donnant droit d’occuper mon esprit contre mon gré, et de se rendre presque maîtresses de ma créance ; et je ne me désaccoutumerai jamais de leur déférer, et de prendre confiance en elles tant que je les considérerai telles qu’elles sont en effet, c’est-à-dire en quelque façon douteuses, comme je viens de montrer, et toutefois fort probables, en sorte que l’on a beaucoup plus de raison de les croire que de les nier. C’est pourquoi je pense que je ne ferai pas mal si, prenant de propos délibéré un sentiment contraire, je me trompe moi-même, et si je feins pour quelque temps que toutes ces opinions sont entièrement fausses et imaginaires ; jusqu’à ce qu’enfin, ayant tellement balancé mes anciens et nouveaux préjugés qu’ils ne puissent faire pencher mon avis plus d’un côté que d’un autre, mon jugement ne soit plus désormais maîtrisé par de mauvais usages et détourné du droit chemin qui le peut conduire à la connoissance de la vérité. Car je suis assuré qu’il ne peut y avoir de péril ni d’erreur en cette voie, et que je ne saurois aujourd’hui trop accorder à ma défiance, puisqu’il n’est pas maintenant question d’agir, mais seulement de méditer et de connoître.
 
-
 Je supposerai donc, non pas que Dieu, qui est très bon, et qui est la souveraine source de vérité, mais qu’un certain mauvais génie, non moins rusé et trompeur que puissant, a employé toute son industrie à me tromper ; je penserai que le ciel, l’air, la terre, les couleurs, les figures, les sons, et toutes les choses extérieures, ne sont rien que des illusions et rêveries dont il s’est servi pour tendre des piéges à ma crédulité ; je me considérerai moi-même comme n’ayant point de mains, point d’yeux, point de chair, point de sang ; comme n’ayant aucun sens, mais croyant faussement avoir toutes ces choses ; je demeurerai obstinément attaché à cette pensée ; et si, par ce moyen, il n’est pas en mon pouvoir de parvenir à la connoissance d’aucune vérité, à tout le moins il est en ma puissance de suspendre mon jugement : c’est pourquoi je prendrai garde soigneusement de ne recevoir en ma croyance aucune fausseté, et préparerai si bien mon esprit à toutes les ruses de ce grand trompeur, que, pour puissant et rusé qu’il soit, il ne me pourra jamais rien imposer.
 
-
-Mais ce dessein est pénible et laborieux, et une certaine paresse m’entraîne insensiblement dans le train de ma vie ordinaire ; et tout de même qu’un esclave qui jouissoit dans le sommeil d’une liberté imaginaire, lorsqu’il commence à soupçonner que sa liberté n’est qu’un songe, craint de se réveiller, et conspire avec ces illusions agréables pour en être plus long-temps abusé, ainsi je retombe insensiblement de moi-même dans mes anciennes opinions, et j’appréhende de me réveiller de cet assoupissement, de peur que les veilles laborieuses qui auroient à succéder à la tranquillité de ce repos, au lieu de m’apporter quelque jour et quelque lumière dans la connoissance de la vérité, ne fussent pas suffisantes pour éclaircir toutes les ténèbres des difficultés qui viennent d’être agitées. 
-
-
+</div>
