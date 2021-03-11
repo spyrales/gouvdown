@@ -7,11 +7,12 @@ lang: fr
 paged-footnotes: true
 output: 
   gouvdown::propre_brochure:
+    front_cover: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/T1-_d016-_Portrait_de_Descartes.png/776px-T1-_d016-_Portrait_de_Descartes.png
     # changer le nom du bloque-marque
     logo: "rf"
     width_main_column: 12
 # la ligne suivante permet l'impression en PDF
-knit: pagedown::chrome_print
+# knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
@@ -20,6 +21,12 @@ knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE)
 ```
 
+:::header
+
+Texte introductif qui démarre en colonne de gauche, page de gauche.
+:::
+
+
 :::main-column
 
 Ce n’est pas d’aujourd’hui que je me suis aperçu que, _dès mes premières années_, j’ai reçu quantité de fausses opinions pour véritables, et que ce que j’ai depuis fondé sur des principes si mal assurés ne sauroit être que fort douteux et incertain ; et dès lors j’ai bien jugé qu’il me falloit entreprendre sérieusement une fois en ma vie de me défaire de toutes les opinions que j’avois reçues auparavant en ma créance, et commencer tout de nouveau dès les fondements, si je voulois établir quelque chose de ferme et de constant dans les sciences. Mais cette entreprise me semblant être fort grande, j’ai attendu que j’eusse atteint un âge qui fût si mûr que je n’en pusse espérer d’autre après lui auquel je fusse plus propre à l’exécuter ; ce qui m’a fait différer si long-temps, que désormais je croirois commettre une faute si j’employois encore à délibérer le temps qui me reste pour agir. Aujourd’hui donc que, fort à propos pour ce dessein, j’ai délivré mon esprit de toutes sortes de soins, que par bonheur je ne me sens agité d’aucunes passions, et que je me suis procuré un repos assuré dans une paisible solitude, je m’appliquerai sérieusement et avec liberté à détruire généralement toutes mes anciennes opinions. Or, pour cet effet, il ne sera pas nécessaire que je montre qu’elles sont toutes **fausses**, de quoi peut-être je ne viendrois jamais à bout. Mais, d’autant que la raison me persuade déjà que je ne dois pas moins soigneusement m’empêcher de donner créance aux choses qui ne sont pas entièrement certaines et indubitables, qu’à celles qui me paroissent manifestement être fausses, ce me sera assez pour les rejeter toutes, si je puis trouver en chacune quelque raison de douter. Et pour cela il ne sera pas aussi besoin que je les examine chacune en particulier, ce qui seroit d’un travail infini ; mais, parceque la ruine des fondements entraîne nécessairement avec soi tout le reste de l’édifice, je m’attaquerai d’abord aux principes sur lesquels toutes mes anciennes opinions étoient appuyées.
@@ -27,18 +34,32 @@ Ce n’est pas d’aujourd’hui que je me suis aperçu que, _dès mes première
 ## Ceci est un titre de niveau 2
 
 Tout ce que j’ai reçu jusqu’à présent pour le plus vrai et assuré, **je l’ai appris des sens ou par les sens** : or j’ai quelquefois éprouvé que ces sens étoient trompeurs ; et il est de la prudence de ne se fier jamais entièrement à ceux qui nous ont une fois trompés.
+Tout ce que j’ai reçu jusqu’à présent pour le plus vrai et assuré, **je l’ai appris des sens ou par les sens** : or j’ai quelquefois éprouvé que ces sens étoient trompeurs ; et il est de la prudence de ne se fier jamais entièrement à ceux qui nous ont une fois trompés.
+Tout ce que j’ai reçu jusqu’à présent pour le plus vrai et assuré, **je l’ai appris des sens ou par les sens** : or j’ai quelquefois éprouvé que ces sens étoient trompeurs ; et il est de la prudence de ne se fier jamais entièrement à ceux qui nous ont une fois trompés.
+Tout ce que j’ai reçu jusqu’à présent pour le plus vrai et assuré, **je l’ai appris des sens ou par les sens** : or j’ai quelquefois éprouvé que ces sens étoient trompeurs ; et il est de la prudence de ne se fier jamais entièrement à ceux qui nous ont une fois trompés.
+Tout ce que j’ai reçu jusqu’à présent pour le plus vrai et assuré, **je l’ai appris des sens ou par les sens** : or j’ai quelquefois éprouvé que ces sens étoient trompeurs ; et il est de la prudence de ne se fier jamais entièrement à ceux qui nous ont une fois trompés.
+
 
 :::
 
-:::secondary-column
+:::secondary-column-top
 
 Mais ce dessein est pénible et laborieux, et une certaine paresse m’entraîne insensiblement dans le train de ma vie ordinaire ; et tout de même qu’un esclave qui jouissoit dans le sommeil d’une liberté imaginaire, lorsqu’il commence à soupçonner que sa liberté n’est qu’un songe, craint de se réveiller, et conspire avec ces illusions agréables pour en être plus long-temps abusé, ainsi je retombe insensiblement de moi-même dans mes anciennes opinions, et j’appréhende de me réveiller de cet assoupissement, de peur que les veilles laborieuses qui auroient à succéder à la tranquillité de ce repos, au lieu de m’apporter quelque jour et quelque lumière dans la connoissance de la vérité, ne fussent pas suffisantes pour éclaircir toutes les ténèbres des difficultés qui viennent d’être agitées. 
+
+:::
+
+:::secondary-column-bottom
+![](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/drawkit-full-stack-man-monochrome.svg)
+
+> Citation positionnée en bas de page, dans les marges
 
 :::
 
 :::main-column
 
 Mais peut-être qu’encore que les sens nous trompent quelquefois touchant des choses fort peu sensibles et fort éloignées, il s’en rencontre néanmoins beaucoup d’autres desquelles on ne peut pas raisonnablement douter, quoique nous les connoissions par leur moyen : par exemple, que je suis ici, assis auprès du feu, vêtu d’une robe de chambre, ayant ce papier entre les mains, et autres choses de cette nature. Et comment est-ce que je pourrois nier que ces mains et ce corps soient à moi ? si ce n’est peut-être que je me compare à certains insensés, de qui le cerveau est tellement troublé et offusqué par les noires vapeurs de la bile, qu’ils assurent constamment qu’ils sont des rois, lorsqu’ils sont très pauvres ; qu’ils sont vêtus d’or et de pourpre, lorsqu’ils sont tout nus ; ou qui s’imaginent être des cruches ou avoir un corps de verre. Mais quoi ! ce sont des fous, et je ne serois pas moins extravagant si je me réglois sur leurs exemples.
+
+> et si nous rajoutions une citation ?
 
 ```{r fake_data, echo = FALSE}
 library(tibble)
@@ -71,20 +92,31 @@ Toutefois j’ai ici à considérer que je suis homme, et par conséquent que j�
 
 :::
 
-:::secondary-column
+::::numbers
+## Propre.rpls en quelques chiffres
+
+- 14 publications déployées sur ce canevas commun
+- 7 DREAL mobilisées ainsi que le SDES (producteur de la donnée)
+- 4,9 k messages asynchrones
+- 5 réunions synchrones
+- une forge publique qui compte un projet déployé et un guide de publication
+- 146 demandes (dont 114 closes) et 215 jalons de développements pour le paquet `{propre.rpls}`
+- 166 revues de code approuvées 
+- 96 % du code couvert par des tests fonctionnels
+- 300 litres de café
+
+::::
+
+
+:::secondary-column-top
 
 ### Ceci est un titre de niveau 3
 
 Supposons donc maintenant que nous sommes endormis, et que toutes ces particularités, à savoir que nous ouvrons les yeux, que nous branlons la tête, que nous étendons les mains, et choses semblables, ne sont que de fausses illusions ; et pensons que peut-être nos mains ni tout notre corps ne sont pas tels que nous les voyons. Toutefois il faut au moins avouer que les choses qui nous sont représentées dans le sommeil sont comme des tableaux et des peintures, qui ne peuvent être formées qu’à la ressemblance de quelque chose de réel et de véritable ;
 
-> et qu’ainsi, pour le moins, ces choses générales, à savoir des yeux, une tête, des mains, et tout un corps, ne sont pas choses imaginaires, mais réelles et existantes. 
-
-> Car de vrai les peintres, lors même qu’ils s’étudient avec le plus d’artifice à représenter des sirènes et des satyres par des figures bizarres et extraordinaires, ne peuvent toutefois leur donner des formes et des natures entièrement nouvelles, mais font seulement un certain mélange et composition des membres de divers animaux ; ou bien si peut-être leur imagination est assez extravagante pour inventer quelque chose de si nouveau que jamais on n’ait rien vu de semblable, et qu’ainsi leur ouvrage représente une chose purement feinte et absolument fausse, certes à tout le moins les couleurs dont ils les composent doivent-elles être véritables.
-
 :::
 
-<div class = "main-column">
-
+:::main-column
 ```{r tab_descartes}
 knitr::kable(df_descartes, "html") # --> à ajuster quand le thème tableau sera fait
 ```
@@ -105,4 +137,27 @@ Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne
 
 Je supposerai donc, non pas que Dieu, qui est très bon, et qui est la souveraine source de vérité, mais qu’un certain mauvais génie, non moins rusé et trompeur que puissant, a employé toute son industrie à me tromper ; je penserai que le ciel, l’air, la terre, les couleurs, les figures, les sons, et toutes les choses extérieures, ne sont rien que des illusions et rêveries dont il s’est servi pour tendre des piéges à ma crédulité ; je me considérerai moi-même comme n’ayant point de mains, point d’yeux, point de chair, point de sang ; comme n’ayant aucun sens, mais croyant faussement avoir toutes ces choses ; je demeurerai obstinément attaché à cette pensée ; et si, par ce moyen, il n’est pas en mon pouvoir de parvenir à la connoissance d’aucune vérité, à tout le moins il est en ma puissance de suspendre mon jugement : c’est pourquoi je prendrai garde soigneusement de ne recevoir en ma croyance aucune fausseté, et préparerai si bien mon esprit à toutes les ruses de ce grand trompeur, que, pour puissant et rusé qu’il soit, il ne me pourra jamais rien imposer.
 
-</div>
+:::
+
+
+:::last-page
+
+:::main-column
+
+Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne soin de m’en souvenir ; car ces anciennes et ordinaires opinions me reviennent encore souvent en la pensée, le long et familier usage qu’elles ont eu avec moi leur donnant droit d’occuper mon esprit contre mon gré, et de se rendre presque maîtresses de ma créance ; et je ne me désaccoutumerai jamais de leur déférer, et de prendre confiance en elles tant que je les considérerai telles qu’elles sont en effet, c’est-à-dire en quelque façon douteuses, comme je viens de montrer, et toutefois fort probables, en sorte que l’on a beaucoup plus de raison de les croire que de les nier. C’est pourquoi je pense que je ne ferai pas mal si, prenant de propos délibéré un sentiment contraire, je me trompe moi-même, et si je feins pour quelque temps que toutes ces opinions sont entièrement fausses et imaginaires ; jusqu’à ce qu’enfin, ayant tellement balancé mes anciens et nouveaux préjugés qu’ils ne puissent faire pencher mon avis plus d’un côté que d’un autre, mon jugement ne soit plus désormais maîtrisé par de mauvais usages et détourné du droit chemin qui le peut conduire à la connoissance de la vérité. Car je suis assuré qu’il ne peut y avoir de péril ni d’erreur en cette voie, et que je ne saurois aujourd’hui trop accorder à ma défiance, puisqu’il n’est pas maintenant question d’agir, mais seulement de méditer et de connoître.
+
+Je supposerai donc, non pas que Dieu, qui est très bon, et qui est la souveraine source de vérité, mais qu’un certain mauvais génie, non moins rusé et trompeur que puissant, a employé toute son industrie à me tromper ; je penserai que le ciel, l’air, la terre, les couleurs, les figures, les sons, et toutes les choses extérieures, ne sont rien que des illusions et rêveries dont il s’est servi pour tendre des piéges à ma crédulité ; je me considérerai moi-même comme n’ayant point de mains, point d’yeux, point de chair, point de sang ; comme n’ayant aucun sens, mais croyant faussement avoir toutes ces choses ; je demeurerai obstinément attaché à cette pensée ; et si, par ce moyen, il n’est pas en mon pouvoir de parvenir à la connoissance d’aucune vérité, à tout le moins il est en ma puissance de suspendre mon jugement : c’est pourquoi je prendrai garde soigneusement de ne recevoir en ma croyance aucune fausseté, et préparerai si bien mon esprit à toutes les ruses de ce grand trompeur, que, pour puissant et rusé qu’il soit, il ne me pourra jamais rien imposer.
+Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne soin de m’en souvenir ; car ces anciennes et ordinaires opinions me reviennent encore souvent en la pensée, le long et familier usage qu’elles ont eu avec moi leur donnant droit d’occuper mon esprit contre mon gré, et de se rendre presque maîtresses de ma créance ; et je ne me désaccoutumerai jamais de leur déférer, et de prendre confiance en elles tant que je les considérerai telles qu’elles sont en effet, c’est-à-dire en quelque façon douteuses, comme je viens de montrer, et toutefois fort probables, en sorte que l’on a beaucoup plus de raison de les croire que de les nier. C’est pourquoi je pense que je ne ferai pas mal si, prenant de propos délibéré un sentiment contraire, je me trompe moi-même, et si je feins pour quelque temps que toutes ces opinions sont entièrement fausses et imaginaires ; jusqu’à ce qu’enfin, ayant tellement balancé mes anciens et nouveaux préjugés qu’ils ne puissent faire pencher mon avis plus d’un côté que d’un autre, mon jugement ne soit plus désormais maîtrisé par de mauvais usages et détourné du droit chemin qui le peut conduire à la connoissance de la vérité. Car je suis assuré qu’il ne peut y avoir de péril ni d’erreur en cette voie, et que je ne saurois aujourd’hui trop accorder à ma défiance, puisqu’il n’est pas maintenant question d’agir, mais seulement de méditer et de connoître.
+
+:::
+
+:::secondary-column-top
+
+Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne soin de m’en souvenir ; car ces anciennes et ordinaires opinions me reviennent encore souvent en la pensée, le long et familier usage qu’elles ont eu avec moi leur donnant droit d’occuper mon esprit contre mon gré, et de se rendre presque maîtresses de ma créance ; et je ne me désaccoutumerai jamais de leur déférer, et de prendre confiance en elles tant que je les considérerai telles qu’elles sont en effet, c’est-à-dire en quelque façon douteuses, comme je viens de montrer, et toutefois fort probables, en sorte que l’on a beaucoup plus de raison de les croire que de les nier. C’est pourquoi je pense que je ne ferai pas mal si, prenant de propos délibéré un sentiment contraire, je me trompe moi-même, et si je feins pour quelque temps que toutes ces opinions sont entièrement fausses et imaginaires ; jusqu’à ce qu’enfin, ayant tellement balancé mes anciens et nouveaux préjugés qu’ils ne puissent faire pencher mon avis plus d’un côté que d’un autre, mon jugement ne soit plus désormais maîtrisé par de mauvais usages et détourné du droit chemin qui le peut conduire à la connoissance de la vérité. Car je suis assuré qu’il ne peut y avoir de péril ni d’erreur en cette voie, et que je ne saurois aujourd’hui trop accorder à ma défiance, puisqu’il n’est pas maintenant question d’agir, mais seulement de méditer et de connoître.
+
+Je supposerai donc, non pas que Dieu, qui est très bon, et qui est la souveraine source de vérité, mais qu’un certain mauvais génie, non moins rusé et trompeur que puissant, a employé toute son industrie à me tromper ; je penserai que le ciel, l’air, la terre, les couleurs, les figures, les sons, et toutes les choses extérieures, ne sont rien que des illusions et rêveries dont il s’est servi pour tendre des piéges à ma crédulité ; je me considérerai moi-même comme n’ayant point de mains, point d’yeux, point de chair, point de sang ; comme n’ayant aucun sens, mais croyant faussement avoir toutes ces choses ; je demeurerai obstinément attaché à cette pensée ; et si, par ce moyen, il n’est pas en mon pouvoir de parvenir à la connoissance d’aucune vérité.
+
+:::footer
+Le document que vous avez sous les yeux a été réalisé dans le cadre de la démarche Propre: la mise en page a été réalisée en même temps que son contenu. Le code source de ce document est accessible [ici](https://gitlab.com/rdes_dreal/propre.brochure/). Les illustrations ont été réalisées par www.drawkit.io, les caractères typographiques Marianne et Spectral ont respectivement été dessinées et développées par Mathieu Réguer & par Production Type.
+
+:::

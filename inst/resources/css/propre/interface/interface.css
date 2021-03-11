@@ -24,7 +24,7 @@
   }
 
   .pagedjs_first_page {
-    /* margin-left: var(--pagedjs-pagebox-width); */
+    margin-left: var(--pagedjs-pagebox-width);
   }
 
   .pagedjs_page > [class*="pagedjs_margin"] {

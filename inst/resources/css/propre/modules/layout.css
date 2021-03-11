@@ -1,20 +1,34 @@
 /* running elements  */
 
-@page {
+@page  {
   size: A4;
-  
-  margin-right: 17mm;
-  margin-left: 17mm;
-  
+  margin: 7mm;
+}
+
+.front-page {
+  break-after: page;
+}
+
+.front-page #header {
+  margin: 0;
+  margin-left: 0px;
+  padding: 0;
+  margin-left: calc(2 * var(--unit));
+  /* display: flex; */
 }
 
 
 
-
-[id*="page"] {
-  break-before: page;
+.last-page {
+  page: lastPage
 }
 
+@page lastPage {
 
+}
 
-#que-couvre-le-rapport h3  {margin-top: 0;}
+.last-page .footer {
+  position: absolute;
+  bottom: 0;
+  
+}

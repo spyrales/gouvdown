@@ -12,16 +12,15 @@
 
 
   /* fonts for the book */
-  
+
   --font-serif: "Spectral";
   --font-sans: "Marianne";
   --font-hand: "Caveat";
-  
   --font-body: var(--font-sans);
   --font-body-small-caps: var(--font-sans);
   --font-text: var(--font-sans);
   --font-title: var(--font-sans);
-  
+
   /* for the state stuff */
   --unit: 6mm;
 
@@ -32,9 +31,8 @@
   --color-body: black;
   --color-primary: var(--color-bleu-france);
   --color-secondary: var(--color-rouge-marianne);
-
-
-
+  --main-column-width: 60%;
+  --secondary-column-width: 35%;
   /* colors from the palette */
 }
 

@@ -49,3 +49,9 @@ page: fullpage;
 .pagedjs_page figure:first-child { 
   margin-top: 0;
 }
+
+.main-column img,
+.secondary-column img {
+  width: 100%;
+
+}

@@ -5,26 +5,21 @@ table {
   line-height: 1.2;
   table-layout: fixed;
   margin-bottom: var(--font-lineHeight);
+  margin-top: var(--font-lineHeight);
   width: 100%;
+  
 }
 
 table td,
 table th {
-  border: 1px solid black;
+  border: 1px solid var(--color-primary);
   padding: 0.3em;
   vertical-align: top;
 }
 
 table th {
-  background: rgb(230, 230, 230);
-}
-
-p,
-li {
-  font-size: 1em;
-  text-align: left;
-  text-indent: 0;
-  line-height: 1.2;
+  background: var(--color-primary);
+  color: white;
 }
 
 th:empty {
