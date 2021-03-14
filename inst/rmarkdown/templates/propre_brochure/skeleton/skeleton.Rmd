@@ -158,6 +158,7 @@ Je supposerai donc, non pas que Dieu, qui est très bon, et qui est la souverain
 :::
 
 :::footer
+
 Le document que vous avez sous les yeux a été réalisé dans le cadre de la démarche Propre: la mise en page a été réalisée en même temps que son contenu. Le code source de ce document est accessible [ici](https://gitlab.com/rdes_dreal/propre.brochure/). Les illustrations ont été réalisées par www.drawkit.io, les caractères typographiques Marianne et Spectral ont respectivement été dessinées et développées par Mathieu Réguer & par Production Type.
 
 :::
