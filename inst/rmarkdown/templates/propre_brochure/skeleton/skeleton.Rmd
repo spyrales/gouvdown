@@ -10,9 +10,9 @@ output:
     front_cover: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/T1-_d016-_Portrait_de_Descartes.png/776px-T1-_d016-_Portrait_de_Descartes.png
     # changer le nom du bloque-marque
     logo: "rf"
-    width_main_column: 12
+    width_main_column: 60
 # la ligne suivante permet l'impression en PDF
-# knit: pagedown::chrome_print
+knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
@@ -116,7 +116,7 @@ Supposons donc maintenant que nous sommes endormis, et que toutes ces particular
 
 :::
 
-:::main-column
+<div class = "main-column">
 ```{r tab_descartes}
 knitr::kable(df_descartes, "html") # --> à ajuster quand le thème tableau sera fait
 ```
@@ -137,8 +137,7 @@ Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne
 
 Je supposerai donc, non pas que Dieu, qui est très bon, et qui est la souveraine source de vérité, mais qu’un certain mauvais génie, non moins rusé et trompeur que puissant, a employé toute son industrie à me tromper ; je penserai que le ciel, l’air, la terre, les couleurs, les figures, les sons, et toutes les choses extérieures, ne sont rien que des illusions et rêveries dont il s’est servi pour tendre des piéges à ma crédulité ; je me considérerai moi-même comme n’ayant point de mains, point d’yeux, point de chair, point de sang ; comme n’ayant aucun sens, mais croyant faussement avoir toutes ces choses ; je demeurerai obstinément attaché à cette pensée ; et si, par ce moyen, il n’est pas en mon pouvoir de parvenir à la connoissance d’aucune vérité, à tout le moins il est en ma puissance de suspendre mon jugement : c’est pourquoi je prendrai garde soigneusement de ne recevoir en ma croyance aucune fausseté, et préparerai si bien mon esprit à toutes les ruses de ce grand trompeur, que, pour puissant et rusé qu’il soit, il ne me pourra jamais rien imposer.
 
-:::
-
+</div>
 
 :::last-page
 
@@ -156,8 +155,11 @@ Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne
 Mais il ne suffit pas d’avoir fait ces remarques, il faut encore que je prenne soin de m’en souvenir ; car ces anciennes et ordinaires opinions me reviennent encore souvent en la pensée, le long et familier usage qu’elles ont eu avec moi leur donnant droit d’occuper mon esprit contre mon gré, et de se rendre presque maîtresses de ma créance ; et je ne me désaccoutumerai jamais de leur déférer, et de prendre confiance en elles tant que je les considérerai telles qu’elles sont en effet, c’est-à-dire en quelque façon douteuses, comme je viens de montrer, et toutefois fort probables, en sorte que l’on a beaucoup plus de raison de les croire que de les nier. C’est pourquoi je pense que je ne ferai pas mal si, prenant de propos délibéré un sentiment contraire, je me trompe moi-même, et si je feins pour quelque temps que toutes ces opinions sont entièrement fausses et imaginaires ; jusqu’à ce qu’enfin, ayant tellement balancé mes anciens et nouveaux préjugés qu’ils ne puissent faire pencher mon avis plus d’un côté que d’un autre, mon jugement ne soit plus désormais maîtrisé par de mauvais usages et détourné du droit chemin qui le peut conduire à la connoissance de la vérité. Car je suis assuré qu’il ne peut y avoir de péril ni d’erreur en cette voie, et que je ne saurois aujourd’hui trop accorder à ma défiance, puisqu’il n’est pas maintenant question d’agir, mais seulement de méditer et de connoître.
 
 Je supposerai donc, non pas que Dieu, qui est très bon, et qui est la souveraine source de vérité, mais qu’un certain mauvais génie, non moins rusé et trompeur que puissant, a employé toute son industrie à me tromper ; je penserai que le ciel, l’air, la terre, les couleurs, les figures, les sons, et toutes les choses extérieures, ne sont rien que des illusions et rêveries dont il s’est servi pour tendre des piéges à ma crédulité ; je me considérerai moi-même comme n’ayant point de mains, point d’yeux, point de chair, point de sang ; comme n’ayant aucun sens, mais croyant faussement avoir toutes ces choses ; je demeurerai obstinément attaché à cette pensée ; et si, par ce moyen, il n’est pas en mon pouvoir de parvenir à la connoissance d’aucune vérité.
+:::
 
 :::footer
 Le document que vous avez sous les yeux a été réalisé dans le cadre de la démarche Propre: la mise en page a été réalisée en même temps que son contenu. Le code source de ce document est accessible [ici](https://gitlab.com/rdes_dreal/propre.brochure/). Les illustrations ont été réalisées par www.drawkit.io, les caractères typographiques Marianne et Spectral ont respectivement été dessinées et développées par Mathieu Réguer & par Production Type.
+
+:::
 
 :::

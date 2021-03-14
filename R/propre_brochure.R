@@ -3,7 +3,7 @@
 #' @inheritParams html_gouv
 #' @param ... Additional arguments passed to \code{bookdown::\link{html_document2}()}.
 #' @param css A character vector of additionnal CSS file paths.
-#' @param width_main_column Width of the main text column (in cm)
+#' @param width_main_column Width of the main text column (in %)
 #'
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
@@ -46,8 +46,11 @@ propre_brochure <- function(extra_dependencies = list(),
   # width of main column - write css
   width_css <- tempfile(fileext = ".css")
 
-  writeLines(paste0(":root {--width-main-column:", width_main_column , "cm;}", sep = ""),
-             con = width_css)
+  writeLines(paste(
+    paste0(":root {--main-column-width:", width_main_column , "%;}"),
+    paste0(":root {--secondary-column-width:", 100 - width_main_column - 5, "%;}"), sep = "\n"
+  ),
+  con = width_css)
 
   # render
   pagedown::html_paged(

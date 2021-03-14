@@ -29,7 +29,7 @@ document (typically created using the \code{\link[rmarkdown]{includes}} function
 
 \item{use_gouvdown_fonts}{Use the fonts provided by the \code{gouvdown.fonts} package, if installed.}
 
-\item{width_main_column}{Width of the main text column (in cm)}
+\item{width_main_column}{Width of the main text column (in \%)}
 }
 \value{
 An R Markdown output format object to be passed to
