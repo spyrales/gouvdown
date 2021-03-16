@@ -30,6 +30,7 @@ h2 {
   margin-bottom: calc(var(--font-lineHeight) * 1);
   font-style: normal;
   font-weight: 600;
+  color: var(--color-primary);
 }
 
 h3 {
