@@ -42,7 +42,7 @@ img {
     font-size: 1.2em;
   }
 
-  :is(#header) .author, .date {
+  #header .author, #header .date {
     display: inline;
   }
 
