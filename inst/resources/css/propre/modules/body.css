@@ -62,17 +62,6 @@ hr::before {
   margin: 0;
 }
 
-blockquote {
-  /* margin-top: calc(var(--font-lineHeight));
-  line-height: var(--font-lineHeight);
-  margin-bottom: calc(var(--font-lineHeight));
-  padding-left: 20px;
-  margin-left: var(--text-indent);
-  font-style: italic;
-  font-weight: 400;
-  border-left: 5px solid var(--color-primary); */
-}
-
 p {
   font-family: var(--font-serif);
 }
