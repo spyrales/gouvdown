@@ -11,7 +11,7 @@ output:
     # changer le nom du bloque-marque
     logo: "rf"
     width_main_column: 60
-# la ligne suivante permet l'impression en PDF
+# la ligne suivante permet l'impression en PDF (Chrome doit être installé)
 knit: pagedown::chrome_print
 ---
 

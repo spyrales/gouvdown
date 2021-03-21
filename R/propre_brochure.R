@@ -36,9 +36,6 @@ propre_brochure <- function(extra_dependencies = list(),
   # custom css
   book_css <- pkg_resource("css/propre", "book.css")
 
-  # custom Pandoc template
-  brochure_html <- pkg_resource("html", "propre_brochure.html")
-
   # fonts dependencies - taken from html_gouv
   extra_dependencies <- c(gouvdown_dependencies(use_gouvdown_fonts),
                           extra_dependencies)
@@ -60,7 +57,6 @@ propre_brochure <- function(extra_dependencies = list(),
     # self_contained = FALSE,
     toc = FALSE,
     css = c(css, book_css, width_css),
-    template = brochure_html,
     ...
   )
 }
