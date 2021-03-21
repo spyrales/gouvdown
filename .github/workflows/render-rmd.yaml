@@ -78,6 +78,8 @@ jobs:
 
       - name: Render Rmd
         run: |
+          dir.create("rmd")
+          dir.create("rmd_pdf")
           rmarkdown::render(
             "inst/rmarkdown/templates/propre_brochure/skeleton/skeleton.Rmd",
             output_format = gouvdown::propre_brochure(front_cover = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/T1-_d016-_Portrait_de_Descartes.png/776px-T1-_d016-_Portrait_de_Descartes.png",
