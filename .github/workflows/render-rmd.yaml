@@ -83,12 +83,11 @@ jobs:
           rmarkdown::render(
             "inst/rmarkdown/templates/propre_brochure/skeleton/skeleton.Rmd",
             output_format = gouvdown::propre_brochure(front_cover = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/T1-_d016-_Portrait_de_Descartes.png/776px-T1-_d016-_Portrait_de_Descartes.png",
-                                                      logo = "rf",
                                                       width_main_column = 60),
-            output_file = "skeleton.html"
+            output_file = "skeleton.html",
+            output_dir = "rmd"
           )
-          dir.create("rmd")
-          pagedown::chrome_print(input = "skeleton.html", output = "rmd/skeleton.pdf")
+          pagedown::chrome_print(input = "rmd/skeleton.html", output = "rmd/skeleton.pdf")
         shell: Rscript {0}
 
       - name: Upload Rmd outputs
