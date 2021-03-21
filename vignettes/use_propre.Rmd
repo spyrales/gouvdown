@@ -66,17 +66,17 @@ knit: pagedown::chrome_print
 ---
 ```
 
-Il faut retenir que l'indentation est très important car elle indique de quel élément va dépendre chaque ligne. Lorsque le fichier bloque dès le début de la compilation, c'est l'une des premières erreurs à rechercher.
+Il faut retenir que l'indentation est très importante car elle indique de quel élément va dépendre chaque ligne. Lorsque le fichier bloque dès le début de la compilation, c'est l'une des premières erreurs à rechercher.
 
 On peut comprendre cet élément comme une liste de variables où il faut indiquer des valeurs :
 
 - le titre (`title`), le sous-titre (`subtitle`), la date (`date`), l'auteur (`author`) ;
-- le format de sortie (`output`) et des arguments qui le précise (`logo`, `width_main_column`). C'est ce qui permet d'utiliser la fonction `propre_brochure` ;
-- des arguments complémentaires (`knit`), qui sert ici à générer un fichier PDF directement en imprimant le contenu du fichier HTML.
+- le format de sortie (`output`) et des arguments qui le précisent (`logo`, `width_main_column`). C'est ce qui permet d'utiliser la fonction `propre_brochure` ;
+- des arguments complémentaires (`knit`), qui sert ici à générer un fichier PDF directement grâce à Chrome en imprimant le contenu du fichier HTML.
 
 ### Balisage
 
-RMarkdown repose sur Markdown qui, contrairement à d'autres outils comme Work ou LibreOffice, n'affiche pas directement la mise en forme du document. Il faut une étape de compilation (en appuyant sur le boutant _Knit_ ou en utilisant la fonction `rmarkdown::render`) pour cela.
+RMarkdown repose sur Markdown qui, contrairement à d'autres outils comme Word ou LibreOffice, n'affiche pas directement la mise en forme du document. Il faut une étape de compilation (en appuyant sur le boutant _Knit_ ou en utilisant la fonction `rmarkdown::render`) pour cela.
 
 Cela implique que la mise en forme est directement incluse dans le texte au moyen de balises qui permettent d'indiquer le niveau du titre, si il s'agit d'un bloc de citation, d'un texte en gras, ou en italique.
 
