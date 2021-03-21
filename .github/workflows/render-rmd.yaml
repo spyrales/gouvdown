@@ -105,3 +105,4 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: rmd
+          retention-days: 5

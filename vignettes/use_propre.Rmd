@@ -34,9 +34,9 @@ La création de documents repose sur l'utilisation de [RMarkdown](https://rmarkd
 
 De bonnes ressources pour se former à RMarkdown existent, notamment :
 
-- ressource 1
-- ressource 2
-- ressource 3
+- [Diffuser et publier avec `rmarkdown`](https://juba.github.io/tidyverse/13-rmarkdown.html)
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+- [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
 ## Éléments importants
 
@@ -165,9 +165,21 @@ knitr::kable(df_logo, "html", col.names = c("Logo", "Bloc-marque"))
 ```
 
 - `width_main_column` : largeur (en cm) de la colonne de texte principale (de la classe `main-column`).
-CAPTURE ECRAN PROPRE AVEC LOGO ET YAML EN FACE - 2 situations
 
-IDEM WIDTH MAIN COLUMN - 2 EXEMPLES
+```{r table_width}
+df_width <-
+  data.frame(
+    logo = c("width_main_column: 60",
+             "width_main_column: 80"),
+    img = paste0("![](", c(
+        "img/propre_width_60.png",
+        "img/propre_width_80.png"
+      )
+    , "){height=20%}")
+  )
+
+knitr::kable(df_width, "html", col.names = c("Largeur", "Résultat"))
+```
 
 Il est aussi possible d'utiliser les arguments proposés par la fonction `pagedown::html_paged` comme pour inclure en supplément un autre fichier `css`.
 
@@ -194,13 +206,22 @@ df_styles <-
       "texte normal",
       "> citation"
     ),
-    img = c("img/", "img/", "img/", "img/", "img/", "img/")
+    img = paste0(
+      "![](",
+      c(
+        "img/propre_titre2.png",
+        "img/propre_titre3.png",
+        "img/propre_gras.png",
+        "img/propre_italique.png",
+        "img/propre_texte.png",
+        "img/propre_citation.png"
+      ),
+      "){height=100%}"
+    )
   )
 
 knitr::kable(df_styles, "html", col.names = c("Style", "Résultat"))
 ```
-
--- IMAGE UNE FOIS LE CSS FINALISE
 
 On peut aussi inclure directement des graphiques ou des tableaux (FORMAT DES TABLEAUX TO DO) qui pourront être directement dans la bonne charte.
 
@@ -231,27 +252,35 @@ Deux classes principales permettent de diviser le texte en deux colonnes. Il con
 
 La colonne principale se fixe au moyen de la classe `main-column`. Sa largeur peut se régler au moyen du paramètre `width_main_column` de la fonction `propre_brochure`. On lui donne alors une largeur en pourcentage de la page. Elle se situe alternativement à droite ou à gauche en fonction de si la page est paire ou impaire.
 
-CAPTURE ECRAN
+```{r, out.width = '400px'}
+knitr::include_graphics("img/propre_main_col.png")
+```
 
-La colonne secondaire se fixe par `secondary-column`. De façon plus fine, on peut utiliser `secondary-column-top` pour placer un élément en haut de cette colonne secondaire ou `secondary-column-bottom` pour un placement en bas.
+La colonne secondaire se fixe par `secondary-column`. 
 
-CAPTURE ECRAN DES TROIS CAS
+```{r, out.width = '400px'}
+knitr::include_graphics("img/propre_secondary_col.png")
+```
+
+De façon plus fine, on peut utiliser `secondary-column-top` pour placer un élément en haut de cette colonne secondaire ou `secondary-column-bottom` pour un placement en bas.
 
 ### Classes de positionnement
 
 D'autres classes spécifiques permettent de gérer des blocs spécifiques :
 
-+ `header` positionne un bloc en haut à gauche de couleur bleu
-
-CAPTURE ECRAN
++ `header` positionne un bloc en haut à gauche 
 
 + `numbers` créé un encart en bas à droite
 
-CAPTURE ECRAN
+```{r, out.width = '400px'}
+knitr::include_graphics("img/propre_numbers.png")
+```
 
 + `footer` créé une note de bas de page
 
-CAPTURE ECRAN
+```{r, out.width = '400px'}
+knitr::include_graphics("img/propre_footer.png")
+```
 
 + `front-page` et `last-page` définissent les premières et dernières pages.
 
