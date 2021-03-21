@@ -23,8 +23,8 @@ La fonction `propre_brochure` du package `gouvdown` et ses ressources associées
 
 Pour davantage d'informations sur la reproductibilité des publications et son intérêt, vous pouvez vous tourner vers la documentation de la démarche PROPRE, mise en place par ThinkR et le réseau des DREAL :
 
-- au format long : **LIEN DOCUMENTATION LONGUE PROPRE** ;
-- au format court : **LIEN GITHUB PROPRE.BROCHURE** (cette brochure est-elle même réalisée grâce à la fonction `propre_brochure` présentée ici).
+- au format [long](https://rdes_dreal.gitlab.io/propre/index.html) ;
+- au format [court](https://github.com/spyrales/propre.brochure) (cette brochure est-elle même réalisée grâce à la fonction `propre_brochure` présentée ici).
 
 ## Principes généraux
 
@@ -175,7 +175,9 @@ Il est aussi possible d'utiliser les arguments proposés par la fonction `pagedo
 
 Les éléments de titre sont assignés à certaines places.
 
-CAPTURE ECRAN AVEC PLACES TITRE/SOUS-TITRE/DATE/AUTEUR
+```{r, out.width = '500px', out.height = '400px'}
+knitr::include_graphics("img/propre_page_titre.png")
+```
 
 Les styles présents suivent le design proposés par dans le cadre de la marque-État (polices notamment).
 

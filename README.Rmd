@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R build status](https://github.com/spyrales/gouvdown/workflows/R-CMD-check/badge.svg)](https://github.com/spyrales/gouvdown/actions)
 [![Codecov test coverage](https://codecov.io/gh/spyrales/gouvdown/branch/master/graph/badge.svg)](https://codecov.io/gh/spyrales/gouvdown?branch=master)
+[![R-CMD-check](https://github.com/spyrales/gouvdown/workflows/R-CMD-check/badge.svg)](https://github.com/spyrales/gouvdown/actions)
 <!-- badges: end -->
 
 **gouvdown** let you write R Markdown documents which comply with the French
