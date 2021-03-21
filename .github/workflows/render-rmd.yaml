@@ -22,7 +22,6 @@ jobs:
         config:
           - {os: macOS-latest,   r: 'release'}
           - {os: windows-latest, r: 'release'}
-          - {os: windows-latest, r: '4.0'}
           - {os: ubuntu-18.04,   r: '4.0',     rspm: "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"}
 
     env:
@@ -62,11 +61,12 @@ jobs:
           do
             eval sudo $cmd
           done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "16.04"))')
-      - name: Install dependencies
+      - name: Install dependencies and package
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
           remotes::install_github("rstudio/pagedown")
+          remotes::install_local(".")
         shell: Rscript {0}
 
       - name: Session info
@@ -76,7 +76,7 @@ jobs:
           sessioninfo::session_info(pkgs, include_base = TRUE)
         shell: Rscript {0}
 
-      - name: Render README
+      - name: Render Rmd
         run: |
           rmarkdown::render(
             "inst/rmarkdown/templates/propre_brochure/skeleton/skeleton.Rmd",
@@ -85,11 +85,11 @@ jobs:
                                                       width_main_column = 60),
             output_file = "rmd/skeleton.html"
           )
-          pagedown::chrome_print("rmd/skeleton.html", output = "rmd/skeleton.pdf")
+          pagedown::chrome_print("rmd/skeleton.html", output = "rmd_pdf/skeleton.pdf")
         shell: Rscript {0}
 
       - name: Upload Rmd outputs
         uses: actions/upload-artifact@main
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-          path: rmd
+          path: rmd_pdf
