@@ -64,8 +64,8 @@ jobs:
       - name: Install dependencies and package
         run: |
           remotes::install_deps(dependencies = TRUE)
-          remotes::install_cran("rcmdcheck")
           remotes::install_github("rstudio/pagedown")
+          remotes::install_github("spyrales/gouvdown.fonts")
           remotes::install_local(".")
         shell: Rscript {0}
 
