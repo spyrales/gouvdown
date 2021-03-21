@@ -97,7 +97,7 @@ Pour cela on utilise des _div_ que l'on peut assimiler à des blocs auxquels il 
 
 On peut déclarer les _div_ de deux façons :
 
-Soit en utilisant la syntaxe HTML :
+Soit en utilisant la syntaxe HTML (à privilégier quand on est en présence de tableaux) :
 
 ```
 <div>
