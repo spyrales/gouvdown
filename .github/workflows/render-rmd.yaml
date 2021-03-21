@@ -70,6 +70,15 @@ jobs:
           remotes::install_local(".")
         shell: Rscript {0}
 
+      - name: Install gouvdown fonts to mac os
+        if: runner.os == 'macOS'
+        run: |
+          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/spectral/desktop/truetype/*.ttf /Library/Fonts/
+          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/marianne/truetype/*.ttf /Library/Fonts/
+
+      - name: Remove gouvdown.fonts directory
+        run: rm -rf gouvdown.fonts
+
       - name: Session info
         run: |
           options(width = 100)
