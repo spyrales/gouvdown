@@ -78,20 +78,20 @@ jobs:
 
       - name: Render Rmd
         run: |
-          dir.create("rmd")
-          dir.create("rmd_pdf")
+
           rmarkdown::render(
             "inst/rmarkdown/templates/propre_brochure/skeleton/skeleton.Rmd",
             output_format = gouvdown::propre_brochure(front_cover = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/T1-_d016-_Portrait_de_Descartes.png/776px-T1-_d016-_Portrait_de_Descartes.png",
                                                       logo = "rf",
                                                       width_main_column = 60),
-            output_file = "rmd/skeleton.html"
+            output_file = "skeleton.html",
+            output_dir = "rmd"
           )
-          pagedown::chrome_print("rmd/skeleton.html", output = "rmd_pdf/skeleton.pdf")
+          pagedown::chrome_print(input = "rmd/skeleton.html", output = "rmd/skeleton.pdf")
         shell: Rscript {0}
 
       - name: Upload Rmd outputs
         uses: actions/upload-artifact@main
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-          path: rmd_pdf
+          path: rmd
