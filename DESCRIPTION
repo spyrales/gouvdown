@@ -44,6 +44,7 @@ Imports:
     utils,
     xfun
 Suggests: 
+    gouvdown.fonts,
     pals,
     scales,
     sf,
@@ -51,6 +52,8 @@ Suggests:
     tidyverse
 VignetteBuilder: 
     knitr
+Remotes:
+    spyrales/gouvdown.fonts
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
