@@ -1,7 +1,7 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1.9000
-pkgdown_sha: e1e46f2e13c7efdb17bc4eae40bc3779c2b0b517
+pkgdown: 1.6.1.9001
+pkgdown_sha: 23eb05ceceda1c44573b254dd8b96e92cd91f825
 articles:
   graph_gouv: graph_gouv.html
-last_built: 2020-11-03T17:07Z
+last_built: 2021-03-24T20:35Z
 
