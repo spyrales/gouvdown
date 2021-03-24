@@ -20,8 +20,8 @@ Authors@R:
       person(family = "ThinkR",
              role = "cph",
              comment = "helper functions from drealdown"))
-Description: Produce documents compliants with the French
-    government design system.
+Description: Produce documents compliants with the French government
+    design system.
 License: EUPL (>= 1.2) | file LICENCE
 URL: https://github.com/spyrales/gouvdown
 BugReports: https://github.com/spyrales/gouvdown/issues
@@ -31,9 +31,9 @@ Imports:
     bookdown,
     colorspace,
     extrafont,
-    glue,
     ggplot2 (>= 3.3.0),
     ggpubr,
+    glue,
     grid,
     here,
     htmltools,
