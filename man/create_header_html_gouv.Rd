@@ -25,5 +25,5 @@ an html file
 create html_gouv bootstrap header
 }
 \examples{
-create_header_html_gouv(logo = "gouvernement")
+create_header_html_gouv(logo = 'gouvernement')
 }

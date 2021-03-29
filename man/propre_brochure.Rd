@@ -11,7 +11,8 @@ propre_brochure(
   logo = NULL,
   css = NULL,
   use_gouvdown_fonts = TRUE,
-  width_main_column = 15
+  width_main_column = 15,
+  made_with = "Ce document a été réalisé avec le package `gouvdown`"
 )
 }
 \arguments{

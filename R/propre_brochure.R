@@ -14,7 +14,8 @@ propre_brochure <- function(extra_dependencies = list(),
                             logo = NULL,
                             css = NULL,
                             use_gouvdown_fonts = TRUE,
-                            width_main_column = 15) {
+                            width_main_column = 15,
+                            made_with = "Ce document a été réalisé avec le package `gouvdown`") {
   # init variable
   logo_html_fragment <- NULL
 
@@ -49,6 +50,14 @@ propre_brochure <- function(extra_dependencies = list(),
   ),
   con = width_css)
 
+  # text made with gouvdown - write css
+  made_with_css <- tempfile(fileext = ".css")
+
+  writeLines(paste(
+    paste0(":root {--made-with:", made_with , ";}")
+  ),
+  con = made_with_css)
+
   # render
   pagedown::html_paged(
     extra_dependencies = extra_dependencies,
@@ -56,7 +65,7 @@ propre_brochure <- function(extra_dependencies = list(),
     number_sections = FALSE,
     # self_contained = FALSE,
     toc = FALSE,
-    css = c(css, book_css, width_css),
+    css = c(css, book_css, width_css, made_with_css),
     ...
   )
 }

@@ -11,6 +11,8 @@ output:
     # changer le nom du bloque-marque
     logo: "rf"
     width_main_column: 60
+    # la ligne suivante permet de modifier la ligne "Ce document a été réalisé avec le package `gouvdown`"
+    # made_with: ""
 # la ligne suivante permet l'impression en PDF (Chrome doit être installé)
 knit: pagedown::chrome_print
 ---
