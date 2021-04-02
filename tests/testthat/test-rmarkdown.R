@@ -15,6 +15,13 @@ expect_render <- function(template){
     "pandoc")
 }
 
+# gouvdown html document
 test_that("gouvdown_html_document", {
   expect_render("gouvdown_html_document")
 })
+
+# propre brochure
+test_that("propre_brochure", {
+  expect_render("propre_brochure")
+})
+

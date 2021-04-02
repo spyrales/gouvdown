@@ -1,0 +1,26 @@
+:root {
+    --color-bleu-france: #000091;
+    --color-rouge-marianne: #e1000f; 
+    --color-black: #000000;
+  
+    /* ya un truc à faire ici pour créer des teintes multi */
+    
+    --color-A1: #958B62; 
+    --color-B1: #91AE4F;
+    --color-C1: #169B62;
+    --color-D1: #466964;
+    --color-E1: #00AC8C;
+    --color-F1: #5770BE;
+    --color-G1: #484D7A;
+    --color-H1: #FF8D7E;
+    --color-I1: #D08A77;
+    --color-J1: #FFC29E;
+    --color-K1: #FFE800;
+    --color-L1: #FDCF41;
+    --color-M1: #FF9940;
+    --color-N1: #E18B63;
+    --color-O1: #FF6F4C;
+    --color-P1: #7D4E5B;
+    --color-R1: #A26859;
+  }
+  
