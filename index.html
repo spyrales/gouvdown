@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">gouvdown</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
@@ -44,7 +44,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -61,7 +61,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/spyrales/gouvdown/">
+  <a href="https://github.com/spyrales/gouvdown/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -78,51 +78,50 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="gouvdown" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#gouvdown" class="anchor"></a>gouvdown</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="gouvdown">gouvdown<a class="anchor" aria-label="anchor" href="#gouvdown"></a>
+</h1></div>
 <!-- badges: start -->
-
 <p><strong>gouvdown</strong> let you write R Markdown documents which comply with the French government design system.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>You can install the development version from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"spyrales/gouvdown"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"spyrales/gouvdown"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="palettes" class="section level2">
-<h2 class="hasAnchor">
-<a href="#palettes" class="anchor"></a>Palettes</h2>
+<div class="section level2">
+<h2 id="palettes">Palettes<a class="anchor" aria-label="anchor" href="#palettes"></a>
+</h2>
 <p><strong>gouvdown</strong> provides the official colors and a set of palettes.</p>
 <p><img src="reference/figures/README-palettes-1.png" width="100%"></p>
 </div>
-<div id="theme" class="section level2">
-<h2 class="hasAnchor">
-<a href="#theme" class="anchor"></a>Theme</h2>
+<div class="section level2">
+<h2 id="theme">Theme<a class="anchor" aria-label="anchor" href="#theme"></a>
+</h2>
 <p><strong>gouvdown</strong> provides themes for <a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a> graphics and maps.</p>
 <p><img src="reference/figures/README-theme-1.png" width="100%"></p>
 </div>
-<div id="rmarkdown" class="section level2">
-<h2 class="hasAnchor">
-<a href="#rmarkdown" class="anchor"></a>Rmarkdown</h2>
-<div id="html_document" class="section level3">
-<h3 class="hasAnchor">
-<a href="#html_document" class="anchor"></a>html_document</h3>
+<div class="section level2">
+<h2 id="rmarkdown">Rmarkdown<a class="anchor" aria-label="anchor" href="#rmarkdown"></a>
+</h2>
+<div class="section level3">
+<h3 id="html_document">html_document<a class="anchor" aria-label="anchor" href="#html_document"></a>
+</h3>
 <p><strong>gouvdown</strong> provides a html template for <code>{Rmarkdown}</code></p>
 <p><img src="reference/figures/html_gouv.png"></p>
 </div>
-<div id="bookdown" class="section level3">
-<h3 class="hasAnchor">
-<a href="#bookdown" class="anchor"></a>bookdown</h3>
+<div class="section level3">
+<h3 id="bookdown">bookdown<a class="anchor" aria-label="anchor" href="#bookdown"></a>
+</h3>
 <p><strong>gouvdown</strong> provides a bookdown project template for <a href="https://github.com/rstudio/bookdown" class="external-link">bookdown</a></p>
 <p><img src="reference/figures/gouvbook.png"></p>
 </div>
 </div>
-<div id="references" class="section level2">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
 <ul>
 <li>Design system: <a href="https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/introduction" class="external-link uri">https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/introduction</a>
 </li>
@@ -137,10 +136,8 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/spyrales/gouvdown/">https://​github.com/​spyrales/​gouvdown/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/spyrales/gouvdown/issues">https://​github.com/​spyrales/​gouvdown/​issues</a>
-</li>
+<li><a href="https://github.com/spyrales/gouvdown/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/spyrales/gouvdown/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -160,13 +157,20 @@
 </ul>
 </div>
 
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing gouvdown</a></li>
+</ul>
+</div>
+
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Maël Theulière <br><small class="roles"> Author, maintainer </small>  </li>
-<li>Romain Lesur <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-0721-5595" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Romain Lesur <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-0721-5595" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Thomas Vroylandt <br><small class="roles"> Author </small>  </li>
-<li><a href="authors.html">More on authors...</a></li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
@@ -189,7 +193,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.9000.</p>
 </div>
 
       </footer>
