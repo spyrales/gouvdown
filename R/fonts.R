@@ -50,7 +50,7 @@ load_fonts <- function() {
 #'
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' check_fonts_in_r(import = FALSE)
 #'
 #' # Test if working

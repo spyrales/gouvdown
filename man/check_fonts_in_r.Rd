@@ -25,7 +25,7 @@ Test if fonts are available on the system and import them in R
 For fonts to be used, they need to be installed on the machine.
 }
 \examples{
-\donttest{
+\dontrun{
 check_fonts_in_r(import = FALSE)
 
 # Test if working
