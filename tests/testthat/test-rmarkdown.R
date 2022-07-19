@@ -18,3 +18,7 @@ expect_render <- function(template){
 test_that("gouvdown_html_document", {
   expect_render("gouvdown_html_document")
 })
+
+test_that("Le template lettre_word fonctionne", {
+  expect_render("gouvdown-lettre-word")
+})
