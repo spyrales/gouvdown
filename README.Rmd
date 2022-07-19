@@ -80,6 +80,10 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 
 ![](man/figures/gouvbook.png)
 
+### Word output format
+
+**gouvdown** provides a word template for `{Rmarkdown}` for writing an official letter.
+
 ## References
 
 + Design system: <https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/introduction>

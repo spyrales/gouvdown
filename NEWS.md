@@ -1,5 +1,7 @@
 # gouvdown 0.0.0.9000
 
+* Add new output_format and template for creating docx letter
+
 * Add logos for regional prefecture and 3 ministries
 
 * Added `Book project using gouvdown` template
