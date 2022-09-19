@@ -1,18 +1,64 @@
 ---
-title: "Template Title"
+title: "Exemple lettre Word"
 author: "Your Name"
-date: "The Date"
+date: "19/09/2022"
 output: gouvdown::lettre_word
+params:
+  lettre_date: "01/01/2022"
+  lettre_lieu: "Paris"
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Adding an RMarkdown Template
+:::Date
+``r params$lettre_date``, le ``r params$lettre_date``
+:::
 
-This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
 
-This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+:::header-letter
+Je ne sais plus à quoi doit servir ce style
+:::
 
-Finally, be sure to remove this message!
+
+:::header-letter-naming
+Madame la préfête de la Loire-Atlantique
+:::
+
+:::object-title
+Objet: Informations sur ...
+:::
+
+
+## Un titre de niveau 2
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+
+:::header-annexes
+Annexes
+:::
+Le titre au dessus marque le début de la section des annexes.
+
+
+Listes à puces:
+:::Compact
+- le style
+- "Compact"
+- est utilisé pour
+- les listes à puces
+:::
+
+
+
+:::header-annexeN
+Annexe 1: Première annexe
+:::
+:::subheader-annexe
+Sous-titre de la première annexe
+:::
+
+Contenu de l'annexe 1
+
