@@ -28,10 +28,8 @@ Markdown output formats or Shiny applications.
 library(htmltools)
 library(gouvdown)
 
-tag <- p(
-  "The quick brown fox jumps over the lazy dog",
-  style = "font-family: 'Marianne', Arial, sans-serif"
-)
+tag <- p("The quick brown fox jumps over the lazy dog",
+    style = "font-family: 'Marianne', Arial, sans-serif")
 
 tag <- attachDependencies(tag, marianne_font_dep())
 
