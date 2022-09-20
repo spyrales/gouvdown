@@ -49,9 +49,8 @@ parameters are provided.
 library(grid)
 
 header <- gglogo("marianne", x = 0, y = 1)
-vp <- viewport(x = 0.22, y = 0.78,
-               width = 0.2, height = 0.2,
-               just = c("right", "bottom"))
+vp <- viewport(x = 0.22, y = 0.78, width = 0.2, height = 0.2, just = c("right",
+    "bottom"))
 pushViewport(vp)
 grid.draw(header)
 }

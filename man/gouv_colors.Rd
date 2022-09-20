@@ -19,7 +19,6 @@ requested hex code.
 }
 \examples{
 gouv_colors("a1")
-
 }
 \references{
 \url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}

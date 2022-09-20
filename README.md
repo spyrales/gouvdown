@@ -38,7 +38,7 @@ remotes::install_github("spyrales/gouvdown")
 
 ## Rmarkdown
 
-### html\_document
+### html_document
 
 **gouvdown** provides a html template for `{Rmarkdown}`
 
@@ -50,9 +50,14 @@ remotes::install_github("spyrales/gouvdown")
 
 ![](man/figures/gouvbook.png)
 
+### Word output format
+
+**gouvdown** provides a word template for `{Rmarkdown}` for writing an
+official letter.
+
 ## References
 
-  - Design system:
+-   Design system:
     <https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/introduction>
-  - Example:
+-   Example:
     <https://github.com/DISIC/design.numerique.gouv.fr/tree/master/src/assets>

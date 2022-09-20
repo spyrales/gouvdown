@@ -7,7 +7,7 @@
 scale_fill_gouv_continuous(palette = "pal_gouv_a", reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Character name of palette in \link{gouv_palettes}, one of \code{pal_gouv_fr}, \code{pal_gouv_a}, \code{pal_gouv_b}, \code{pal_gouv_c}, \code{pal_gouv_d}, \code{pal_gouv_e}, \code{pal_gouv_f}, \code{pal_gouv_g}, \code{pal_gouv_h}, \code{pal_gouv_i}, \code{pal_gouv_j}, \code{pal_gouv_k}, \code{pal_gouv_l}, \code{pal_gouv_m}, \code{pal_gouv_n}, \code{pal_gouv_o}, \code{pal_gouv_p}, \code{pal_gouv_q}, \code{pal_gouv_r}, \code{pal_gouv_qual1}, \code{pal_gouv_qual2}, \code{pal_gouv_div1}, \code{pal_gouv_div2}.}
+\item{palette}{Character name of palette in \link{gouv_palettes}, one of \verb{r paste0("``", names(gouvdown::gouv_palettes), "``", collapse = ", ")}.}
 
 \item{reverse}{Boolean indicating whether the palette should be reversed.}
 
