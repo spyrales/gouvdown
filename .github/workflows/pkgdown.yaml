@@ -10,33 +10,14 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-r@v2
 
-      - uses: r-lib/actions/setup-pandoc@master
+      - uses: r-lib/actions/setup-pandoc@v2
 
       - name: Install tools
         run: |
           install.packages("devtools")
         shell: Rscript {0}
-
-      - name: Checkout gouvdown.fonts
-        uses: actions/checkout@v2
-        with:
-          repository: spyrales/gouvdown.fonts
-          token: ${{ secrets.BOT_GITHUB_PAT }}
-          path: gouvdown.fonts
-
-      - name: Install gouvdown.fonts package
-        run: devtools::install("gouvdown.fonts")
-        shell: Rscript {0}
-
-      - name: Install gouvdown fonts to mac os
-        run: |
-          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/spectral/desktop/truetype/*.ttf /Library/Fonts/
-          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/marianne/truetype/*.ttf /Library/Fonts/
-
-      - name: Remove gouvdown.fonts directory
-        run: rm -rf gouvdown.fonts
 
       - uses: actions/checkout@v2
 
@@ -59,6 +40,11 @@ jobs:
           remotes::install_deps(dependencies = TRUE, type = "mac.binary")
           remotes::install_dev("pkgdown")
         shell: Rscript {0}
+
+      - name: Install gouvdown fonts to mac os
+        run: |
+          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/spectral/desktop/truetype/*.ttf /Library/Fonts/
+          cp /Users/runner/work/_temp/Library/gouvdown.fonts/resources/fonts/marianne/truetype/*.ttf /Library/Fonts/
 
       - name: Install package
         run: R CMD INSTALL .

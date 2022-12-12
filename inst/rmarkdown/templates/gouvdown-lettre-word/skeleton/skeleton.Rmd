@@ -1,0 +1,67 @@
+---
+#title: "Exemple lettre Word"
+output: gouvdown::lettre_word
+params:
+  lettre_date: "01/01/2022"
+  lettre_lieu: "Paris"
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+::: {custom-style="Date"}
+`r params$lettre_lieu`, le `r params$lettre_date`
+:::
+
+
+::: {custom-style="header-letter"}
+Je ne sais plus à quoi doit servir ce style
+:::
+
+
+::: {custom-style="header-letter-naming"}
+Madame la préfête de la Loire-Atlantique
+:::
+
+::: {custom-style="objet-title"}
+Objet: Informations sur ...
+:::
+
+
+## Un titre de niveau 2
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+
+::: {custom-style="header-annexes"}
+Annexes
+:::
+
+
+Le titre au dessus marque le début de la section des annexes.
+
+
+Listes à puces:
+
+::: {custom-style="Compact"}
+- le style
+- "Compact"
+- est utilisé pour
+- les listes à puces
+:::
+
+
+
+::: {custom-style="header-annexeN"}
+Annexe 1: Première annexe
+:::
+
+
+::: {custom-style="subheader-annexe"}
+Sous-titre de la première annexe
+:::
+
+Contenu de l'annexe 1
+

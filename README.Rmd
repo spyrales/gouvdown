@@ -89,6 +89,11 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 
 This template is generated through a Github Action for Linux, Windows and MacOS and uploaded as an artifact. This aims at helping to follow the development of `{pagedown}` by providing a visual check.
 
+### Word output format
+
+**gouvdown** provides a word template for `{Rmarkdown}` for writing an official letter.
+
+
 ## References
 
 + Design system: <https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/introduction>

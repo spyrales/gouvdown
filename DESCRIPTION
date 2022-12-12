@@ -20,8 +20,8 @@ Authors@R:
       person(family = "ThinkR",
              role = "cph",
              comment = "helper functions from drealdown"))
-Description: Produce documents compliants with the French
-    government design system.
+Description: Produce documents compliants with the French government
+    design system.
 License: EUPL (>= 1.2) | file LICENCE
 URL: https://github.com/spyrales/gouvdown
 BugReports: https://github.com/spyrales/gouvdown/issues
@@ -31,9 +31,9 @@ Imports:
     bookdown,
     colorspace,
     extrafont,
-    glue,
     ggplot2 (>= 3.3.0),
     ggpubr,
+    glue,
     grid,
     here,
     htmltools,
@@ -45,17 +45,21 @@ Imports:
     xfun,
     pagedown
 Suggests: 
+    gouvdown.fonts,
     pals,
+    pkgload,
     scales,
     sf,
     testthat,
     tidyverse
 VignetteBuilder: 
     knitr
+Remotes:
+    spyrales/gouvdown.fonts
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 Collate: 
     'colors.R'
     'fonts.R'
@@ -67,4 +71,5 @@ Collate:
     'propre_brochure.R'
     'skeleton.R'
     'utils.R'
+    'word.R'
     'zzz.R'
