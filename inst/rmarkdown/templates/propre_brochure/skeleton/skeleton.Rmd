@@ -51,7 +51,7 @@ Mais ce dessein est pénible et laborieux, et une certaine paresse m’entraîne
 :::
 
 :::secondary-column-bottom
-![](https://gitlab.com/rdes_dreal/propre.brochure/-/raw/master/images/drawkit-full-stack-man-monochrome.svg)
+![](https://gitlab-forge.din.developpement-durable.gouv.fr/dreal-pdl/csd/propre.brochure/-/raw/master/images/drawkit-full-stack-man-monochrome.svg)
 
 > Citation positionnée en bas de page, dans les marges
 

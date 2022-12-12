@@ -311,7 +311,7 @@ knitr::include_graphics("img/inspecter_chrome.png")
 
 ### Ajouter des fichiers CSS
 
-Il est possible de créer des classes personnalisées dans le fichier. On peut alors leur donner des valeurs et les utliser pour pousser davantage la personnalisation.
+Il est possible de créer des classes personnalisées dans le fichier. On peut alors leur donner des valeurs et les utiliser pour pousser davantage la personnalisation.
 
 Cela demande notamment de connaître le CSS. Une excellente ressource sur le sujet est proposée par [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS).
 

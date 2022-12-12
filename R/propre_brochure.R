@@ -4,6 +4,7 @@
 #' @param ... Additional arguments passed to \code{bookdown::\link{html_document2}()}.
 #' @param css A character vector of additionnal CSS file paths.
 #' @param width_main_column Width of the main text column (in %)
+#' @param made_with Character. Add extra information to show how the document was made.
 #'
 #' @return An R Markdown output format object to be passed to
 #'   \code{rmarkdown::\link{render}()}.
