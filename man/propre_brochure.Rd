@@ -2,7 +2,8 @@
 % Please edit documentation in R/propre_brochure.R
 \name{propre_brochure}
 \alias{propre_brochure}
-\title{gouvdown PDF brochure - PROPRE style}
+\title{gouvdown PDF brochure - PROPRE style
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}}
 \usage{
 propre_brochure(
   extra_dependencies = list(),
@@ -12,7 +13,7 @@ propre_brochure(
   css = NULL,
   use_gouvdown_fonts = TRUE,
   width_main_column = 15,
-  made_with = "Ce document a été réalisé avec le package `gouvdown`"
+  made_with = "Ce document a ete realise avec le package `{gouvdown}`"
 )
 }
 \arguments{
@@ -41,4 +42,5 @@ An R Markdown output format object to be passed to
 }
 \description{
 gouvdown PDF brochure - PROPRE style
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }

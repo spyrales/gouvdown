@@ -43,7 +43,8 @@ Imports:
     systemfonts,
     utils,
     xfun,
-    pagedown
+    pagedown,
+    lifecycle
 Suggests: 
     gouvdown.fonts,
     pals,
@@ -67,6 +68,7 @@ Collate:
     'html_gouv.R'
     'gitbook_gouv.R'
     'gouv_palettes.R'
+    'gouvdown-package.R'
     'logo.R'
     'propre_brochure.R'
     'skeleton.R'

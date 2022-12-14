@@ -1,4 +1,5 @@
 #' gouvdown PDF brochure - PROPRE style
+#' `r lifecycle::badge("experimental")`
 #'
 #' @inheritParams html_gouv
 #' @param ... Additional arguments passed to \code{bookdown::\link{html_document2}()}.
@@ -16,7 +17,7 @@ propre_brochure <- function(extra_dependencies = list(),
                             css = NULL,
                             use_gouvdown_fonts = TRUE,
                             width_main_column = 15,
-                            made_with = "Ce document a été réalisé avec le package `gouvdown`") {
+                            made_with = "Ce document a ete realise avec le package `{gouvdown}`") {
   # init variable
   logo_html_fragment <- NULL
 
@@ -55,9 +56,10 @@ propre_brochure <- function(extra_dependencies = list(),
   made_with_css <- tempfile(fileext = ".css")
 
   writeLines(paste(
-    paste0(":root {--made-with:", made_with , ";}")
+    paste0(":root {--made-with:", iconv(made_with, to = "UTF-8") , ";}")
   ),
-  con = made_with_css)
+  con = made_with_css,
+  useBytes = TRUE)
 
   # render
   pagedown::html_paged(
