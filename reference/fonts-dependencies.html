@@ -83,7 +83,7 @@ Markdown output formats or Shiny applications.</p>
     
 
 <p>An object that can be included in a list of dependencies passed to
-<a href="https://rdrr.io/pkg/htmltools/man/htmlDependencies.html" class="external-link">attachDependencies</a>.</p>
+<a href="https://rstudio.github.io/htmltools/reference/htmlDependencies.html" class="external-link">attachDependencies</a>.</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -95,12 +95,14 @@ Markdown output formats or Shiny applications.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/spyrales/gouvdown" class="external-link">gouvdown</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">tag</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"The quick brown fox jumps over the lazy dog"</span>,</span></span>
-<span class="r-in"><span>    style <span class="op">=</span> <span class="st">"font-family: 'Marianne', Arial, sans-serif"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tag</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="st">"The quick brown fox jumps over the lazy dog"</span>,</span></span>
+<span class="r-in"><span>  style <span class="op">=</span> <span class="st">"font-family: 'Marianne', Arial, sans-serif"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">tag</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/htmlDependencies.html" class="external-link">attachDependencies</a></span><span class="op">(</span><span class="va">tag</span>, <span class="fu">marianne_font_dep</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">tag</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/htmlDependencies.html" class="external-link">attachDependencies</a></span><span class="op">(</span><span class="va">tag</span>, <span class="fu">marianne_font_dep</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/html_print.html" class="external-link">html_print</a></span><span class="op">(</span><span class="va">tag</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/html_print.html" class="external-link">html_print</a></span><span class="op">(</span><span class="va">tag</span><span class="op">)</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -115,7 +117,7 @@ Markdown output formats or Shiny applications.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.9000.</p>
 </div>
 
       </footer></div>
