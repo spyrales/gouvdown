@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: remotes::install_deps(dependencies = TRUE")
+        run: remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
       - name: Install gouvdown fonts to mac os
