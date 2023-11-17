@@ -66,8 +66,10 @@ library(ggplot2)
 library(sf)
 demo(nc, ask = FALSE, echo = FALSE)
 
-ggplot(data = nc) + geom_sf(aes(fill = BIR79)) + theme_gouv_map() +
-    scale_color_gouv_continuous() + labs(title = "North Carolina SIDS",
-    subtitle = "with theme_gouv_map()")
+ggplot(data = nc) +
+  geom_sf(aes(fill = BIR79)) +
+  theme_gouv_map() +
+  scale_color_gouv_continuous() +
+  labs(title = "North Carolina SIDS", subtitle = "with theme_gouv_map()")
 }
 }
