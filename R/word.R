@@ -22,7 +22,7 @@
 #'   \code{rmarkdown::\link{render}()}.
 #' @export
 #'
-#' @examples
+
 lettre_word <- function(reference_docx = pkg_resource("docx", "template_lettre.docx"), ...){
   rmarkdown::word_document(reference_docx = reference_docx, ...)
 }

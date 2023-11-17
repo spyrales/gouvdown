@@ -1,3 +1,9 @@
+# gouvdown 0.0.0.9001
+
+* Update 4 logos for regional prefecture
+
+* Add Word template for creating a docx letter (`lettre_word()`)
+
 # gouvdown 0.0.0.9000
 
 * Add new output_format and template for creating docx letter

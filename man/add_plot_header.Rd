@@ -23,7 +23,7 @@ Add a logo to a plot
 library(ggplot2)
 
 p <- ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
-    geom_point(aes(color = Species, shape = Species))
+  geom_point(aes(color = Species, shape = Species))
 
 add_plot_header(p, gglogo("marianne"))
 }

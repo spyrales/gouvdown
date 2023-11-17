@@ -1,10 +1,10 @@
 Package: gouvdown
 Title: French Government Design System for R Markdown
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     c(person(given = "Maël",
              family = "Theulière",
-             role = c("aut", "cre"),
+             role = c("aut"),
              email = "mael.theuliere@gmail.com"),
       person(given = "Romain",
              family = "Lesur",
@@ -15,6 +15,10 @@ Authors@R:
              family = "Vroylandt",
              role = "aut",
              email = "tvroylandt@gmail.com"),
+      person(given = "Juliette",
+             family = "Engelaere-Lefebvre",
+             role = c("aut", "cre"),
+             email = "juliette.engelaere@developpement-durable.gouv.fr"),
       person(family = "République Française",
              role = "cph"),
       person(family = "ThinkR",

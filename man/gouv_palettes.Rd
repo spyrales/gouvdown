@@ -11,12 +11,7 @@ A named list with 23 palettes.
 gouv_palettes
 }
 \description{
-\if{html}{\out{<div class="sourceCode {r palettes, echo=FALSE}">}}\preformatted{pal <- gouvdown::gouv_palettes
-labels <- names(pal)
-do.call(pals::pal.bands,
-        c(pal, list(labels = labels, gap = 0.2, main = "gouvdown palettes"))
-)
-}\if{html}{\out{</div>}}
+\figure{palettes-1.png}
 }
 \references{
 \url{https://www.gouvernement.fr/charte/charte-graphique-les-fondamentaux/les-couleurs}
