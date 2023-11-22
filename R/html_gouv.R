@@ -29,19 +29,21 @@ create_header_html_gouv <- function(logo = NULL,
     stop("please select only one file")
   }
   logo_name <- basename(file)
-  if (!dir.exists(here::here("www"))) {dir.create(here::here("www"))}
-  file.copy(file,'www')
+  path_here_www <- here::here("www")
+  if (!dir.exists(path_here_www)) {dir.create(path_here_www)}
+  file.copy(file, paste0(path_here_www, "/", logo_name))
   writeLines(
     glue(
       "<div class=\"row\">
 
 <div class=\"col-md-4\">
 <a>
-<img src=\"www/{logo_name}\" width=\"215px\">
+<img src=\"{path_here_www}/{logo_name}\" width=\"215px\">
 </a>
 </div>
 
-</div>"),
+</div>"
+),
     output
   )
 

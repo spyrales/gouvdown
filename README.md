@@ -9,6 +9,7 @@
 status](https://github.com/spyrales/gouvdown/workflows/R-CMD-check/badge.svg)](https://github.com/spyrales/gouvdown/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/spyrales/gouvdown/branch/master/graph/badge.svg)](https://codecov.io/gh/spyrales/gouvdown?branch=master)
+[![R-CMD-check](https://github.com/spyrales/gouvdown/workflows/R-CMD-check/badge.svg)](https://github.com/spyrales/gouvdown/actions)
 <!-- badges: end -->
 
 **gouvdown** let you write R Markdown documents which comply with the
@@ -49,6 +50,16 @@ remotes::install_github("spyrales/gouvdown")
 **gouvdown** provides a bookdown project template for `{bookdown}`
 
 ![](man/figures/gouvbook.png)
+
+### pagedown
+
+**gouvdown** provides a bookdown project template for `{pagedown}`
+
+**CAPTURE ECRAN A AJOUTER UNE FOIS FINALISE**
+
+This template is generated through a Github Action for Linux, Windows
+and MacOS and uploaded as an artifact. This aims at helping to follow
+the development of `{pagedown}` by providing a visual check.
 
 ### Word output format
 

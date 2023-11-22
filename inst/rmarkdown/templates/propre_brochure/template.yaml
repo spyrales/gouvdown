@@ -1,0 +1,6 @@
+name: propre_brochure
+description: >
+   This template implements the French official public design system into a
+   RMarkdown document with a PDF output. This is based on the pagedown package
+   and on pagedjs.
+create_dir: FALSE

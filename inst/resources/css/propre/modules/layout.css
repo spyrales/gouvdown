@@ -1,0 +1,34 @@
+/* running elements  */
+
+@page  {
+  size: A4;
+  margin: 7mm;
+}
+
+.front-page {
+  break-after: page;
+}
+
+.front-page #header {
+  margin: 0;
+  margin-left: 0px;
+  padding: 0;
+  margin-left: calc(2 * var(--unit));
+  /* display: flex; */
+}
+
+
+
+.last-page {
+  page: lastPage
+}
+
+@page lastPage {
+
+}
+
+.last-page .footer {
+  position: absolute;
+  bottom: 0;
+  
+}
