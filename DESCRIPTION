@@ -58,6 +58,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
+    wch/extrafont,
+    wch/Rttf2pt1,
     spyrales/gouvdown.fonts
 Encoding: UTF-8
 LazyData: true
