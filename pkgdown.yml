@@ -1,7 +1,6 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7.9000
-pkgdown_sha: 5a0a31f89d7c839c04a929844e4b7216196189ca
+pandoc: 3.1.11
+pkgdown: 2.1.3.9000
+pkgdown_sha: fe04924b3df129bea60ac871614b01d87bcae147
 articles:
   graph_gouv: graph_gouv.html
-last_built: 2023-11-20T14:02Z
-
+last_built: 2025-09-15T12:40Z
