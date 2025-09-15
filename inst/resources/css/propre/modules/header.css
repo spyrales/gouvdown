@@ -1,0 +1,120 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-style: normal;
+  font-family: var(--font-title);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  min-height: calc(var(--font-lineHeight) * 14);
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 1.2;
+  font-style: normal;
+  margin-top: calc(var(--font-lineHeight) * 2);
+  margin-bottom: calc(var(--font-lineHeight) * 1);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: calc(var(--font-lineHeight) * 2);
+  margin-bottom: calc(var(--font-lineHeight) * 1);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+h3 {
+  font-size: 16px;
+  /* margin-left: 39px; */
+  margin-bottom: calc(var(--font-lineHeight) * 1);
+  color: var(--color-primary);
+  margin-top: calc(var(--font-lineHeight) * 1);
+  color: black;
+  /* text-decoration: underline; */
+}
+
+h4 {
+  font-size: var(--font-size);
+  font-weight: 600;
+  margin-top: var(--font-lineHeight);
+  color: var(--color-body);
+}
+
+h5 {
+  font-size: var(--font-size);
+  font-weight: 400;
+  margin-top: calc(var(--font-lineHeight) / 2);
+  margin-bottom: calc(var(--font-lineHeight) / 2);
+  margin-left: var(--text-indent);
+  color: var(--color-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  break-after: avoid;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  text-indent: 0;
+}
+
+.header {
+  margin-top: calc(2 * var(--font-lineHeight));
+  width: var(--secondary-column-width);
+  float: left;
+}
+
+.header h2 {
+  /* width: min-content; */
+  font-size: 2.4em;
+  line-height: 1.1;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  border-bottom: 2px solid var(--color-secondary);
+  color: var(--color-body);
+  margin-right: 1ch;
+  margin-bottom: .3em;
+  display: block;
+  
+}
+
+.header p {
+  font-weight: 500;
+  font-size: 1.2em;
+  font-family: var(--font-title);
+  line-height: 1.3;
+  text-indent: 0;
+  max-width: 43ch;
+  color: var(--color-bleu-france);
+}
+
+.header p + p {
+  text-indent: 1em;
+}
+
+.main-column h3:first-child {
+  margin-top: 0;
+}
+.main-column h2:first-child {
+  margin-top: 0;
+}

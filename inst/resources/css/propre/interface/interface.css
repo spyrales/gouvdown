@@ -1,0 +1,53 @@
+/* To define how the book look on the screen: */
+
+@media screen {
+  body {
+    background-color: var(--color-background);
+  }
+
+  .pagedjs_pages {
+    display: flex;
+    width: calc(var(--pagedjs-pagebox-width) * 2);
+    flex: 0;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 3em;
+  }
+
+  .pagedjs_page {
+    background-color: var(--color-paper);
+    box-shadow: 0 0 0 2px var(--color-pageBox);
+    margin: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-top: 10mm;
+  }
+
+  .pagedjs_first_page {
+    margin-left: var(--pagedjs-pagebox-width);
+  }
+
+  .pagedjs_page > [class*="pagedjs_margin"] {
+    box-shadow: 0 0 0 1px var(--color-marginBox);
+  }
+
+  [class*="pagedjs_margin"] {
+    box-shadow: 0 0 0 1px inset orange;
+  }
+
+  /* uncomment for recto/verso book. 
+    --------------------------------------------------- */
+  /* .pagedjs_pages {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pagedjs_first_page {
+    margin-left: 0;
+  }
+
+  .pagedjs_page {
+    margin: 0 auto;
+    margin-top: 20mm;
+  } */
+}

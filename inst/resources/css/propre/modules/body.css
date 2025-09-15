@@ -1,0 +1,254 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--font-lineHeight);
+  color: var(--color-body);
+  font-variant-ligatures: common-ligatures;
+}
+
+ul + p,
+ol + p,
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  text-indent: 0;
+}
+
+ul,
+ol,
+blockquote,
+p {
+  /* baseline reset*/
+  margin: 0;
+  padding: 0;
+  orphans: 2;
+  widows: 2;
+}
+
+p,
+li {
+  font-size: var(--font-size);
+  line-height: var(--font-lineHeight);
+  text-align: left;
+  hyphens: none;
+}
+
+.main-column p {
+  hyphens: auto;
+  text-align: justify;
+  margin-bottom: var(--font-lineHeight);
+}
+
+hr {
+  height: var(--font-lineHeight);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: calc(var(--font-lineHeight));
+  margin-bottom: calc(var(--font-lineHeight));
+  position: relative;
+  top: 4px;
+}
+
+hr::before {
+  width: 100%;
+  position: absolute;
+  display: block;
+  content: "* * *";
+  text-align: center;
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-serif);
+}
+
+blockquote em {
+  font-style: normal;
+}
+
+em,
+sup,
+sub,
+strong,
+b,
+i {
+  line-height: 0;
+}
+
+.smallcaps {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.main-column {
+  width: var(--main-column-width);
+}
+
+.pagedjs_left_page .main-column {
+  margin-left: auto;
+}
+
+.secondary-column-top {
+  top: 0;
+}
+
+.secondary-column-bottom {
+  position: absolute;
+  width: var(--secondary-column-width);
+  bottom: 0;
+}
+
+[class*="secondary-column"] {
+  position: absolute;
+  background: var(--color-paper);
+  width: var(--secondary-column-width);
+}
+
+[class*="secondary-column"] p {
+  font-family: var(--font-sans);
+  font-size: .9em;
+}
+
+.pagedjs_left_page [class*="secondary-column"] {
+  left: 0;
+  right: unset;
+}
+
+.pagedjs_right_page [class*="secondary-column"] {
+  left: unset;
+  right: 0;
+}
+
+[class*="secondary-column"] h3 {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+[class*="secondary-column"] :first-child {
+  margin-top: 0;
+}
+
+[class*="secondary-column"] blockquote {
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+  border-left: 1px solid var(--color-primary);
+  /* margin-left: 10px; */
+  color: var(--color-primary);
+  font-style: italic;
+  text-align: left;
+}
+
+blockquote p {
+  text-align: left;
+}
+
+[class*="secondary-column"] p + blockquote {
+  margin-top: var(--font-lineHeight);
+}
+
+[class*="secondary-column"] blockquote p {
+  font-family: var(--font-serif);
+  font-size: 1.1em;
+}
+
+.pagedjs_left_page .secondary-column {
+  float: left;
+}
+
+.pagedjs_right_page .secondary-column {
+  float: right;
+}
+
+
+
+/* showing numbers  in the margin*/
+
+.numbers {
+  position: absolute;
+  font-family: var(--font-sans);
+  color: var(--color-bleu-france);
+  font-size: 1em;
+  padding: 2ch;
+  width: calc(var(--secondary-column-width) - 2%);
+  box-shadow: 0 0 0 1px var(--color-E1);
+  bottom: 0;
+  background: var(--color-E1), linear-gradient(rgb(255, 255, 255, 0.2), rgb(255, 255, 255, 0.5));
+}
+
+.pagedjs_right_page .numbers {
+  right: 0;
+}
+
+.pagedjs_left_page .numbers {
+  left: 0;
+}
+
+.numbers h2 {
+  font-size: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.numbers ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  /* padding: 1em; */
+}
+
+.numbers ul li {
+  margin-top: 1em;
+  font-size: 0.8em;
+  line-height: 1.1em;
+  max-width: 80%;
+}
+
+.numbers strong {
+  font-size: 1.1em;
+  line-height: 0;
+  font-weight: 300;
+}
+
+
+/* blockquote */
+
+
+.main-column blockquote {
+  font-size: 0.945em;
+  margin-top: .5em;
+}
+
+.main-column blockquote p {
+  text-indent: 0;
+  font-family: var(--font-sans);
+  font-size: .9em;
+  border-left: 2px solid var(--color-bleu-france);
+  padding-left: 1.5ch;
+}
+
+.main-column blockquote p + p {
+  text-indent: var(--text-indent);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+.footer p {
+  font-family: var(--font-sans);
+  border-top: 1px solid var(--color-bleu-france);
+  font-size: .9em;
+}

@@ -1,0 +1,56 @@
+img {
+  height: auto;
+}
+
+@page:first  {
+  margin-top: 8mm;
+  margin-bottom: 8mm;
+}
+
+#titlepage .caption {
+  display: none;
+}
+
+  /* page de titre (front page) */
+
+  /* front page crée automatiquement vient rendre problématique le 4 pages */
+
+  #header {
+    margin: 0;
+    padding: 0;
+    margin-left: calc(2 * var(--unit));
+  }
+
+  #header h1.title {
+    font-size: 5.5em;
+    line-height: 1.1;
+    margin-top: 1em;
+    max-width: 60%;
+  }
+
+  #header h1.subtitle {
+    max-width: 30ch;
+    font-size: 3em;
+    max-width: 60%;
+    line-height: 1.2;
+    font-weight: 300;
+  }
+
+  #header h2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+
+  #header .author, #header .date {
+    display: inline;
+  }
+
+  #header .date::before {
+    content: ' — '
+  }
+
+  #titlepage img {
+    width: 400px;
+  }
+

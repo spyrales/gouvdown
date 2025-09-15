@@ -1,0 +1,28 @@
+table {
+  border-collapse: collapse;
+  /* border: 1px solid black; */
+  font-size: 0.9em;
+  line-height: 1.2;
+  table-layout: fixed;
+  margin-bottom: var(--font-lineHeight);
+  margin-top: var(--font-lineHeight);
+  width: 100%;
+  
+}
+
+table td,
+table th {
+  border: 1px solid var(--color-primary);
+  padding: 0.3em;
+  vertical-align: top;
+}
+
+table th {
+  background: var(--color-primary);
+  color: white;
+}
+
+th:empty {
+  border: 0;
+  background: unset;
+}

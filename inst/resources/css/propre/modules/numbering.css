@@ -1,0 +1,11 @@
+body {
+  counter-reset: part chapter;
+}
+
+.body-chapter {
+  counter-increment: chapter;
+}
+
+.body-part {
+  counter-increment: part;
+}
